@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mainbackground"
+        >
+
+        <ImageView
+            android:id="@+id/cepheuslogo"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="80dp"
+            android:paddingTop="40dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cepheuslogo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventscroll"
+            android:layout_marginTop="150dp"
+            app:layout_constraintTop_toBottomOf="@+id/cepheuslogo"
+            tools:layout_editor_absoluteX="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="35dp"
+                    android:src="@drawable/eventcard1"
+                    android:id="@+id/card1"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="centerCrop"
+                    />
+
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/eventcard3"
+                    android:paddingLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="centerCrop"
+                    >
+                </ImageView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/eventcard3"
+                    android:paddingLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scaleType="centerCrop"
+                    />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/eventcard2"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/eventscroll"
+            android:layout_marginTop="65dp"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

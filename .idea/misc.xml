@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/drawable/ic_baseline_emoji_events_24.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/fragment_dashboard.xml" value="0.17335526315789473" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/fragment_event1.xml" value="0.16222677595628415" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/fragment_events.xml" value="0.16222677595628415" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/homelayout.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/fragment_home.xml" value="0.17335526315789473" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/homelayout.xml" value="0.136" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/sidenav_header.xml" value="0.1721311475409836" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/layout/sidenavheader.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/menu/bottom_menu.xml" value="0.17269736842105263" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/menu/bottom_nav_menu.xml" value="0.205859375" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/menu/bottomnav_menu.xml" value="0.176" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/menu/sidenav_menu.xml" value="0.17335526315789473" />
       </map>
     </option>
