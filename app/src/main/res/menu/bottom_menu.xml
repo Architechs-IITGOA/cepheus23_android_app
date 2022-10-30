@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/homeFragment"/>
+    <item android:title="Events"
+        android:id="@+id/eventsFragment"
+        android:icon="@drawable/ic_baseline_emoji_events_24"/>
+    <item android:title="Schedule"
+        android:icon="@drawable/ic_baseline_calendar"/>
+    <item android:title="Dashboard"
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_baseline_person_24"/>
+</menu>
