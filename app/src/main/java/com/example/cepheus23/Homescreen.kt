@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 
 import com.example.cepheus23.databinding.HomelayoutBinding
-import com.example.cepheus23.fragments.EventsFragment
 import com.google.android.material.navigation.NavigationView
 
 
@@ -26,7 +25,6 @@ class Homescreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = HomelayoutBinding.inflate(layoutInflater)
-        binding.cepheuslogo.setOnClickListener(EventsFragment)
         setContentView(binding.root)
 
         val drawerLayout:DrawerLayout = binding.drawerLayout
