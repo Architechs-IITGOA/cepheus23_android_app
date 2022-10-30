@@ -8,11 +8,6 @@
     android:background="@drawable/mainbackground"
     tools:context=".fragments.Event1Fragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <ImageView
             android:id="@+id/maskgroup"
             android:layout_width="wrap_content"
