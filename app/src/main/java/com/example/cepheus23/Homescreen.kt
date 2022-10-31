@@ -42,17 +42,6 @@ class Homescreen : AppCompatActivity() {
         navController = navHostFragment.navController
         val bottomNavigationView = binding.bottomNavView
         setupWithNavController(bottomNavigationView,navController)
-
-
-
-
-
-
-
-
-
-
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
