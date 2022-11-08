@@ -1,6 +1,7 @@
 package com.example.cepheus23
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -42,6 +43,7 @@ class Homescreen : AppCompatActivity() {
         navController = navHostFragment.navController
         val bottomNavigationView = binding.bottomNavView
         setupWithNavController(bottomNavigationView,navController)
+        Log.i("message", "nav bars working")
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -19,9 +19,18 @@
 
 
     </style>
-    <style name="ThemeActionBar"
-        parent="Widget.AppCompat.Light.ActionBar.Solid">
+
+    <style name="ThemeActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
         <item name="android:background">#30000000</item>
         <item name="background">@null</item>
     </style>
+
+<!--    <style name="Theme.Cepheus23.NoActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.Cepheus23.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+<!--    <style name="Theme.Cepheus23.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 </resources>
