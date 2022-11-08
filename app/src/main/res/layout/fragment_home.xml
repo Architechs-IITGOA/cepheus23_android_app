@@ -39,36 +39,132 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="35dp"
-                    android:src="@drawable/eventcard1"
-                    android:id="@+id/card1"
-                    android:layout_marginRight="20dp"
-                    android:scaleType="centerCrop"
-                    />
 
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/eventcard3"
-                    android:paddingLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:scaleType="centerCrop"
-                    >
-                </ImageView>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/eventcard3"
-                    android:paddingLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:scaleType="centerCrop"
-                    />
+                    <ImageView
+
+                        android:id="@+id/card1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:paddingLeft="35dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/eventcard1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+
+                        android:src="@drawable/planet5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Competitions"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.771"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.801" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent">
+
+                    <ImageView
+
+                        android:id="@+id/card2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:layout_marginTop="40dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/eventcard1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+
+                        android:src="@drawable/planet5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Worksshops"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.771"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.801" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent">
+
+                    <ImageView
+
+                        android:id="@+id/card3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:layout_marginTop="40dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/eventcard1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+
+                        android:src="@drawable/planet5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RuleBook"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.725"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.801" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>
@@ -83,8 +179,6 @@
             app:layout_constraintTop_toBottomOf="@+id/eventscroll"
             android:layout_marginTop="65dp"
             tools:ignore="MissingConstraints" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
