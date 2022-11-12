@@ -14,4 +14,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="About_us">In Cepheus, we strive to promote and foster technical spirit within the young and imaginative minds of students while also representing the rich and unique culture of Goa, which will be evident in the fest’s various subtleties. Cepheus is a celebration of our technical prowess - not just as an institution, but as a country. We aim at instilling a sense of collective learning by creating a melting pot of ideas open to students of all institutions and disciplines. With intriguing events and competitions, along with resourceful workshops by experts and professionals, we hope to make Cepheus ‘23 a memorable experience for all.</string>
 </resources>

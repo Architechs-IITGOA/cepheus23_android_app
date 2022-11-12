@@ -6,181 +6,325 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/mainbackground"
-        >
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/cepheuslogo"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="80dp"
-            android:paddingTop="40dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="30dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cepheuslogo"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="10dp" />
+            android:layout_height="match_parent"
+            android:background="@drawable/mainbackground"
+            >
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/eventscroll"
-            android:layout_marginTop="150dp"
-            app:layout_constraintTop_toBottomOf="@+id/cepheuslogo"
-            tools:layout_editor_absoluteX="40dp">
+            <ImageView
+                android:id="@+id/cepheuslogo"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="80dp"
+                android:paddingTop="40dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cepheuslogo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventscroll"
+                android:layout_marginTop="150dp"
+                app:layout_constraintTop_toBottomOf="@+id/cepheuslogo"
+                tools:layout_editor_absoluteX="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    >
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+
+                            android:id="@+id/card1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:paddingLeft="35dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/eventcard1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <ImageView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+
+                            android:src="@drawable/planet5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/akronim"
+                            android:text="Competitions"
+                            android:textColor="@color/white"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.609"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.809" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent">
+
+                        <ImageView
+
+                            android:id="@+id/card2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="35dp"
+                            android:layout_marginTop="40dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/eventcard1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <ImageView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+
+                            android:src="@drawable/planet5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/akronim"
+                            android:text="Worksshops"
+                            android:textColor="@color/white"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.624"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.809" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent">
+
+                        <ImageView
+
+                            android:id="@+id/card3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="35dp"
+                            android:layout_marginTop="40dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/eventcard1"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <ImageView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+
+                            android:src="@drawable/planet5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/akronim"
+                            android:text="RuleBook"
+                            android:textColor="@color/white"
+                            android:textSize="30dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.623"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.809" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="65dp"
+                app:layout_constraintTop_toBottomOf="@+id/eventscroll">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
 
-                    <ImageView
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/gif"
+                        android:layout_width="231dp"
+                        android:layout_height="233dp"
+                        android:src="@drawable/gif_shop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
 
-                        android:id="@+id/card1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:paddingLeft="35dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/eventcard1"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_merch"
+                        app:layout_constraintVertical_bias="0.246"
                         tools:ignore="MissingConstraints" />
 
                     <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="170dp"
-
-                        android:src="@drawable/ic_earth"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:src="@drawable/merchbox"
                         tools:ignore="MissingConstraints" />
 
                     <TextView
+                        android:id="@+id/tv_merch"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Competitions"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/akronim"
+                        android:text="Buy Our Merch"
                         android:textSize="30dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.771"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.801" />
+                        app:layout_constraintVertical_bias="0.143" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="39dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="64dp"
+                        android:src="@drawable/vtr_rightarrow"
+                        app:layout_constraintStart_toEndOf="@+id/tv_merch"
+                        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
                     <ImageView
-
-                        android:id="@+id/card2"
+                        android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
-                        android:layout_marginTop="40dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/eventcard1"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:src="@drawable/merchbox"
                         tools:ignore="MissingConstraints" />
 
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="170dp"
-
-                        android:src="@drawable/ic_mars"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="MissingConstraints" />
                     <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Worksshops"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/akronim"
+                        android:text="About Us"
                         android:textSize="30dp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.771"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.801" />
+                        app:layout_constraintVertical_bias="0.141" />
+
+                    <TextView
+                        android:layout_width="350dp"
+                        android:layout_height="248dp"
+                        android:text="@string/About_us"
+                        android:textSize="16dp"
+                        android:paddingLeft="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.491"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.727" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
                     <ImageView
-
-                        android:id="@+id/card3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
-                        android:layout_marginTop="40dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/eventcard1"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="MissingConstraints" />
-
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="170dp"
-
-                        android:src="@drawable/ic_moon"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:src="@drawable/eventcard2"
                         tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="RuleBook"
-                        android:textColor="@color/white"
+                        android:fontFamily="@font/akronim"
+                        android:text="Title Sponsor"
                         android:textSize="30dp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.725"
+                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.801" />
+                        app:layout_constraintVertical_bias="0.5" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>
-        </HorizontalScrollView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/eventcard2"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/eventscroll"
-            android:layout_marginTop="65dp"
-            tools:ignore="MissingConstraints" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </FrameLayout>
