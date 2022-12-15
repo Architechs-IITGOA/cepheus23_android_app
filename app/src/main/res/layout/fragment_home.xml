@@ -186,59 +186,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/eventscroll">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp">
 
-
-                    <pl.droidsonroids.gif.GifImageView
-                        android:id="@+id/gif"
-                        android:layout_width="231dp"
-                        android:layout_height="233dp"
-                        android:src="@drawable/gif_shop"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_merch"
-                        app:layout_constraintVertical_bias="0.246"
-                        tools:ignore="MissingConstraints" />
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:src="@drawable/merchbox"
-                        tools:ignore="MissingConstraints" />
-
-                    <TextView
-                        android:id="@+id/tv_merch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/akronim"
-                        android:text="Buy Our Merch"
-                        android:textSize="30dp"
-                        android:textStyle="bold"
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewpager2"
+                        android:layout_width="0dp"
+                        android:layout_height="300dp"
+                        android:paddingStart="80dp"
+                        android:paddingEnd="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.143" />
+                        app:layout_constraintVertical_bias="0.5" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="39dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginTop="64dp"
-                        android:src="@drawable/vtr_rightarrow"
-                        app:layout_constraintStart_toEndOf="@+id/tv_merch"
-                        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -286,6 +251,8 @@
                         app:layout_constraintVertical_bias="0.727" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
