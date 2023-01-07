@@ -57,7 +57,11 @@ class Homescreen : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.sidenav_sponsors ->Toast.makeText(applicationContext,"Sponsors",Toast.LENGTH_SHORT).show()
+                R.id.sidenav_sponsors ->{
+                    Toast.makeText(applicationContext,"Sponsors",Toast.LENGTH_SHORT).show()
+                    val sponsorintent = Intent(this,SponsorActivity::class.java)
+                    startActivity(sponsorintent)
+                }
                 R.id.sidenav_con -> Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
                 R.id.sidenav_merch -> {
                     Log.i("error","1")

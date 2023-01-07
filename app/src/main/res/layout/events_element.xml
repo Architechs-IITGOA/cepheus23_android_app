@@ -5,18 +5,19 @@
     android:id="@+id/event_item_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
+    android:layout_marginBottom="25dp"
     android:background="@drawable/rectangle21">
 
     <LinearLayout
         android:id="@+id/iv_event_type"
         android:layout_width="67dp"
         android:layout_height="27dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/online_offline_tag_rectangle"
         android:elevation="100dp"
-        android:scaleType="center">
+        android:scaleType="center"
+        android:layout_marginLeft="2.1dp"
+        android:paddingLeft="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:layout_marginStart="-85dp">
 
@@ -38,13 +39,11 @@
 
         <ImageView
             android:id="@+id/iv_event"
-            android:layout_marginTop="10dp"
+            android:layout_width="150dp"
             android:layout_marginLeft="10dp"
-            android:layout_width="138dp"
             android:layout_height="match_parent"
             android:elevation="100dp"
-            android:scaleType="center"
-            android:src="@drawable/ic_earth" />
+            android:scaleType="center" />
 
 
 
@@ -52,7 +51,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
                 android:id="@+id/event_name"
@@ -62,19 +63,27 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:padding="0dp"
+                android:layout_marginTop="20dp"
                 android:text="Ardionos' trials"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:shadowColor="@color/white"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="8"/>
 
             <TextView
                 android:id="@+id/event_desc"
                 android:layout_width="260dp"
                 android:layout_height="94dp"
                 android:layout_alignParentBottom="true"
-                android:padding="0dp"
+                android:paddingBottom="10dp"
                 android:textSize="15sp"
                 android:text="AHDKDFBJFVKEJBRFJKVADBKFJABKFJBKJ"
-
+                android:shadowColor="@color/white"
+                android:shadowDx="0.0"
+                android:shadowDy="0.0"
+                android:shadowRadius="8"
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
