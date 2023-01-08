@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "WEB_CLIENT_ID", '"469751877813-knot4ct87713vvr2dmrd1do6nb8efn4i.apps.googleusercontent.com"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -55,4 +56,7 @@ android {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+     //following dependency is to use auth services by google
+     implementation 'com.google.android.gms:play-services-auth:20.4.0'
 }
