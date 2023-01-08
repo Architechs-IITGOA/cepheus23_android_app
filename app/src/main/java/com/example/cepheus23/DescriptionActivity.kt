@@ -49,7 +49,7 @@ class DescriptionActivity : AppCompatActivity() {
 
             val ctapi = retrofitBuilder.create(CreateTeamApi::class.java)
 
-            val teaminfo = CreateTeamInfo(Token.token,"Dickhead")
+            val teaminfo = CreateTeamInfo(Token.token,"bhomsdke")
             val call1 = ctapi.teamCreate(teaminfo)
 
 //            var teamcode = ""
