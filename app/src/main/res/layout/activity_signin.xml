@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/signin_button"
+        android:id="@+id/bv_signin"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_button"
@@ -72,7 +72,6 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 

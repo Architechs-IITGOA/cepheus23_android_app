@@ -24,7 +24,7 @@ class DetailsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val token:String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDUsImluaSI6IkkiLCJncmFkZSI6MTEsInJlZ2lzdGVyZWQiOnRydWUsImlhdCI6MTY3MzAyNTMyNiwiZXhwIjoxNjczMjg0NTI2fQ.h2yj7Jk716yyd4AflPin-WdmrZrXeaRbsROPZpTVSiY"
+//        val token:String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDUsImluaSI6IkkiLCJncmFkZSI6MTEsInJlZ2lzdGVyZWQiOnRydWUsImlhdCI6MTY3MzAyNTMyNiwiZXhwIjoxNjczMjg0NTI2fQ.h2yj7Jk716yyd4AflPin-WdmrZrXeaRbsROPZpTVSiY"
 
         binding.enterButton.setOnClickListener {
 
@@ -32,7 +32,7 @@ class DetailsActivity : AppCompatActivity() {
             val college_name = binding.instituteId.text.toString()
             val phonenumber = binding.phoneId.text.toString()
             val grade = binding.standardId.text.toString()
-
+            var token = Token.token
             if(username.isEmpty() || college_name.isEmpty() || phonenumber.isEmpty()){
                 Log.i("if Block","3")
                 Toast.makeText(this,"Empty fields are not allowed", Toast.LENGTH_SHORT).show()
@@ -66,6 +66,7 @@ class DetailsActivity : AppCompatActivity() {
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@DetailsActivity,Homescreen::class.java)
                             startActivity(intent)
+                            Log.i("response","switched to Homescreen")
                         }
                         else{
                             Log.i("response",response.code().toString())
@@ -80,7 +81,5 @@ class DetailsActivity : AppCompatActivity() {
                 })
             }
         }
-
-
     }
 }
