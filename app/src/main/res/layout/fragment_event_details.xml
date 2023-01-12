@@ -31,7 +31,9 @@
             app:layout_constraintStart_toStartOf="parent"
             android:background="@color/white"
             app:layout_constraintTop_toTopOf="@+id/iv_event_image"
-            app:cardCornerRadius="30dp">
+            app:cardCornerRadius="25dp"
+
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
