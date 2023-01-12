@@ -17,6 +17,8 @@ class SponsorActivity : AppCompatActivity() {
         binding = ActivitySponsorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         Log.i("spcheck","1")
         checkper()
         Log.i("spcheck","2")

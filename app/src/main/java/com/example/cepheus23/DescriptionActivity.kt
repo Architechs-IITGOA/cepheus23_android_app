@@ -79,10 +79,6 @@ class DescriptionActivity : AppCompatActivity() {
                 }
             })
 
-
-//            val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
-//            val eventdata = RegisterEventInfo(Token.token,tea)
-//            val call2 = regeventapi.eventregistration()
         }
     }
 
@@ -90,6 +86,6 @@ class DescriptionActivity : AppCompatActivity() {
     {
         binding.eventName.text = obj.eventName
         binding.eventdec.text = obj.overview
-        binding.ivEventImage.setImageResource(eventImg)
+//        binding.ivEventImage.setImageResource(eventImg)
     }
 }
