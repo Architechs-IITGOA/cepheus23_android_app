@@ -32,46 +32,46 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
         holder.itemView.setOnClickListener{
             val intent= Intent(holder.itemView.context,DescriptionActivity::class.java)
             intent.putExtra("Event",event[position])
-            intent.putExtra("EventImage",eventImage)
+//            intent.putExtra("EventImage",eventImage)
             holder.itemView.context.startActivity(intent)
         }
         holder.eventName.text = event[position].eventName
         holder.eventOverview.text = event[position].overview
 
-        when (event[position].eventName!!) {
-            "Event 1" -> {
-                eventImage = R.drawable.ic_mars
-            }
-            "Event 2" -> {
-                eventImage = R.drawable.ic_neptune
-            }
-            "Event 2" -> {
-                eventImage = R.drawable.ic_earth
-            }
-            "Event 3" -> {
-                eventImage = R.drawable.ic_moon
-            }
-            "Event 4" -> {
-                eventImage = R.drawable.ic_venus
-            }
-            "Event 5" -> {
-                eventImage = R.drawable.ic_venus
-            }
-            "Event 6" -> {
-                eventImage = R.drawable.ic_saturn
-            }
-            "Event 7" -> {
-                eventImage = R.drawable.ic_uranus
-            }
-            "Event 8" -> {
-                eventImage = R.drawable.ic_mercury
-            }
-            "Event 9" -> {
-                eventImage = R.drawable.ic_sun
-            }
+//        when (event[position].eventName!!) {
+//            "Event 1" -> {
+//                eventImage = R.drawable.ic_mars
+//            }
+//            "Event 2" -> {
+//                eventImage = R.drawable.ic_neptune
+//            }
+//            "Event 2" -> {
+//                eventImage = R.drawable.ic_earth
+//            }
+//            "Event 3" -> {
+//                eventImage = R.drawable.ic_moon
+//            }
+//            "Event 4" -> {
+//                eventImage = R.drawable.ic_venus
+//            }
+//            "Event 5" -> {
+//                eventImage = R.drawable.ic_venus
+//            }
+//            "Event 6" -> {
+//                eventImage = R.drawable.ic_saturn
+//            }
+//            "Event 7" -> {
+//                eventImage = R.drawable.ic_uranus
+//            }
+//            "Event 8" -> {
+//                eventImage = R.drawable.ic_mercury
+//            }
+//            "Event 9" -> {
+//                eventImage = R.drawable.ic_sun
+//            }
         }
-        holder.eventListImage.setImageResource(eventImage!!)
-    }
+//        holder.eventListImage.setImageResource(eventImage!!)
+//    }
 
     override fun getItemCount(): Int {
         return event.size

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082178218217",
+    "project_id": "cepheus-iit-goa",
+    "storage_bucket": "cepheus-iit-goa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082178218217:android:0998c71e16be634576a878",
+        "android_client_info": {
+          "package_name": "com.example.cepheus23"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082178218217-fu74p7r6pvkahvugbsmitprid3kd898s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHAkzup3UUzvF7he4GXzpG9Ga45kwEVuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082178218217-fu74p7r6pvkahvugbsmitprid3kd898s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

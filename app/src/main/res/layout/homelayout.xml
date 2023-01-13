@@ -34,6 +34,8 @@
             android:layout_height="55dp"
             android:background="@color/bottomnavbar"
             app:itemIconTint="@color/white"
+            app:itemTextColor="#233988"
+            app:backgroundTint="#A1000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -55,7 +57,11 @@
         app:headerLayout="@layout/sidenavheader"
         app:menu="@menu/sidenav_menu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"/>
+        android:background="#8A000000"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:fitsSystemWindows="true"
+        />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

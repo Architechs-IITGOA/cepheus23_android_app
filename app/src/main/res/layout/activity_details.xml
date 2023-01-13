@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsActivity"
+    style="@style/Theme.Cepheus23"
     android:background="@drawable/mainbackground">
 
     <ScrollView
@@ -39,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -48,7 +50,9 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     android:hint="Full Name"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    app:hintTextColor="@color/white"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -56,6 +60,7 @@
                         android:id="@+id/username_id"
                         android:inputType="text"
                         android:textColor="@color/white"
+                        android:shadowColor="@color/white"
                         android:textSize="20dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -69,6 +74,7 @@
                     android:padding="5dp"
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/white"
                     >
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -87,7 +93,8 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     android:hint="Institution"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    app:hintTextColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -107,15 +114,17 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     android:hint="Standard"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    app:hintTextColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/standard_id"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textColor="@color/white"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +136,8 @@
                     android:textColorHint="@color/white"
                     app:boxStrokeColor="@color/white"
                     android:hint="Address"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    app:hintTextColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
