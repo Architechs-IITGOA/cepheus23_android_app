@@ -8,7 +8,8 @@
         android:id="@+id/eventsFragment"
         android:icon="@drawable/ic_baseline_emoji_events_24"/>
     <item android:title="Schedule"
-        android:icon="@drawable/ic_baseline_calendar"/>
+        android:icon="@drawable/ic_baseline_calendar"
+        android:id="@+id/schedules2"/>
     <item android:title="Dashboard"
         android:id="@+id/dashboardFragment"
         android:icon="@drawable/ic_baseline_person_24"/>
