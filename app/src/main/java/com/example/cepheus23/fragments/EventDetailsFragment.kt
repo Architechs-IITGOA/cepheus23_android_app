@@ -18,10 +18,11 @@ class EventDetailsFragment : Fragment() {
     ): View? {
         detailsBinding = com.example.cepheus23.databinding.FragmentEventDetailsBinding.inflate(inflater, container, false)
         obj?.let{
-            detailsBinding.tvEventName.setText(it.eventName)
-            detailsBinding.tvEventDetails.setText(it.overview)
+            detailsBinding.eventName.setText(it.eventName)
         }
         return detailsBinding.root
+
+
     }
 
 }

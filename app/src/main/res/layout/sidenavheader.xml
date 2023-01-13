@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="400dp"
-    android:background="@drawable/mainbackground"
+    android:background="#8A000000"
     android:orientation="vertical"
     >
     
@@ -19,7 +19,7 @@
             android:layout_height="80dp"
             android:src="@drawable/ic_baseline_person_24"
             android:layout_marginRight="10dp"
-            android:tint="@color/background"
+            android:tint="@color/white"
             tools:ignore="UseAppTint"/>
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Hi, Vivek"
             android:textSize="30dp"
-            android:textColor="@color/background"
+            android:textColor="@color/white"
             android:layout_gravity="center_vertical"
             />
     </LinearLayout>

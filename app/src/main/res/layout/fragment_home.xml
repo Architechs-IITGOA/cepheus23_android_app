@@ -19,13 +19,13 @@
             <ImageView
                 android:id="@+id/cepheuslogo"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginTop="80dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="60dp"
                 android:paddingTop="40dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="30dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/cepheuslogo"
+                android:src="@drawable/titleimage"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="10dp" />
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/eventscroll"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="100dp"
                 app:layout_constraintTop_toBottomOf="@+id/cepheuslogo"
                 tools:layout_editor_absoluteX="40dp">
 
