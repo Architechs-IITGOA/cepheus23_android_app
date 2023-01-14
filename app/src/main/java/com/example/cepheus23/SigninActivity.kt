@@ -115,6 +115,8 @@ class SigninActivity : AppCompatActivity() {
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         oneTapClient = Identity.getSignInClient(this)
         signUpRequest = BeginSignInRequest.builder()
             .setGoogleIdTokenRequestOptions(
@@ -138,6 +140,7 @@ class SigninActivity : AppCompatActivity() {
             .build()
 
         binding.bvSignin.setOnClickListener {
+
             displaySignIn()
         }
 

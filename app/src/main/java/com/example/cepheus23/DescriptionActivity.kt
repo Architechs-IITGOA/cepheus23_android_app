@@ -80,6 +80,8 @@ class DescriptionActivity : AppCompatActivity() {
             })
 
         }
+
+
     }
 
     private fun setData(obj:EventData,eventImg:Int)
