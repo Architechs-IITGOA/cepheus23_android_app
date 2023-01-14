@@ -17,6 +17,7 @@ import com.example.cepheus23.databinding.EventsElementBinding
 class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapter.eventViewHolder>(){
 
     inner class eventViewHolder(val binding: EventsElementBinding) : RecyclerView.ViewHolder(binding.root) {
+
         var eventName = binding.eventName
         var eventOverview = binding.eventDesc
         var eventListImage = binding.ivEvent

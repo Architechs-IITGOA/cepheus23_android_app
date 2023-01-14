@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField("String", "WEB_CLIENT_ID", '"469751877813-knot4ct87713vvr2dmrd1do6nb8efn4i.apps.googleusercontent.com"')
+        buildConfigField("String", "WEB_CLIENT_ID", '"218396342180-14tf81vkmg8a2iu06831pp8prl1k1669.apps.googleusercontent.com"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
