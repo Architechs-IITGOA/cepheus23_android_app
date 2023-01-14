@@ -23,11 +23,7 @@ class DescriptionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = FragmentEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//
-//        window.decorView.apply {
-//            systemUiVisibility =
-//                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-//        }
+
 
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)
@@ -40,49 +36,128 @@ class DescriptionActivity : AppCompatActivity() {
 
 //        val eventid = obj.id!!.toInt()
 //        var createTeamFlag = false
-        binding.registerButton.setOnClickListener {
 
-            val retrofitBuilder = Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://backendcepheus.cf/apiM1/")
-                .build()
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://backendcepheus.cf/apiM1/")
+            .build()
 
-            val ctapi = retrofitBuilder.create(CreateTeamApi::class.java)
 
-            val teaminfo = CreateTeamInfo(Token.token,"bhomsdke")
-            val call1 = ctapi.teamCreate(teaminfo)
+        if(obj.team==0){
 
-//            var teamcode = ""
+            binding.registerButton.setOnClickListener {
+                var teamcode = ""
+                var team_name = ""
+                // call create team api
 
-            call1.enqueue(object : Callback<CreateTeamResponse?> {
-                override fun onResponse(
-                    call: Call<CreateTeamResponse?>,
-                    response: Response<CreateTeamResponse?>
-                ) {
-                    Toast.makeText(this@DescriptionActivity,"OnResponse",Toast.LENGTH_SHORT).show()
-                    if(response.isSuccessful){
-                        Log.i("response2","Team Created Successfully")
-                        Toast.makeText(this@DescriptionActivity,"Success",Toast.LENGTH_SHORT).show()
-//                        teamcode = response.body()?.team_code.toString()
-//                        Log.i("respnse2",teamcode)
+                val CTapi = retrofitBuilder.create(CreateTeamApi::class.java)
+                val teaminfo = CreateTeamInfo(obj.id!!,Token.token,team_name)
+
+                val call1 = CTapi.teamCreate(teaminfo)
+
+                call1.enqueue(object : Callback<CreateTeamResponse?> {
+                    override fun onResponse(
+                        call: Call<CreateTeamResponse?>,
+                        response: Response<CreateTeamResponse?>
+                    ) {
+                        Log.i("response2", "team created")
+                        teamcode = response.body()?.team_code.toString()
+
                     }
-                    else{
-                        Log.i("response2",response.code().toString())
-                        Log.i("response2",response.message())
+
+                    override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
+                        Log.i("failed2","Onfailure of ct")
                     }
-                }
+                })
 
-                override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
-                    Log.i("failed2",t.message.toString())
-                    Log.i("failed2",t.cause.toString())
-                    Toast.makeText(this@DescriptionActivity,"Onfailure",Toast.LENGTH_SHORT).show()
-                }
-            })
 
+
+                // call register api
+                val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
+                val data = RegisterEventInfo(Token.token,teamcode, obj.id!!)
+                val call2 = regeventapi.eventregistration(data)
+
+                call2.enqueue(object : Callback<RegisterEventResponse?> {
+                    override fun onResponse(
+                        call: Call<RegisterEventResponse?>,
+                        response: Response<RegisterEventResponse?>
+                    ) {
+                        Log.i("response2","registered successfully")
+                        binding.registerButton.setText("registered")
+
+                    }
+
+                    override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+                        Log.i("failed2","failure")
+                    }
+                })
+
+            }
+        }
+
+        else{
+            binding.registerButton.setText("Create Team")
+            binding.registerButton.setOnClickListener {
+
+                var team_name = ""
+                var teamcode = ""
+                // create team intent
+
+
+
+                //create team api call
+                val CTapi = retrofitBuilder.create(CreateTeamApi::class.java)
+                val teaminfo = CreateTeamInfo(obj.id!!,Token.token,team_name)
+
+                val call1 = CTapi.teamCreate(teaminfo)
+
+                call1.enqueue(object : Callback<CreateTeamResponse?> {
+                    override fun onResponse(
+                        call: Call<CreateTeamResponse?>,
+                        response: Response<CreateTeamResponse?>
+                    ) {
+                        Log.i("response2", "team created")
+                        teamcode = response.body()?.team_code.toString()
+
+                    }
+
+                    override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
+                        Log.i("failed2","Onfailure of ct")
+                    }
+                })
+
+
+
+                // register event api call
+                val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
+                val data = RegisterEventInfo(Token.token,teamcode, obj.id!!)
+                val call2 = regeventapi.eventregistration(data)
+
+                call2.enqueue(object : Callback<RegisterEventResponse?> {
+                    override fun onResponse(
+                        call: Call<RegisterEventResponse?>,
+                        response: Response<RegisterEventResponse?>
+                    ) {
+                        Log.i("response2","registered successfully")
+                        binding.registerButton.setText("registered")
+
+                    }
+
+                    override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+                        Log.i("failed2","failure of reg")
+                    }
+                })
+
+
+            }
         }
 
 
     }
+
+
+
+
 
     private fun setData(obj:EventData,eventImg:Int)
     {
