@@ -15,7 +15,9 @@ import com.example.cepheus23.EventsData.EventData
 import com.example.cepheus23.EventsData.setData
 import com.example.cepheus23.R
 import com.example.cepheus23.adapter.EventAdapter
+import com.example.cepheus23.adapter.EventsFragmentAdapter
 import com.example.cepheus23.databinding.FragmentEventsBinding
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
 import java.util.Arrays.toString
 
@@ -23,6 +25,7 @@ class EventsFragment : Fragment() {
     lateinit var eventRecycler: RecyclerView
     lateinit var eventsRecyclerLayoutManager: RecyclerView.LayoutManager
     lateinit var eventsRecyclerAdapter: EventAdapter
+    private var tabTitle = arrayOf("Events", "Competitions", "Workshops")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,12 +33,22 @@ class EventsFragment : Fragment() {
     ): View? {
         val eventsBinding = FragmentEventsBinding.inflate(inflater, container, false)
 
-        eventRecycler=eventsBinding.viewEventRecycler
-        eventsRecyclerLayoutManager = LinearLayoutManager(activity)
-        eventRecycler.layoutManager = eventsRecyclerLayoutManager
-//        val finalRes: MutableList<EventData> = mutableListOf()
-        eventsRecyclerAdapter = EventAdapter(setData.SetEvents())
-        eventRecycler.adapter = eventsRecyclerAdapter
+//        eventRecycler=eventsBinding.viewEventRecycler
+//        eventsRecyclerLayoutManager = LinearLayoutManager(activity)
+//        eventRecycler.layoutManager = eventsRecyclerLayoutManager
+////        val finalRes: MutableList<EventData> = mutableListOf()
+//        eventsRecyclerAdapter = EventAdapter(setData.SetEvents())
+//        eventRecycler.adapter = eventsRecyclerAdapter
+
+        var pager = eventsBinding.viewpager2
+        var tl = eventsBinding.tabLayout
+        pager.adapter = EventsFragmentAdapter(childFragmentManager, lifecycle)
+
+        TabLayoutMediator(tl, pager) {
+            tab, position ->
+                tab.text = tabTitle[position]
+        }.attach()
+
         return eventsBinding.root
     }
 //    private fun onItemClicked(eventData: EventData){
