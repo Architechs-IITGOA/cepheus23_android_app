@@ -20,7 +20,7 @@ class SponsorActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         Log.i("spcheck","1")
-        checkper()
+//        checkper // Not needed
         Log.i("spcheck","2")
         binding.sponsor1.setOnClickListener {
             val phone1 = "9770594125"

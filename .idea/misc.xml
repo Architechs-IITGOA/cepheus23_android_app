@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/drawable/box_white_border.xml" value="0.155" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/drawable/ic_baseline_check_box_outline_blank_24.xml" value="0.155" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/drawable/ic_baseline_feedback_24.xml" value="0.2005" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/drawable/tab_indicator.xml" value="0.12" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/activity_details.xml" value="0.25" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/activity_signin.xml" value="0.25" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/activity_sponsor.xml" value="0.25" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/events_element.xml" value="0.21784420289855072" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/fragment_competitions_event.xml" value="0.1" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/fragment_competitions_in_event.xml" value="0.1" />
@@ -23,9 +27,11 @@
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/fragment_schedules.xml" value="0.152" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/fragment_workshop_in_event_fragement.xml" value="0.1" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/fragment_workshops_event_fragement.xml" value="0.1" />
-        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/homelayout.xml" value="0.21784420289855072" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/homelayout.xml" value="0.4568854568854569" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/notification.xml" value="0.25" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/schedule_element.xml" value="0.21784420289855072" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/sidenavheader.xml" value="0.25" />
+        <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/layout/slide_image_container.xml" value="0.25" />
         <entry key="..\:/Pranav/cepheus23_android_app/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Cepheus23/app/src/main/res/drawable/ic_baseline_emoji_events_24.xml" value="0.1" />
