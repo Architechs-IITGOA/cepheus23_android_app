@@ -1,5 +1,6 @@
 package com.example.cepheus23.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -46,6 +47,10 @@ class HomeFragment : Fragment() {
             }
         })
 
+//        binding.comcard.setOnClickListener {
+////            val intent = Intent(this,CompetitionsInEventFragment::class.java)
+//        }
+
         return binding.root
     }
 
@@ -67,7 +72,7 @@ class HomeFragment : Fragment() {
         transformer.addTransformer(MarginPageTransformer(40))
         transformer.addTransformer { page, position ->
             val r = 1 - abs(position)
-            page.scaleY = 0.85f + r*0.14f
+            page.scaleY = 0.75f + r*0.14f
         }
 
         viewPager2.setPageTransformer(transformer)
