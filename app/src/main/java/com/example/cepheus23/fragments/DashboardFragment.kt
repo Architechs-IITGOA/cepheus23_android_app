@@ -24,10 +24,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-private lateinit var  dashboardBinding: FragmentDashboardBinding
+
 
 
 class DashboardFragment : Fragment() {
+    private lateinit var  dashboardBinding: FragmentDashboardBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,7 +47,7 @@ class DashboardFragment : Fragment() {
 
         println(tkn)
 
-        val Tkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMTIsImluaSI6IlBQIiwiZ3JhZGUiOjEwLCJyZWdpc3RlcmVkIjp0cnVlLCJpYXQiOjE2NzM2NzQwNjYsImV4cCI6MTY3MzkzMzI2Nn0.vC1iomdxY7APbSpyZWMXDd0mU_AAaDb3o0nmlBlNhBg"
+        val Tkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMTIsImluaSI6IlBQIiwiZ3JhZGUiOjEwLCJyZWdpc3RlcmVkIjp0cnVlLCJpYXQiOjE2NzM3MDc3MTksImV4cCI6MTY3Mzk2NjkxOX0.yx_Kw2kdyoOn0k8JKNytTXA8V8PtWLu5kMBpoWZc_Sk"
 
         val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
         val tokenpara = GetRegInfo(tkn)
@@ -84,8 +85,6 @@ class DashboardFragment : Fragment() {
 
             }
         })
-
-
 
         return dashboardBinding.root
 

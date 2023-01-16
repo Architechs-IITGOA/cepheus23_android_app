@@ -86,7 +86,9 @@ class DetailsActivity : AppCompatActivity() {
                             Log.i("response",response.code().toString())
 
                             val token2 = response.body()?.token.toString()
+
                             Token.token = token2
+
 
                             Log.i("newToken",token2)
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()

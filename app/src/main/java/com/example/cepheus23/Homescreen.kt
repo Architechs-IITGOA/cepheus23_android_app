@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
@@ -105,18 +106,34 @@ class Homescreen : AppCompatActivity() {
 
     }
 
-    private fun goToGoogleFormForFeedback() {
-        Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show()
-
-        val intent = Intent(Intent.ACTION_VIEW)
-        intent.data = Uri.parse("https://iitgoa.ac.in/")
-        startActivity(intent)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.feedback_menu,menu)
+        return true
     }
+
+    // override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+    //     val intent = Intent(Intent.ACTION_VIEW)
+    //     intent.data = Uri.parse("https://iitgoa.ac.in/")
+    //     startActivity(intent)
+    // }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
         }
-        return super.onOptionsItemSelected(item)
+
+        return when(item.itemId){
+            R.id.feedbackbtn -> {
+                val intent = Intent(android.content.Intent.ACTION_VIEW)
+                intent.data = Uri.parse("https://iitgoa.ac.in/")
+                Log.i("error","3")
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+
+        }
+
     }
 }
