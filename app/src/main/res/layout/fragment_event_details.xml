@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="230dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,93 +35,120 @@
 
             >
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:paddingBottom="25dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/event_name"
-                    android:text="Megapixel - Photogaphy Contest"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    />
+                android:layout_height="match_parent">
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_calendar"
-                        android:layout_marginRight="5dp"/>
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.15">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/event_name"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="15 Jan ‘23 6:00PM"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/mohaveregular"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:text="Megapixel - Photogaphy Contest"
                         android:textColor="@color/black"
-                        android:textSize="15sp"/>
+                        android:textSize="30sp" />
+
 
                     <LinearLayout
-                        android:layout_width="60dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="150dp"
-                        android:gravity="center_horizontal"
-                        android:backgroundTint="#3F51B5"
-                        android:background="@drawable/round_button">
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:src="@drawable/ic_baseline_calendar" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Online"
-                            android:textColor="@color/white"/>
+                            android:text="15 Jan ‘23 6:00PM"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
 
                     </LinearLayout>
 
-                </LinearLayout>
 
-
-                <TextView
-                    android:id="@+id/eventdec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/About_us"
-                    android:textColor="#3E3939"
-                    android:textSize="16sp"
-                    android:layout_marginTop="15dp"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
                     <TextView
+                        android:id="@+id/eventdec"
+                        android:fontFamily="@font/mohaveregular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Event Host: "
-                        android:textColor="@color/black"
-                        android:textSize="15sp"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_marginTop="15dp"
+                        android:text="@string/About_us"
+                        android:textColor="#3E3939"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vivek Bandrele"
-                        android:textStyle="italic"
-                        android:textSize="15sp"
-                        android:textColor="@color/black"/>
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Event Host: "
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/hostname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Host Name"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="italic"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact: "
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/contactno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0000000000"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="italic"/>
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -130,36 +157,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="20dp">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintStart_toStartOf="parent">
 
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Problem Statement"
-                        android:textSize="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="40dp"
-                        android:backgroundTint="#C419245C"/>
+                        android:backgroundTint="#C419245C"
+                        android:text="Problem Statement"
+                        android:textSize="10dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:layout_width="160dp"
                         android:id="@+id/register_Button"
+                        android:layout_width="160dp"
                         android:layout_height="wrap_content"
+                        android:backgroundTint="#C419245C"
                         android:text="register Now"
-                        android:textSize="10dp"
-                        android:backgroundTint="#C419245C"/>
+                        android:textSize="10dp" />
 
                 </LinearLayout>
 
 
-
-            </LinearLayout>
-
-
-
-
-
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
