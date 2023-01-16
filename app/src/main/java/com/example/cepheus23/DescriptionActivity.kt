@@ -24,7 +24,6 @@ class DescriptionActivity : AppCompatActivity() {
         binding = FragmentEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)
         setData(obj, eventImg!!)

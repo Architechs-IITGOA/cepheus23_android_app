@@ -31,6 +31,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
     override fun onBindViewHolder(holder: eventViewHolder, position: Int) {
         var eventImage: Int? = null
         holder.itemView.setOnClickListener{
+
             val intent= Intent(holder.itemView.context,DescriptionActivity::class.java)
             intent.putExtra("Event",event[position])
 //            intent.putExtra("EventImage",eventImage)

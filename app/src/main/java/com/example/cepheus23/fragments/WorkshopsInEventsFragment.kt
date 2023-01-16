@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cepheus23.EventsData.EventData
 import com.example.cepheus23.EventsData.setData
 import com.example.cepheus23.adapter.EventAdapter
-import com.example.cepheus23.databinding.FragmentEventsInEventsBinding
+import com.example.cepheus23.databinding.FragmentWorkshopsInEventsBinding
 
-class EventsInEventsFragment : Fragment() {
+class WorkshopsInEventsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = EventsInEventsFragment()
+        fun newInstance() = WorkshopsInEventsFragment()
     }
-    private lateinit var binding : FragmentEventsInEventsBinding
+    private lateinit var binding : FragmentWorkshopsInEventsBinding
 
     private lateinit var eventInEventRecycler: RecyclerView
     private lateinit var eventsInEventRecyclerLayoutManager: RecyclerView.LayoutManager
@@ -29,13 +29,13 @@ class EventsInEventsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentEventsInEventsBinding.inflate(inflater, container, false)
+        binding = FragmentWorkshopsInEventsBinding.inflate(inflater, container, false)
 
-        eventInEventRecycler=binding.eventInEventRecycler
+        eventInEventRecycler=binding.workshopsInEventRecycler
         eventsInEventRecyclerLayoutManager = LinearLayoutManager(activity)
         eventInEventRecycler.layoutManager = eventsInEventRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
-        val eventList : List<EventData> = setData.SetEvents().filter{ it.id == 1}
+        val eventList : List<EventData> = setData.SetEvents().filter{ it.type == 3 }
         eventsInEventRecyclerAdapter = EventAdapter(eventList)
         eventInEventRecycler.adapter = eventsInEventRecyclerAdapter
 

@@ -135,7 +135,7 @@ class SigninActivity : AppCompatActivity() {
                     // Your server's client ID, not your Android client ID.
                     .setServerClientId(BuildConfig.WEB_CLIENT_ID)
                     // Show all accounts on the device.
-                    .setFilterByAuthorizedAccounts(true)
+                    .setFilterByAuthorizedAccounts(false)
                     .build())
             .build()
 

@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CompetitionsInEventFragment">
+    tools:context=".fragments.OfflineCompetitionsInEventFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/competitionsInEventRecycler"
+            android:id="@+id/offlineCompetitionsInEventRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/ll_panel"

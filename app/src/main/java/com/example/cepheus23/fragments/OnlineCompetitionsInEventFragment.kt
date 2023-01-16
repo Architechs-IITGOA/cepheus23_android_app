@@ -12,15 +12,15 @@ import com.example.cepheus23.EventsData.EventData
 import com.example.cepheus23.EventsData.setData
 import com.example.cepheus23.R
 import com.example.cepheus23.adapter.EventAdapter
-import com.example.cepheus23.databinding.FragmentCompetitionsInEventBinding
-import com.example.cepheus23.databinding.FragmentWorkshopInEventFragementBinding
+import com.example.cepheus23.databinding.FragmentOnlineCompetitionsInEventBinding
 
-class WorkshopInEventFragement : Fragment() {
+class OnlineCompetitionsInEventFragment : Fragment() {
 
     companion object {
-        fun newInstance() = WorkshopInEventFragement()
+        fun newInstance() = OnlineCompetitionsInEventFragment()
     }
-    private lateinit var binding:FragmentWorkshopInEventFragementBinding
+
+    private lateinit var binding : FragmentOnlineCompetitionsInEventBinding
 
     private lateinit var eventRecycler: RecyclerView
     private lateinit var eventsRecyclerLayoutManager: RecyclerView.LayoutManager
@@ -31,13 +31,13 @@ class WorkshopInEventFragement : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentWorkshopInEventFragementBinding.inflate(inflater, container, false)
-        eventRecycler=binding.workshopInEventRecycler
+        binding = FragmentOnlineCompetitionsInEventBinding.inflate(inflater, container, false)
+        eventRecycler=binding.onlineCompetitionsInEventRecycler
         eventsRecyclerLayoutManager = LinearLayoutManager(activity)
         eventRecycler.layoutManager = eventsRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
-        val workshopsList : List<EventData> = setData.SetEvents().filter{ it.id  == 3 }
-        eventsRecyclerAdapter = EventAdapter(workshopsList)
+        val onlineCompetitionsList : List<EventData> = setData.SetEvents().filter{ it.type  == 1 }
+        eventsRecyclerAdapter = EventAdapter(onlineCompetitionsList)
         eventRecycler.adapter = eventsRecyclerAdapter
         return binding.root
     }

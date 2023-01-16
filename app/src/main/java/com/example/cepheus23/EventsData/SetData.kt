@@ -102,7 +102,7 @@ object setData {
         Eventlist.add(
             EventData(
                 12,
-                1,
+                2,
                 1,
                 "Launch Galaset",
                 "The hype that Shark Tank India created, a few months back, was real! It had all of us glued to our seats, and sparked our minds with curiosity and awe. We’re planning to give you a similar experience this year. Except, that you’ll not be watching this time. You’ll be the one pitching your ideas to the panel of investors in front of you. Pitch your startup ideas, specifically in the domain of FinTech in under 7 minutes. Stand a chance to be noticed by the investors and get their help in financing your ideas.")
@@ -111,7 +111,7 @@ object setData {
         Eventlist.add(
             EventData(
                 13,
-                1,
+                2,
                 1,
                 "KBC Quiz Competition",
                 "Watching KBC on TV is by far one of our favorite memories. Our excitement is at its peak when a question is presented to the participant, and the stakes are high. Join us for a fun KBC quiz event this year. In teams of 3, you will have 30 ")
@@ -120,7 +120,7 @@ object setData {
         Eventlist.add(
             EventData(
                 14,
-                1,
+                2,
                 1,
                 "Maze Amaze",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \"Red Planet\".\nThe latter refers to the effect of the iron oxide prevalent on Mars's surface, which gives it a reddish appearance distinctive among the astronomical bodies visible to the naked eye.\nMars is a terrestrial planet with a thin atmosphere, with surface features reminiscent of the impact craters of the Moon and the valleys, deserts and polar ice caps of Earth."
@@ -130,7 +130,7 @@ object setData {
         Eventlist.add(
             EventData(
                 15,
-                1,
+                3,
                 0,
                 "Scratch",
                 "A fun event for school students to introduce them to the world of programming using scratch. Scratch is a tool that allows people to explore the world of coding and logic flow without having any prior knowledge. This would be a workshop cum hackathon in which we would be demonstrating how to build a game using scratch followed by a problem statement. The participants have to create a game based on the problem statement implementing what has been demonstrated in the workshop. We aim to teach the importance of coding to students and introduce them to the basic logic flow and structure behind programming.")
@@ -139,7 +139,7 @@ object setData {
         Eventlist.add(
             EventData(
                 16,
-                1,
+                2,
                 1,
                 "Treasure Hunt",
                 "The event is somewhat similar to Treasure Hunt but in a computer sciency way! Participants would have to solve tricky questions of competitive programming to find clues for the next waypoint. The event will be conducted in two phases - Snail trail and Escape room. In snail trail, the participants would have to collect multiple clues, each clue leading to another. All the clues collected in the first round will be useful in the second round in which the teams will be separated in different rooms and will be given a task to solve in which the previous clues will be useful. So get ready to solve these brain racking problem statements and awaken the Sherlock Holmes within you!")
@@ -148,7 +148,7 @@ object setData {
         Eventlist.add(
             EventData(
                 17,
-                1,
+                2,
                 1,
                 "Buy My Code",
                 "You have heard about trading in stocks and trading in cryptocurrency, but have you ever heard about trading in programming? We are hosting a fascinating event that will test both your trading and coding skills. Problem statements will be released and the participants will have to create functions that might be helpful to complete the challenge. The name and description of all functions will be open to all the participants. If participants are convinced by the price and description then they can trade."
@@ -158,7 +158,7 @@ object setData {
         Eventlist.add(
             EventData(
                 18,
-                1,
+                2,
                 0,
                 "Pare It Down",
                 "Curious about competitive programming but don’t know where to start? We bring to you a fun coding event to help you hone your programming skills even without any prior experience. There will be five coding rounds which will  progress from easy to medium difficulty levels namely,  Introduction to a new language, Debugging Round, Brain Racking, Blind Code, and CP with risk and reward.")
@@ -166,7 +166,7 @@ object setData {
         Eventlist.add(
             EventData(
                 19,
-                1,
+                2,
                 0,
                 "Game Theory",
                 "It's riveting to see how games and human nature can get complicated and interesting at the same time. Game Theory is the tool in use to comprehend the subtle relation between the two. It also lays the foundation for some profound algorithms used in AI today. If Game Theory is back on the grid, so are we. There would be a faceoff between participants in each round, which will consist of multiple games. The selected players would proceed to the next round and climb up the Leaderboard. So keep an eye out for everyone's strengths and weaknesses, and get ready to play on both fronts.\n")
@@ -175,7 +175,7 @@ object setData {
         Eventlist.add(
             EventData(
                 20,
-                1,
+                3,
                 1,
                 "Arduino Workshop",
                 "In order to expand the knowledge of participants we will be hosting a workshop followed by a competition on Arduino\n The entire workshop is split into 3 sessions, during which the facilitators will explain the fundamentals of Arduino and other basic sensors and motors while also demonstrating some live projects using both hardware and software. Whatever your skill level is, you’re sure to have fun as you will learn to harness the power of Arduino in your own DIY projects\n")
@@ -184,7 +184,7 @@ object setData {
         Eventlist.add(
             EventData(
                 21,
-                1,
+                2,
                 1,
                 "EV Bike Competition",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \"Red Planet\".\nThe latter refers to the effect of the iron oxide prevalent on Mars's surface, which gives it a reddish appearance distinctive among the astronomical bodies visible to the naked eye.\nMars is a terrestrial planet with a thin atmosphere, with surface features reminiscent of the impact craters of the Moon and the valleys, deserts and polar ice caps of Earth."
@@ -194,7 +194,7 @@ object setData {
         Eventlist.add(
             EventData(
                 22,
-                1,
+                2,
                 0,
                 "Line Maze Fun Game",
                 "Ever solved those fun mazes at the back of your notebooks? This event is all about maze solving but the catch is that you will have to solve it using a ROBOT!! All participants will be given an RC car which they have to maneuver through the maze.  The car will be equipped with IR sensors in every direction. If the car touches the line, the sensors will pick up the signal, a buzzer will go off and the player will fall out of the game. This is a fun event so be ready to put your RC driving skills to the test!")
@@ -203,7 +203,7 @@ object setData {
         Eventlist.add(
             EventData(
                 23,
-                1,
+                2,
                 1,
                 "Dive the Boat",
                 "Have you ever played with Legos? If yes: you have an edge! If not: your time has arrived! Get ready to build a boat and wade through uncertain waters without losing your hold.\n You will be given lego building bars, a motor, and a battery to create your own boat. You must configure the boat in such a way that it reaches a certain distance or person within the stipulated time.\n")

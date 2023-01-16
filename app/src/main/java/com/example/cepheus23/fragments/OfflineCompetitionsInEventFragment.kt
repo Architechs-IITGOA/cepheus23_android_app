@@ -1,6 +1,5 @@
 package com.example.cepheus23.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,16 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cepheus23.EventsData.EventData
 import com.example.cepheus23.EventsData.setData
-import com.example.cepheus23.R
 import com.example.cepheus23.adapter.EventAdapter
-import com.example.cepheus23.databinding.FragmentCompetitionsInEventBinding
+import com.example.cepheus23.databinding.FragmentOfflineCompetitionsInEventBinding
 
-class CompetitionsInEventFragment : Fragment() {
+class OfflineCompetitionsInEventFragment : Fragment() {
 
     companion object {
-        fun newInstance() = CompetitionsInEventFragment()
+        fun newInstance() = OfflineCompetitionsInEventFragment()
     }
-    private lateinit var binding : FragmentCompetitionsInEventBinding
+    private lateinit var binding : FragmentOfflineCompetitionsInEventBinding
 
     private lateinit var eventRecycler: RecyclerView
     private lateinit var eventsRecyclerLayoutManager: RecyclerView.LayoutManager
@@ -29,13 +27,13 @@ class CompetitionsInEventFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCompetitionsInEventBinding.inflate(inflater, container, false)
-        eventRecycler=binding.competitionsInEventRecycler
+        binding = FragmentOfflineCompetitionsInEventBinding.inflate(inflater, container, false)
+        eventRecycler=binding.offlineCompetitionsInEventRecycler
         eventsRecyclerLayoutManager = LinearLayoutManager(activity)
         eventRecycler.layoutManager = eventsRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
-        val competitionsList : List<EventData> = setData.SetEvents().filter{ it.id  == 2 }
-        eventsRecyclerAdapter = EventAdapter(competitionsList)
+        val offlineCompetitionsList : List<EventData> = setData.SetEvents().filter{ it.type  == 2 }
+        eventsRecyclerAdapter = EventAdapter(offlineCompetitionsList)
         eventRecycler.adapter = eventsRecyclerAdapter
         return binding.root
     }

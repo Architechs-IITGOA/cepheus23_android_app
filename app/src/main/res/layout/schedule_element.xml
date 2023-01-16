@@ -46,7 +46,7 @@
                 android:id="@+id/schedules_event_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12.00PM - 2.00PM"
+                android:text="@string/_12_00pm_2_00pm"
                 android:textSize="17sp"
                 android:textColor="#6A6A6A"
                 app:layout_constraintLeft_toRightOf="@id/schedules_event_name"

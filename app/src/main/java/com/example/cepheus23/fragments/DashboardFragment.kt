@@ -49,7 +49,7 @@ class DashboardFragment : Fragment() {
         val Tkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMTIsImluaSI6IlBQIiwiZ3JhZGUiOjEwLCJyZWdpc3RlcmVkIjp0cnVlLCJpYXQiOjE2NzM2NzQwNjYsImV4cCI6MTY3MzkzMzI2Nn0.vC1iomdxY7APbSpyZWMXDd0mU_AAaDb3o0nmlBlNhBg"
 
         val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
-        val tokenpara = GetRegInfo(Tkn)
+        val tokenpara = GetRegInfo(tkn)
         val call = geteventapi.getEvents(tokenpara)
 
         call.enqueue(object : Callback<RegisteredEventList?> {

@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Day2Schedule">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offlineCompetitionsInEventRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Day 2"
-        android:textSize="40dp"
-        android:textColor="@color/white"/>
+        android:layout_below="@+id/ll_panel"
+        android:layout_marginTop="10dp" />
 
 </FrameLayout>

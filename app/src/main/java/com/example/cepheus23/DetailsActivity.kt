@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.cepheus23.databinding.ActivityDetailsBinding
 import com.example.cepheus23.model.Token
@@ -23,6 +24,18 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        val languages = resources.getStringArray(R.array.Languages)
+
+
+        val standardDropdown = binding.standardId
+        val grades = arrayOf("B.Tech/ B.E./ B.Sc./ B.Com or equivalent", "M.Tech / M.Com / M. Sc. or equivalent", "PhD or Equivalent", "8th Class", "9th Class", "10th Class", "11th Class", "12th Class")
+        val gradesAdapter = ArrayAdapter<String>(this, R.layout.dropdown_item, grades)
+        standardDropdown.setAdapter(gradesAdapter)
+        val genderDropdown = binding.gender
+        val gender = arrayOf("Female", "Male", "Other")
+        val genderAdapter = ArrayAdapter<String>(this, R.layout.dropdown_item, gender)
+        genderDropdown.setAdapter(genderAdapter)
+
 
 //        val token:String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDUsImluaSI6IkkiLCJncmFkZSI6MTEsInJlZ2lzdGVyZWQiOnRydWUsImlhdCI6MTY3MzAyNTMyNiwiZXhwIjoxNjczMjg0NTI2fQ.h2yj7Jk716yyd4AflPin-WdmrZrXeaRbsROPZpTVSiY"
 
@@ -31,9 +44,22 @@ class DetailsActivity : AppCompatActivity() {
             val username = binding.usernameId.text.toString()
             val college_name = binding.instituteId.text.toString()
             val phonenumber = binding.phoneId.text.toString()
-            val grade = binding.standardId.text.toString()
+            val gender = binding.gender.text.toString()
+            val grade_str = binding.standardId.text.toString()
+            val grade = when (grade_str) {
+                "B.Tech/ B.E./ B.Sc./ B.Com or equivalent" -> 13
+                "M.Tech / M.Com / M. Sc. or equivalent" -> 14
+                "PhD or Equivalent" -> 15
+                "8th Class" -> 8
+                "9th Class" -> 9
+                "10th Class" -> 10
+                "11th Class" -> 11
+                else -> 12
+            }
             var token = Token.token
-            if(username.isEmpty() || college_name.isEmpty() || phonenumber.isEmpty()){
+
+
+            if(username.isEmpty() || college_name.isEmpty() || phonenumber.isEmpty() || gender.isEmpty()|| grade_str.isEmpty()){
                 Log.i("if Block","3")
                 Toast.makeText(this,"Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }

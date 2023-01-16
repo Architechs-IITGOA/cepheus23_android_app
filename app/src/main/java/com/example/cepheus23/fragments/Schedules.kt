@@ -24,7 +24,7 @@ class Schedules : Fragment() {
         fun newInstance() = Schedules()
     }
     private lateinit var binding: FragmentSchedulesBinding
-    private var tabTitle = arrayOf("Wed\n\n09", "Thu\n\n10", "Fri\n\n11", "Sat\n\n12", "Sun\n\n13")
+    private var tabTitle = arrayOf("Wed\n08", "Thu\n09", "Fri\n10", "Sat\n11", "Sun\n12")
     val schedulesEventList: ArrayList<ScheduleEvent> = ArrayList<ScheduleEvent>()
 
     override fun onCreateView(
