@@ -65,16 +65,18 @@ class SigninActivity : AppCompatActivity() {
 
 
                                 val responseToken = response.body()?.token.toString()
+                                val user_email = response.body()?.user?.email.toString()
+                                val user_name = response.body()?.user?.user_name.toString()
                                 responseToken.trim()
                                 Token.token = responseToken
                                 Log.i("first jwt",responseToken)
 
                                 if(response.code() == 200){
-                                    Login.login = true
-                                    saveLoginStatuslocally("true", responseToken)
+//                                    Login.login = true
+                                    saveLoginStatuslocally("true", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
                                     startActivity(activityIntent)
-                                    Log.i("login response", Login.login.toString())
+//                                    Log.i("login response", Login.login.toString())
                                 }
 
 
@@ -128,6 +130,8 @@ class SigninActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
 
         oneTapClient = Identity.getSignInClient(this)
         signUpRequest = BeginSignInRequest.builder()
@@ -192,12 +196,14 @@ class SigninActivity : AppCompatActivity() {
     }
 
 
-    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, currstatus_email : String, currstatus_name : String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()
         editor.putString("Login_status", currstatus_login)
         editor.putString("JWToken", currstatus_token)
+        editor.putString("Email", currstatus_email)
+        editor.putString("Name", currstatus_name)
         editor.apply()
     }
 
