@@ -65,6 +65,7 @@ class DetailsActivity : AppCompatActivity() {
                             val token2 = response.body()?.token.toString()
 
 
+
                             Log.i("newToken",token2)
                             saveregistrationStatuslocally("true")
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()
