@@ -2,16 +2,16 @@ package com.example.cepheus23
 
 import android.content.Intent
 import android.content.IntentSender
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.cepheus23.APIs.LoginApi
 import com.example.cepheus23.databinding.ActivitySigninBinding
-import com.example.cepheus23.model.LoginUserInfo
-import com.example.cepheus23.model.LoginUserResponse
-import com.example.cepheus23.model.Token
+import com.example.cepheus23.model.*
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -57,18 +57,30 @@ class SigninActivity : AppCompatActivity() {
                             if(response.isSuccessful){
                                 Log.i("login response",response.code().toString())
                                 Log.i("login response",response.body()?.token.toString())
+                                Log.i("login response", response.body()?.user?.registered.toString())
+                                Log.i("login response", response.body().toString())
 
                                 val responseToken = response.body()?.token.toString()
                                 responseToken.trim()
                                 Token.token = responseToken
                                 Log.i("first jwt",responseToken)
 
-                                val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
-                                startActivity(activityIntent)
+                                if(response.code() == 200){
+                                    Login.login = true
+                                    saveLoginStatuslocally("true", responseToken)
+                                    val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
+                                    startActivity(activityIntent)
+                                    Log.i("login response", Login.login.toString())
+                                }
+
+
                             }
                             else{
                                 Log.i("login response",response.code().toString())
                                 Log.i("login response",response.message().toString())
+                                Log.i("login response", response.errorBody()?.charStream()?.readText().toString())
+                                Login.login = false
+                                Registration.registration = false
                             }
                         }
 
@@ -78,9 +90,9 @@ class SigninActivity : AppCompatActivity() {
 
                     })
 
-//                    val msg = "idToken: $idToken"
-//                    Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).show()
-//                    Log.d("one tap", msg)
+                    val msg = "idToken: $idToken"
+                    Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).show()
+                    Log.d("one tap", msg)
                 }
                 else -> {
                     // Shouldn't happen.
@@ -115,8 +127,6 @@ class SigninActivity : AppCompatActivity() {
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-
         oneTapClient = Identity.getSignInClient(this)
         signUpRequest = BeginSignInRequest.builder()
             .setGoogleIdTokenRequestOptions(
@@ -140,7 +150,6 @@ class SigninActivity : AppCompatActivity() {
             .build()
 
         binding.bvSignin.setOnClickListener {
-
             displaySignIn()
         }
 
@@ -179,6 +188,18 @@ class SigninActivity : AppCompatActivity() {
                 Log.d("btn click", e.localizedMessage!!)
             }
     }
+
+
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {
+//        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = preferences.edit()
+        editor.putString("Login_status", currstatus_login)
+        editor.putString("JWToken", currstatus_token)
+        editor.apply()
+    }
+
+
 
 }
 

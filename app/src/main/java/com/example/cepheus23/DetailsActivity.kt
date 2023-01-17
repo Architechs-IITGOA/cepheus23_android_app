@@ -1,14 +1,14 @@
 package com.example.cepheus23
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.Toast
 import com.example.cepheus23.databinding.ActivityDetailsBinding
-import com.example.cepheus23.model.Token
-import com.example.cepheus23.model.UserInfo
-import com.example.cepheus23.model.UserResponse
+import com.example.cepheus23.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +24,7 @@ class DetailsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+
 //        val token:String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDUsImluaSI6IkkiLCJncmFkZSI6MTEsInJlZ2lzdGVyZWQiOnRydWUsImlhdCI6MTY3MzAyNTMyNiwiZXhwIjoxNjczMjg0NTI2fQ.h2yj7Jk716yyd4AflPin-WdmrZrXeaRbsROPZpTVSiY"
 
         binding.enterButton.setOnClickListener {
@@ -32,6 +33,8 @@ class DetailsActivity : AppCompatActivity() {
             val college_name = binding.instituteId.text.toString()
             val phonenumber = binding.phoneId.text.toString()
             val grade = binding.standardId.text.toString()
+            Token.token = getDefaults("JWToken").toString()
+
             var token = Token.token
             if(username.isEmpty() || college_name.isEmpty() || phonenumber.isEmpty()){
                 Log.i("if Block","3")
@@ -60,13 +63,25 @@ class DetailsActivity : AppCompatActivity() {
                             Log.i("response",response.code().toString())
 
                             val token2 = response.body()?.token.toString()
-                            Token.token = token2
+
 
                             Log.i("newToken",token2)
+                            saveregistrationStatuslocally("true")
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@DetailsActivity,Homescreen::class.java)
                             startActivity(intent)
                             Log.i("response","switched to Homescreen")
+                            val responseCode = response.code()
+
+                            if(responseCode != 200){
+                                Registration.registration = false
+                                Login.login = false
+                                val loginIntent = Intent(this@DetailsActivity,SigninActivity::class.java)
+                                startActivity(loginIntent)
+                            }
+                            else{
+                                Registration.registration = false
+                            }
                         }
                         else{
                             Log.i("response",response.code().toString())
@@ -81,5 +96,17 @@ class DetailsActivity : AppCompatActivity() {
                 })
             }
         }
+    }
+    private fun saveregistrationStatuslocally(currstatus_register: String) {
+//        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = preferences.edit()
+        editor.putString("register_status", currstatus_register)
+        editor.apply()
+    }
+
+    fun getDefaults(key: String?): String? {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        return preferences.getString(key, null)
     }
 }
