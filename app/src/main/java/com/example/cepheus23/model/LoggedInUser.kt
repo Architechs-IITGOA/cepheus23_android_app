@@ -12,5 +12,5 @@ data class LoggedInUser(
     val registered: Boolean,
     val user_name: String,
     val user_uuid: String,
-    val image_url : String,
+    val image_url : String
 )
