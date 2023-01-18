@@ -40,7 +40,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             Log.i("adapter",event[position].eventName.toString())
         }
         holder.eventName.text = event[position].eventName
-        holder.eventOverview.text = event[position].overview
+        holder.eventOverview.text = event[position].description
 
 
 

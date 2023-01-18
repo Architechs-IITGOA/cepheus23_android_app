@@ -10,6 +10,7 @@ data class EventData(
     val team:Int?,
     val time: String?,
     val eventName:String?,
+    val description: String?,
     val host:String?,
     val phone:String?,
     val overview:String?
@@ -18,6 +19,7 @@ data class EventData(
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -32,6 +34,7 @@ data class EventData(
         parcel.writeValue(team)
         parcel.writeString(time)
         parcel.writeString(eventName)
+        parcel.writeString(description)
         parcel.writeString(host)
         parcel.writeString(phone)
         parcel.writeString(overview)
