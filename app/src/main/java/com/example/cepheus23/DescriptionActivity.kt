@@ -234,6 +234,7 @@ class DescriptionActivity : AppCompatActivity() {
     private fun setData(obj:EventData,eventImg:Int)
     {
         binding.eventName.text = obj.eventName
+        val id = obj.eventName
         binding.eventdec.text = obj.overview
         binding.hostname.text = obj.host
         binding.contactno.text = obj.phone

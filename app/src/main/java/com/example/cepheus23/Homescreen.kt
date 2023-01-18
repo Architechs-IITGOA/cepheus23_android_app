@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -38,6 +39,7 @@ class Homescreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = HomelayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         val drawerLayout:DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -89,9 +91,12 @@ class Homescreen : AppCompatActivity() {
 //        implementing QR
         val header: View = navView.getHeaderView(0)
         val QRimageview : ImageView = header.findViewById(R.id.Qrbox)
+
         val drawericon : ImageView = header.findViewById(R.id.navicon)
         drawericon.setImageResource(R.drawable.avtr1)
-        val useremail: String = "vivek.bandrele.20031@iitgoa.ac.in"
+
+        val useremail : String = getDefaults("Email").toString()
+
         val writer = QRCodeWriter()
         try {
             val bitMatrix = writer.encode(useremail, BarcodeFormat.QR_CODE, 200,200)
@@ -134,5 +139,10 @@ class Homescreen : AppCompatActivity() {
 
         }
 
+    }
+
+    fun getDefaults(key: String?): String? {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        return preferences.getString(key, null)
     }
 }
