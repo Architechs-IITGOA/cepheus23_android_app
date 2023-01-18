@@ -76,8 +76,11 @@ class Homescreen : AppCompatActivity() {
                     Log.i("error","4")
 
                 }
-                R.id.sidenav_faqs -> Toast.makeText(applicationContext,"FAQS",Toast.LENGTH_SHORT).show()
-                R.id.sidenav_signout-> Toast.makeText(applicationContext,"Sign out",Toast.LENGTH_SHORT).show()
+                R.id.sidenav_faq -> {
+                    val intent = Intent(android.content.Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("https://discord.gg/jQsfbrtkzG")
+                    startActivity(intent)
+                }
             }
             true
         }
@@ -86,6 +89,8 @@ class Homescreen : AppCompatActivity() {
 //        implementing QR
         val header: View = navView.getHeaderView(0)
         val QRimageview : ImageView = header.findViewById(R.id.Qrbox)
+        val drawericon : ImageView = header.findViewById(R.id.navicon)
+        drawericon.setImageResource(R.drawable.avtr1)
         val useremail: String = "vivek.bandrele.20031@iitgoa.ac.in"
         val writer = QRCodeWriter()
         try {

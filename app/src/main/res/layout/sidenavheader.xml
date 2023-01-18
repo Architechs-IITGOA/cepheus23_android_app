@@ -17,16 +17,26 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:id="@+id/navicon"
             android:src="@drawable/ic_baseline_person_24"
             android:layout_marginRight="10dp"
-            android:tint="@color/white"
             tools:ignore="UseAppTint"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hi, Vivek"
-            android:textSize="30dp"
+            android:text="Hi,"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nav_name"
+            android:text="Cepheus Cipher"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/white"
             android:layout_gravity="center_vertical"
             />

@@ -64,7 +64,7 @@
                 android:fontFamily="@font/mohaveregular"
                 android:text="Ardionos' trials"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/event_desc"
@@ -75,7 +75,7 @@
                 android:paddingBottom="10dp"
                 android:text="AHDKDFBJFVKEJBRFJKVADBKFJABKFJBKJ"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="16sp"
 
                 />
         </LinearLayout>
