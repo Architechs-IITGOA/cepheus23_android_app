@@ -69,6 +69,25 @@ class DashboardFragment : Fragment() {
                     var eventsRecyclerAdapter = EventAdapter(regEvents)
                     eventRecycler.adapter = eventsRecyclerAdapter
 
+                    var oncnt = 0
+                    var offcnt = 0
+                    var wcnt = 0
+                    for(i in eventlist){
+                        if(i==19 || i==20){
+                            wcnt += 1
+                        }
+                        else if(i<=11){
+                            oncnt += 1
+                        }
+                        else{
+                            offcnt += 1
+                        }
+                    }
+
+                    dashboardBinding.onlinecnt.text = oncnt.toString()
+                    dashboardBinding.offlinecnt.text = offcnt.toString()
+                    dashboardBinding.workcnt.text = wcnt.toString()
+
                 }
                 else{
                     Log.i("response3",response.message().toString())

@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -93,6 +94,8 @@ class Homescreen : AppCompatActivity() {
         val QRimageview : ImageView = header.findViewById(R.id.Qrbox)
 
         val drawericon : ImageView = header.findViewById(R.id.navicon)
+        val navname : TextView = header.findViewById(R.id.nav_name)
+        navname.text = getDefaults("Name").toString()
         drawericon.setImageResource(R.drawable.avtr1)
 
         val useremail : String = getDefaults("Email").toString()
