@@ -10,7 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.constraintlayout.helper.widget.Carousel
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -52,6 +54,16 @@ class HomeFragment : Fragment() {
 //        binding.comcard.setOnClickListener {
 ////            val intent = Intent(this,CompetitionsInEventFragment::class.java)
 //        }
+
+        binding.card1.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
+        }
+        binding.card2.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
+        }
+        binding.card3.setOnClickListener {
+            Toast.makeText(context, "Stay tuned! Rulebook comming soon.", Toast.LENGTH_LONG).show()
+        }
 
         binding.instahome.setOnClickListener {
             val intent = Intent(android.content.Intent.ACTION_VIEW)

@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 app:tabIndicator="@drawable/tab_indicator"
                 app:tabTextColor="@color/material_on_primary_disabled"
-                app:tabSelectedTextColor="@color/white"
+                app:tabSelectedTextColor="@color/black"
                 app:tabIndicatorColor="@null"
                 app:tabTextAppearance="@style/tabLayoutText"
                 android:layout_height="100dp"
