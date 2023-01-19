@@ -1,6 +1,8 @@
 package com.example.cepheus23.fragments
 
+import android.content.Context
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +19,7 @@ import com.example.cepheus23.databinding.FragmentDashboardBinding
 import com.example.cepheus23.model.GetRegInfo
 import com.example.cepheus23.model.RegisteredEventList
 import com.example.cepheus23.model.Token
+import com.example.cepheus23.model.UserName
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,7 +50,7 @@ class DashboardFragment : Fragment() {
 
         println(tkn)
 
-        val Tkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMTIsImluaSI6IlBQIiwiZ3JhZGUiOjEwLCJyZWdpc3RlcmVkIjp0cnVlLCJpYXQiOjE2NzM3MDc3MTksImV4cCI6MTY3Mzk2NjkxOX0.yx_Kw2kdyoOn0k8JKNytTXA8V8PtWLu5kMBpoWZc_Sk"
+//        val Tkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMTIsImluaSI6IlBQIiwiZ3JhZGUiOjEwLCJyZWdpc3RlcmVkIjp0cnVlLCJpYXQiOjE2NzM3MDc3MTksImV4cCI6MTY3Mzk2NjkxOX0.yx_Kw2kdyoOn0k8JKNytTXA8V8PtWLu5kMBpoWZc_Sk"
 
         val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
         val tokenpara = GetRegInfo(tkn)
@@ -68,6 +71,9 @@ class DashboardFragment : Fragment() {
                     val regEvents = setData.SetEvents().filter {eventlist.contains(it.id)}
                     var eventsRecyclerAdapter = EventAdapter(regEvents)
                     eventRecycler.adapter = eventsRecyclerAdapter
+
+                    dashboardBinding.dashUsername.text = UserName.name
+
 
                     var oncnt = 0
                     var offcnt = 0
@@ -115,6 +121,12 @@ class DashboardFragment : Fragment() {
 
 
     }
+
+//    fun getDefaults(key: String?): String? {
+////        val preferences = PreferenceManager.getDefaultSharedPreferences(this@DashboardFragment)
+//        val preferences = this.getActivity()?.getSharedPreferences("pref", Context.MODE_PRIVATE);
+//        return preferences?.getString(key, null)
+//    }
 
 
 }

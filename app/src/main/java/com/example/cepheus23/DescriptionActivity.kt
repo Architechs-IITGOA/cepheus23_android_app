@@ -1,5 +1,7 @@
 package com.example.cepheus23
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
@@ -91,11 +93,23 @@ class DescriptionActivity : AppCompatActivity() {
                                     Log.i("new response", "in response")
                                     if(response1.isSuccessful){
                                         Log.i("new response", "is success")
+
+
                                         Toast.makeText(this@DescriptionActivity,"Registered Successfully",Toast.LENGTH_SHORT).show()
                                     }
+//                                    else if(response1.code().toString() == "401"){
+//
+////                                        saveLoginStatuslocally("","")
+//                                        Log.i("new response", response1.code().toString())
+//                                        val signActivityIntent = Intent(this@DescriptionActivity,SigninActivity::class.java)
+//                                        startActivity(signActivityIntent)
+//                                    }
                                     else{
                                         Log.i("new response", response1.message())
                                         Log.i("new response", response1.code().toString())
+                                        Log.i("new response", response1.errorBody()?.charStream()?.readText().toString())
+
+
                                         Toast.makeText(this@DescriptionActivity,"Already registered/Age doesn't fit",Toast.LENGTH_LONG).show()
                                     }
 
@@ -115,6 +129,7 @@ class DescriptionActivity : AppCompatActivity() {
                         else{
                             Log.i("new response",response.message())
                             Log.i("new response",response.code().toString())
+                            Toast.makeText(this@DescriptionActivity,"Already registered",Toast.LENGTH_LONG).show()
                         }
 
 
@@ -206,9 +221,9 @@ class DescriptionActivity : AppCompatActivity() {
                                 call2.enqueue(object : Callback<RegisterEventResponse?> {
                                     override fun onResponse(
                                         call: Call<RegisterEventResponse?>,
-                                        response: Response<RegisterEventResponse?>
+                                        response1: Response<RegisterEventResponse?>
                                     ) {
-                                        if(response.isSuccessful){
+                                        if(response1.isSuccessful){
                                             Log.i("response2","registered successfully")
                                             Toast.makeText(this@DescriptionActivity,"Registered successfully: " + teamcode,Toast.LENGTH_LONG).show()
 //                                            binding.registerButton.setText("registered")
@@ -475,6 +490,15 @@ class DescriptionActivity : AppCompatActivity() {
 
     }
 
+
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {
+//        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = preferences.edit()
+        editor.putString("Login_status", currstatus_login)
+        editor.putString("JWToken", currstatus_token)
+        editor.apply()
+    }
     fun getDefaults(key: String?): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         return preferences.getString(key, null)

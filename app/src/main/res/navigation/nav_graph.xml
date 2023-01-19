@@ -13,6 +13,21 @@
         tools:layout="@layout/fragment_event_details"/>
 
 
+<!--    <activity tools:ignore="ExtraText"-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/Homescreen"-->
+<!--        android:name="com.example.cepheus23.Homescreen"-->
+<!--        android:label="Homescreen"-->
+<!--        tools:layout="@layout/fragment_home">-->
+<!--        <action-->
+<!--            android:id="@+id/action_homescreen_to_sponsors_fragment"-->
+<!--            app:destination="@+id/SponsorsFragment"-->
+<!--            app:enterAnim="@anim/slide_in_right"-->
+<!--            app:exitAnim="@anim/slide_out_left"-->
+<!--            app:popEnterAnim="@anim/slide_in_left"-->
+<!--            app:popExitAnim="@anim/slide_out_right" />-->
+<!--    </activity>-->
     <fragment
         android:id="@+id/eventsFragment"
         android:name="com.example.cepheus23.fragments.EventsFragment"
@@ -34,6 +49,7 @@
         android:name="com.example.cepheus23.fragments.EventDetailsFragment"
         android:label="event_details"
         tools:layout="@layout/fragment_event_details"/>
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.cepheus23.fragments.DashboardFragment"

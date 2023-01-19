@@ -27,9 +27,12 @@
             />
 
         <item
-            android:title="Developers"
-            android:icon="@drawable/ic_baseline_groups_24"
-            android:id="@+id/sidenav_devs"/>
+            android:title="Sign out"
+            android:icon="@drawable/ic_signout"
+            android:id="@+id/sidenav_signout"
+            android:iconTint="@color/white"
+            />
+
 
 
     </group>
@@ -39,3 +42,8 @@
 
 
 </menu>
+
+<!--<item-->
+<!--android:title="Developers"-->
+<!--android:icon="@drawable/ic_baseline_groups_24"-->
+<!--android:id="@+id/sidenav_devs"/>-->
