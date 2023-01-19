@@ -218,7 +218,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Glimpes"
+                    android:text="Glimpses"
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:layout_marginLeft="20dp"

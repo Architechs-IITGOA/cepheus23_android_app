@@ -48,7 +48,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
 
 
         when (event[position].eventName!!) {
-            "Loren Ipsum" -> {
+            "Lorem Ipsum" -> {
                 eventImage = R.drawable.loremipsum1
             }
             "HackOverFlow" -> {
@@ -72,7 +72,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             "Online Treasure Hunt" -> {
                 eventImage = R.drawable.onlinethunt1
             }
-            "Bridge Building Comeptition" -> {
+            "Bridge Building Competition" -> {
                 eventImage = R.drawable.bridgebuilding1
             }
             "Copy the Nature" -> {
