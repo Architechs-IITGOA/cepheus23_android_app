@@ -11,10 +11,7 @@ import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.cepheus23.APIs.LoginApi
 import com.example.cepheus23.databinding.ActivitySigninBinding
-import com.example.cepheus23.model.LoginUserInfo
-import com.example.cepheus23.model.LoginUserResponse
-import com.example.cepheus23.model.Token
-import com.example.cepheus23.model.User
+import com.example.cepheus23.model.*
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
 import com.google.android.gms.auth.api.identity.Identity
 import com.google.android.gms.auth.api.identity.SignInClient
@@ -71,12 +68,18 @@ class SigninActivity : AppCompatActivity() {
                                 Token.token = responseToken
                                 Log.i("first jwt",responseToken)
 
-                                if(response.code() == 200){
-//                                    Login.login = true
+
+
+                                if(response.body()?.user?.registered == false){
+                                    //                                    Login.login = true
                                     saveLoginStatuslocally("true", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
                                     startActivity(activityIntent)
 //                                    Log.i("login response", Login.login.toString())
+                                }
+                                else{
+                                    val activityIntent = Intent(this@SigninActivity,Homescreen::class.java)
+                                    startActivity(activityIntent)
                                 }
 
 
@@ -94,9 +97,9 @@ class SigninActivity : AppCompatActivity() {
 
                     })
 
-                    val msg = "idToken: $idToken"
-                    Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).show()
-                    Log.d("one tap", msg)
+//                    val msg = "idToken: $idToken"
+//                    Snackbar.make(binding.root, msg, Snackbar.LENGTH_INDEFINITE).show()
+//                    Log.d("one tap", msg)
                 }
                 else -> {
                     // Shouldn't happen.
@@ -151,7 +154,7 @@ class SigninActivity : AppCompatActivity() {
                     // Your server's client ID, not your Android client ID.
                     .setServerClientId(BuildConfig.WEB_CLIENT_ID)
                     // Show all accounts on the device.
-                    .setFilterByAuthorizedAccounts(true)
+                    .setFilterByAuthorizedAccounts(false)
                     .build())
             .build()
 
@@ -202,8 +205,7 @@ class SigninActivity : AppCompatActivity() {
         val editor = preferences.edit()
         editor.putString("Login_status", currstatus_login)
         editor.putString("JWToken", currstatus_token)
-        editor.putString("Email", currstatus_email)
-        editor.putString("Name", currstatus_name)
+
         editor.apply()
     }
 
