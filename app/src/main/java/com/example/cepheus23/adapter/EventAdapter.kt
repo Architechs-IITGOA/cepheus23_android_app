@@ -105,14 +105,19 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             "Game Theory" -> {
                 eventImage = R.drawable.gametheory1
             }
-            "Arduino Workshop" -> {
+            "Arduino's Trial" -> {
                 eventImage = R.drawable.arduinotrial1
             }
             "EV Bike Competition" -> {
                 eventImage = R.drawable.ebike1
             }
 
+            else -> {
+                eventImage = R.drawable.h
+            }
+
         }
+
         holder.eventListImage.setImageResource(eventImage!!)
     }
 
