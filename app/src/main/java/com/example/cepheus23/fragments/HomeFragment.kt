@@ -1,9 +1,11 @@
 package com.example.cepheus23.fragments
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -50,6 +52,32 @@ class HomeFragment : Fragment() {
 //        binding.comcard.setOnClickListener {
 ////            val intent = Intent(this,CompetitionsInEventFragment::class.java)
 //        }
+
+        binding.instahome.setOnClickListener {
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://instagram.com/cepheus_iitgoa?igshid=YmMyMTA2M2Y=")
+            startActivity(intent)
+        }
+
+        binding.linkedinhome.setOnClickListener {
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.linkedin.com/company/cepheus-iit-goa/")
+            startActivity(intent)
+        }
+
+        binding.ythome.setOnClickListener {
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://youtube.com/@cepheusiitgoa")
+            startActivity(intent)
+        }
+
+        binding.webhome.setOnClickListener {
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://iitgoa.ac.in/cepheus/")
+            startActivity(intent)
+        }
+
+
 
         return binding.root
     }

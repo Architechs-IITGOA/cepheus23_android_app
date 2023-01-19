@@ -28,6 +28,10 @@ class DescriptionActivity : AppCompatActivity() {
         binding = FragmentEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+
+
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)
 
@@ -119,6 +123,10 @@ class DescriptionActivity : AppCompatActivity() {
             binding.registerButton.setText("Create Team")
             binding.registerButton.setOnClickListener {
 
+<<<<<<< HEAD
+=======
+                var team_name = "123eav"
+>>>>>>> main
 
                 // create team intent
                 Log.i("response3",Token.token)
@@ -335,9 +343,70 @@ class DescriptionActivity : AppCompatActivity() {
     private fun setData(obj:EventData,eventImg:Int)
     {
         binding.eventName.text = obj.eventName
+        val id = obj.eventName
         binding.eventdec.text = obj.overview
         binding.hostname.text = obj.host
         binding.contactno.text = obj.phone
+        if(obj.id==1){
+            binding.ivEventImage.setImageResource(R.drawable.loremipsum2)
+        }
+        else if (obj.id==2){
+            binding.ivEventImage.setImageResource(R.drawable.hackof2)
+        }
+        else if (obj.id==3){
+            binding.ivEventImage.setImageResource(R.drawable.circuitdil2)
+        }
+        else if (obj.id==4){
+            binding.ivEventImage.setImageResource(R.drawable.datascihack2)
+        }
+        else if (obj.id==5){
+            binding.ivEventImage.setImageResource(R.drawable.hackthegame2)
+        }
+        else if (obj.id==6){
+            binding.ivEventImage.setImageResource(R.drawable.ctf2)
+        }
+        else if (obj.id==7){
+            binding.ivEventImage.setImageResource(R.drawable.fizzbuzz2)
+        }
+        else if (obj.id==8){
+            binding.ivEventImage.setImageResource(R.drawable.onth2)
+        }
+        else if (obj.id==9){
+            binding.ivEventImage.setImageResource(R.drawable.bridgeb2)
+        }
+        else if (obj.id==10){
+            binding.ivEventImage.setImageResource(R.drawable.copythenature2)
+        }
+        else if (obj.id==11){
+            binding.ivEventImage.setImageResource(R.drawable.rulethemark2)
+        }
+        else if (obj.id==12){
+            binding.ivEventImage.setImageResource(R.drawable.launchgala2)
+        }
+        else if (obj.id==13){
+            binding.ivEventImage.setImageResource(R.drawable.kbc2)
+        }
+        else if (obj.id==14){
+            binding.ivEventImage.setImageResource(R.drawable.mazeamaze2)
+        }
+        else if (obj.id==15){
+            binding.ivEventImage.setImageResource(R.drawable.scratch2)
+        }
+        else if (obj.id==16){
+            binding.ivEventImage.setImageResource(R.drawable.th2)
+        }
+        else if (obj.id==17){
+            binding.ivEventImage.setImageResource(R.drawable.buymycode2)
+        }
+        else if (obj.id==18){
+            binding.ivEventImage.setImageResource(R.drawable.pareitdown2)
+        }
+        else if (obj.id==19){
+            binding.ivEventImage.setImageResource(R.drawable.gametheory2)
+        }
+        else if (obj.id==20){
+            binding.ivEventImage.setImageResource(R.drawable.arduino2)
+        }
 
     }
 }

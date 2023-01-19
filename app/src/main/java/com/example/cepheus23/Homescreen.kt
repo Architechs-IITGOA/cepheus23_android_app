@@ -6,11 +6,13 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -76,8 +78,11 @@ class Homescreen : AppCompatActivity() {
                     Log.i("error","4")
 
                 }
-                R.id.sidenav_faqs -> Toast.makeText(applicationContext,"FAQS",Toast.LENGTH_SHORT).show()
-                R.id.sidenav_signout-> Toast.makeText(applicationContext,"Sign out",Toast.LENGTH_SHORT).show()
+                R.id.sidenav_faq -> {
+                    val intent = Intent(android.content.Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("https://discord.gg/jQsfbrtkzG")
+                    startActivity(intent)
+                }
             }
             true
         }
@@ -86,7 +91,14 @@ class Homescreen : AppCompatActivity() {
 //        implementing QR
         val header: View = navView.getHeaderView(0)
         val QRimageview : ImageView = header.findViewById(R.id.Qrbox)
-        val useremail: String = "vivek.bandrele.20031@iitgoa.ac.in"
+
+        val drawericon : ImageView = header.findViewById(R.id.navicon)
+        val navname : TextView = header.findViewById(R.id.nav_name)
+        navname.text = getDefaults("Name").toString()
+        drawericon.setImageResource(R.drawable.avtr1)
+
+        val useremail : String = getDefaults("Email").toString()
+
         val writer = QRCodeWriter()
         try {
             val bitMatrix = writer.encode(useremail, BarcodeFormat.QR_CODE, 200,200)
@@ -135,5 +147,10 @@ class Homescreen : AppCompatActivity() {
 
         }
 
+    }
+
+    fun getDefaults(key: String?): String? {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        return preferences.getString(key, null)
     }
 }
