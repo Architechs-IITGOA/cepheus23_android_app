@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EventsInEventsFragment">
+    tools:context=".fragments.WorkshopsInEventsFragment">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/eventInEventRecycler"
+                    android:id="@+id/workshopsInEventRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/ll_panel"

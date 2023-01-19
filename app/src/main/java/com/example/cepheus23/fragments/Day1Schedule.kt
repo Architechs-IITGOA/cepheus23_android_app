@@ -1,12 +1,13 @@
 package com.example.cepheus23.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.cepheus23.R
+import androidx.recyclerview.widget.RecyclerView
+import com.example.cepheus23.adapter.EventAdapter
+import com.example.cepheus23.databinding.FragmentDay1ScheduleBinding
 
 class Day1Schedule : Fragment() {
 
@@ -14,11 +15,18 @@ class Day1Schedule : Fragment() {
         fun newInstance() = Day1Schedule()
     }
 
+    private lateinit var binding : FragmentDay1ScheduleBinding
+
+    private lateinit var eventRecycler: RecyclerView
+    private lateinit var eventsRecyclerLayoutManager: RecyclerView.LayoutManager
+    private lateinit var eventsRecyclerAdapter: EventAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_day1_schedule, container, false)
+        binding = FragmentDay1ScheduleBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

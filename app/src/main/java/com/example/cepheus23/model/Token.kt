@@ -5,6 +5,5 @@ object Token {
         println("singleton class created")
     }
     lateinit var token:String
-    var register:Boolean = true
-    var id : Int = 0
+
 }
