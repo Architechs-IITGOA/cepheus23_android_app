@@ -19,4 +19,14 @@
     <string name="privacyinfo">*We understand that all visitors to our application are entitled to know that their personal data will not be used for any purpose unintended by them and will not accidentally fall into the hands of a third party.</string>
     <string name="fri_n_n10">Fri 10</string>
     <string name="thu_n_n09">Thu\n10</string>
+    <string name="_12_00pm_2_00pm">12.00PM - 2.00PM</string>
+    <string name="selected_item">Selected item:</string>
+    <string-array name="Languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>Scala</item>
+        <item>Perl</item>
+    </string-array>
 </resources>

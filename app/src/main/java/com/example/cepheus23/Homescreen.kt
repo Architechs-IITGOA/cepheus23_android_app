@@ -1,5 +1,6 @@
 package com.example.cepheus23
 
+import android.R.attr.button
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -13,15 +14,13 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.drawerlayout.widget.DrawerLayout
-
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-
 import com.example.cepheus23.databinding.HomelayoutBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.zxing.BarcodeFormat
@@ -124,8 +123,14 @@ class Homescreen : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    // override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+    //     val intent = Intent(Intent.ACTION_VIEW)
+    //     intent.data = Uri.parse("https://iitgoa.ac.in/")
+    //     startActivity(intent)
+    // }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
         }

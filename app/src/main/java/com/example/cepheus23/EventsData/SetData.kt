@@ -146,7 +146,7 @@ object setData {
         Eventlist.add(
             EventData(
                 12,
-                1,
+                2,
                 1,
                 "12:00 PM (2 hrs)",
                 "Launch Galaset",
@@ -159,7 +159,7 @@ object setData {
         Eventlist.add(
             EventData(
                 13,
-                1,
+                2,
                 1,
                 "3:00 PM (2 hrs)",
                 "KBC Quiz Competition",
@@ -172,7 +172,7 @@ object setData {
         Eventlist.add(
             EventData(
                 14,
-                1,
+                2,
                 1,
                 "12:00 PM (3 hrs)",
                 "Maze Amaze",
@@ -186,7 +186,7 @@ object setData {
         Eventlist.add(
             EventData(
                 15,
-                1,
+                3,
                 0,
                 "10:00 AM (1.5 hrs)",
                 "Scratch",
@@ -199,7 +199,7 @@ object setData {
         Eventlist.add(
             EventData(
                 16,
-                1,
+                2,
                 1,
                 "4:00 PM (2 hrs)",
                 "Treasure Hunt",
@@ -212,7 +212,7 @@ object setData {
         Eventlist.add(
             EventData(
                 17,
-                1,
+                2,
                 1,
                 "11:00 AM (4.5 hrs)",
                 "Buy My Code",
@@ -226,7 +226,7 @@ object setData {
         Eventlist.add(
             EventData(
                 18,
-                1,
+                2,
                 0,
                 "11:00 AM (6 hrs)",
                 "Pare It Down",
@@ -238,7 +238,7 @@ object setData {
         Eventlist.add(
             EventData(
                 19,
-                1,
+                2,
                 0,
                 "3:00 PM (-)",
                 "Game Theory",
@@ -251,7 +251,7 @@ object setData {
         Eventlist.add(
             EventData(
                 20,
-                1,
+                3,
                 1,
                 "10:00 AM (2 hrs)",
                 "Arduino's Trial",
@@ -264,7 +264,7 @@ object setData {
         Eventlist.add(
             EventData(
                 21,
-                1,
+                2,
                 1,
                 "Full day",
                 "EV Bike Competition",

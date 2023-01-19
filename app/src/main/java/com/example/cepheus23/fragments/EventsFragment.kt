@@ -25,7 +25,7 @@ class EventsFragment : Fragment() {
     lateinit var eventRecycler: RecyclerView
     lateinit var eventsRecyclerLayoutManager: RecyclerView.LayoutManager
     lateinit var eventsRecyclerAdapter: EventAdapter
-    private var tabTitle = arrayOf("Events", "Competitions", "Workshops")
+    private var tabTitle = arrayOf("Online Competitions", "Offline Competitions", "Workshops")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
