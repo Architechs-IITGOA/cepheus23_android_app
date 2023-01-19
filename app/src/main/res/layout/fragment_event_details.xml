@@ -82,6 +82,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="15 Jan ‘23 6:00PM"
+                            android:id="@+id/event_time"
                             android:textColor="@color/black"
                             android:textSize="15sp" />
 
@@ -108,7 +109,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Event Host: "
+                            android:text="Event Head: "
                             android:textColor="@color/black"
                             android:textSize="15sp"
                             android:textStyle="bold" />

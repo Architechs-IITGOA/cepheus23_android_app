@@ -22,6 +22,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.cepheus23.databinding.HomelayoutBinding
+import com.example.cepheus23.model.Token
 import com.google.android.material.navigation.NavigationView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
@@ -41,6 +42,7 @@ class Homescreen : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        Token.token = getDefaults("JWToken").toString()
         val drawerLayout:DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
