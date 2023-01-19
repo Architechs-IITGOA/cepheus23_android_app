@@ -1,6 +1,7 @@
 package com.example.cepheus23
 
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -58,8 +59,9 @@ class DescriptionActivity : AppCompatActivity() {
 
             binding.registerButton.setOnClickListener {
                 var teamcode = ""
-                var team_name = "Fuckyou"
+                val team_name : String = getDefaults("Email").toString()
                 // call create team api
+                Log.i("new response",team_name)
 
                 val CTapi = retrofitBuilder.create(CreateTeamApi::class.java)
                 val teaminfo = CreateTeamInfo(obj.id!!,Token.token,team_name)
@@ -72,49 +74,84 @@ class DescriptionActivity : AppCompatActivity() {
                         response: Response<CreateTeamResponse?>
                     ) {
                         if(response.isSuccessful){
-                            Log.i("response2", "team created")
+
+                            Log.i("new response", "team created")
                             teamcode = response.body()?.team_code.toString()
+
+
+                            val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
+                            val data = RegisterEventInfo(Token.token,teamcode, obj.id!!)
+                            val call2 = regeventapi.eventregistration(data)
+
+                            call2.enqueue(object : Callback<RegisterEventResponse?> {
+                                override fun onResponse(
+                                    call: Call<RegisterEventResponse?>,
+                                    response1: Response<RegisterEventResponse?>
+                                ) {
+                                    Log.i("new response", "in response")
+                                    if(response1.isSuccessful){
+                                        Log.i("new response", "is success")
+                                        Toast.makeText(this@DescriptionActivity,"Registered Successfully",Toast.LENGTH_SHORT).show()
+                                    }
+                                    else{
+                                        Log.i("new response", response1.message())
+                                        Log.i("new response", response1.code().toString())
+                                        Toast.makeText(this@DescriptionActivity,"Already registered/Age doesn't fit",Toast.LENGTH_LONG).show()
+                                    }
+
+                                }
+
+                                override fun onFailure(
+                                    call: Call<RegisterEventResponse?>,
+                                    t: Throwable
+                                ) {
+                                    Log.i("new response", "onfailure")
+                                    Toast.makeText(this@DescriptionActivity,"Failed to register",Toast.LENGTH_SHORT).show()
+
+                                }
+                            })
+
                         }
                         else{
-                            Log.i("response2",response.message())
-                            Log.i("response2",response.code().toString())
+                            Log.i("new response",response.message())
+                            Log.i("new response",response.code().toString())
                         }
 
 
                     }
 
                     override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
-                        Log.i("failed2","Onfailure of ct")
+                        Log.i("new response","Onfailure of ct")
                     }
                 })
 
 
 
                 // call register api
-                val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
-                val data = RegisterEventInfo(Token.token,teamcode, obj.id!!)
-                val call2 = regeventapi.eventregistration(data)
-
-                call2.enqueue(object : Callback<RegisterEventResponse?> {
-                    override fun onResponse(
-                        call: Call<RegisterEventResponse?>,
-                        response: Response<RegisterEventResponse?>
-                    ) {
-                        if(response.isSuccessful){
-                            Log.i("response2","registered successfully")
-                            binding.registerButton.setText("registered")
-                        }
-                        else{
-                            Log.i("response2",response.message())
-                        }
-
-
-                    }
-
-                    override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
-                        Log.i("failed2","failure")
-                    }
-                })
+//                val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
+//                val data = RegisterEventInfo(Token.token,teamcode, obj.id!!)
+//                val call2 = regeventapi.eventregistration(data)
+//
+//                call2.enqueue(object : Callback<RegisterEventResponse?> {
+//                    override fun onResponse(
+//                        call: Call<RegisterEventResponse?>,
+//                        response: Response<RegisterEventResponse?>
+//                    ) {
+//                        if(response.isSuccessful){
+//                            Log.i("response2","registered successfully")
+//                            binding.registerButton.setText("registered")
+//                        }
+//                        else{
+//                            Log.i("response2",response.message())
+//                        }
+//
+//
+//                    }
+//
+//                    override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+//                        Log.i("failed2","failure")
+//                    }
+//                })
 
             }
         }
@@ -123,10 +160,7 @@ class DescriptionActivity : AppCompatActivity() {
             binding.registerButton.setText("Create Team")
             binding.registerButton.setOnClickListener {
 
-<<<<<<< HEAD
-=======
-                var team_name = "123eav"
->>>>>>> main
+                var team_name = "123vivek"
 
                 // create team intent
                 Log.i("response3",Token.token)
@@ -140,8 +174,6 @@ class DescriptionActivity : AppCompatActivity() {
 
                 createTeamCall.setOnClickListener {
                     var teamcode = ""
-                    var team_name = "Fuckyou"
-
                     if (view.findViewById<TextView>(R.id.team_name).text.isEmpty()){
                         Toast.makeText(this@DescriptionActivity, "Please give a Team name.", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
@@ -178,16 +210,17 @@ class DescriptionActivity : AppCompatActivity() {
                                     ) {
                                         if(response1.isSuccessful){
                                             Log.i("response2","registered successfully")
-                                            Toast.makeText(this@DescriptionActivity,"Team created successfully: " + teamcode,Toast.LENGTH_LONG).show()
+                                            Toast.makeText(this@DescriptionActivity,"Registered successfully: " + teamcode,Toast.LENGTH_LONG).show()
 //                                            binding.registerButton.setText("registered")
                                             dialog.dismiss()
                                         }
                                         else{
                                             Log.i("response2","error in registration")
-                                            Log.i("response2",response.errorBody()?.charStream()?.readText().toString())
-                                            Log.i("response2",response.message())
-                                            Log.i("response2",response.code().toString())
-                                            Toast.makeText(this@DescriptionActivity,"not registered team" + response.errorBody()?.charStream()?.readText().toString(),Toast.LENGTH_LONG).show()
+                                            Log.i("response2",response1.errorBody()?.charStream()?.readText().toString())
+                                            Log.i("response2",response1.message())
+                                            Log.i("response2",response1.code().toString())
+                                            val err_str = response1.errorBody()?.charStream()?.readText().toString()
+                                            Toast.makeText(this@DescriptionActivity,"Already registered/Age doesn't fit",Toast.LENGTH_LONG).show()
                                         }
                                     }
 
@@ -219,9 +252,39 @@ class DescriptionActivity : AppCompatActivity() {
                 }
                 joinTeamCall.setOnClickListener {
                     if (view.findViewById<TextView>(R.id.team_id).text.isEmpty()){
-                        Toast.makeText(this@DescriptionActivity, "Please give a Team code.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DescriptionActivity, "Please give a Team code.", Toast.LENGTH_LONG).show()
                         return@setOnClickListener
                     }
+                    val team_id = view.findViewById<TextView>(R.id.team_id).text.toString()
+
+                    val regeventapi = retrofitBuilder.create(RegisterEventApi::class.java)
+                    val data = RegisterEventInfo(Token.token,team_id, obj.id!!)
+                    val call = regeventapi.eventregistration(data)
+                    call.enqueue(object : Callback<RegisterEventResponse?> {
+                        override fun onResponse(
+                            call: Call<RegisterEventResponse?>,
+                            response: Response<RegisterEventResponse?>
+                        ) {
+                            if(response.isSuccessful){
+                                Toast.makeText(this@DescriptionActivity,"Joined Team and Registered Successfully",Toast.LENGTH_LONG).show()
+                            }
+                            else{
+                                Toast.makeText(this@DescriptionActivity,"Already Registered/Age doesn't fit",Toast.LENGTH_LONG).show()
+                            }
+                        }
+
+                        override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+                            Toast.makeText(this@DescriptionActivity,"Failed to Register",Toast.LENGTH_SHORT).show()
+                        }
+                    })
+
+
+
+
+
+
+
+
                     dialog.dismiss()
                     Toast.makeText(this@DescriptionActivity, "Please " + view.findViewById<TextView>(R.id.team_name).text.toString(), Toast.LENGTH_SHORT).show()
                     Toast.makeText(this@DescriptionActivity, "Join team text:" + view.findViewById<TextView>(R.id.team_id).text.toString(), Toast.LENGTH_SHORT).show()
@@ -347,6 +410,7 @@ class DescriptionActivity : AppCompatActivity() {
         binding.eventdec.text = obj.overview
         binding.hostname.text = obj.host
         binding.contactno.text = obj.phone
+        binding.eventTime.text = obj.time.toString()
         if(obj.id==1){
             binding.ivEventImage.setImageResource(R.drawable.loremipsum2)
         }
@@ -408,5 +472,10 @@ class DescriptionActivity : AppCompatActivity() {
             binding.ivEventImage.setImageResource(R.drawable.arduino2)
         }
 
+    }
+
+    fun getDefaults(key: String?): String? {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        return preferences.getString(key, null)
     }
 }
