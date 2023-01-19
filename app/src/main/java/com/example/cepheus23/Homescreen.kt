@@ -30,6 +30,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.cepheus23.databinding.HomelayoutBinding
 import com.example.cepheus23.fragments.SponsorFragment
+import com.example.cepheus23.model.Token
+import com.example.cepheus23.model.UserName
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -75,8 +77,8 @@ class Homescreen : AppCompatActivity() {
             when(it.itemId){
                 R.id.sidenav_sponsors ->{
 
-//                    val sponsorintent = Intent(this,SponsorActivity::class.java)
-//                    startActivity(sponsorintent)
+                    val sponsorintent = Intent(this@Homescreen,SponsorActivity::class.java)
+                    startActivity(sponsorintent)
 //                    val sponsorintent = Intent(this,SponsorFragment::class.java)
 //                    startActivity(sponsorintent)
 //
@@ -119,13 +121,14 @@ class Homescreen : AppCompatActivity() {
                         GoogleSignInOptions.DEFAULT_SIGN_IN
                     ).requestEmail()
                         .build()
-                    val mGoogleSignInClient = GoogleSignIn.getClient(this,gso)
+                    val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
                     mGoogleSignInClient.signOut()
 
-                    saveLoginStatuslocally("", "", false)
-                    val activityIntent = Intent(this@Homescreen,SigninActivity::class.java)
+                    saveLoginStatuslocally("","")
+                    val activityIntent = Intent(this@Homescreen, SigninActivity::class.java)
                     startActivity(activityIntent)
                     Toast.makeText(applicationContext, "Sign out", Toast.LENGTH_SHORT).show()
+                }
             }
             true
         }
@@ -138,6 +141,7 @@ class Homescreen : AppCompatActivity() {
         val drawericon : ImageView = header.findViewById(R.id.navicon)
         val navname : TextView = header.findViewById(R.id.nav_name)
         navname.text = getDefaults("Name").toString()
+        UserName.name = getDefaults("Name").toString()
         drawericon.setImageResource(R.drawable.avtr1)
 
         val useremail : String = getDefaults("Email").toString()
@@ -192,19 +196,24 @@ class Homescreen : AppCompatActivity() {
 
     }
 
-    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, currstatus_email : Boolean) {
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()
         editor.putString("Login_status", currstatus_login)
         editor.putString("JWToken", currstatus_token)
-        editor.putString("register_status", currstatus_email.toString())
         editor.apply()
     }
+
     fun getDefaults(key: String?): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         return preferences.getString(key, null)
     }
+
 }
+
+
+
+
 
 

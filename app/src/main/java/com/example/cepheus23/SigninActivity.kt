@@ -78,6 +78,7 @@ class SigninActivity : AppCompatActivity() {
 //                                    Log.i("login response", Login.login.toString())
                                 }
                                 else{
+                                    saveLoginStatuslocally("true", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,Homescreen::class.java)
                                     startActivity(activityIntent)
                                 }
@@ -205,6 +206,8 @@ class SigninActivity : AppCompatActivity() {
         val editor = preferences.edit()
         editor.putString("Login_status", currstatus_login)
         editor.putString("JWToken", currstatus_token)
+        editor.putString("Email",currstatus_email)
+        editor.putString("Name", currstatus_name)
 
         editor.apply()
     }

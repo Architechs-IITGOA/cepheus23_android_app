@@ -1,10 +1,10 @@
 package com.example.cepheus23.model
 
 data class SponsorData (
-    val category : String? = null,
-    var iswebsite : String? = null,
-    val link : String? = null,
-    val url : String? = null
+    val category : Long? = null,
+    var iswebsite : Long? = null,
+    val link : Long? = null,
+    val url : Long? = null
 )
 
 
