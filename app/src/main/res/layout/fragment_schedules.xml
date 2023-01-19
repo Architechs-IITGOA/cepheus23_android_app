@@ -89,13 +89,12 @@
                 android:layout_width="match_parent"
                 app:tabIndicator="@drawable/tab_indicator"
                 app:tabTextColor="@color/material_on_primary_disabled"
-                app:tabSelectedTextColor="@color/blue"
+                app:tabSelectedTextColor="@color/black"
                 app:tabIndicatorColor="@null"
-                app:tabIndicatorHeight="3dp"
-                app:tabMaxWidth="0dp"
-                app:tabGravity="center"
-                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/tabLayoutText"
+                android:layout_height="100dp"
                 android:background="#00000000"
+                app:tabBackground="@drawable/tab_color_selector"
                 />
 
             <androidx.viewpager2.widget.ViewPager2

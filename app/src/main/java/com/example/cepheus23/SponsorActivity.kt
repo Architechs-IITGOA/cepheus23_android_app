@@ -34,6 +34,17 @@ class SponsorActivity : AppCompatActivity() {
 
 
 
+//        Log.i("spcheck","1")
+//        checkper // Not needed
+  //      Log.i("spcheck","2")
+    //    binding.sponsor1.setOnClickListener {
+      //      val phone1 = "9770594125"
+        //    val callintent1 = Intent(Intent.ACTION_VIEW)
+          //  callintent1.data = Uri.parse("tel:$phone1")
+            //startActivity(callintent1)
+       // }
+
+
         Log.i("sponsors", "firebase call initialised")
         databaseReference = FirebaseDatabase.getInstance().getReference("sponsor")
         Log.i("sponsors", "firebase call complete")

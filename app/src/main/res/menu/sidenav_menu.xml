@@ -9,28 +9,29 @@
             android:iconTint="@color/white"
             />
         <item
-            android:title="FAQs"
-            android:icon="@drawable/ic_baseline_question_mark_24"
-            android:id="@+id/sidenav_faqs"
-            />
-        <item
             android:title="Merchandise"
             android:icon="@drawable/ic_merch"
             android:id="@+id/sidenav_merch"
             android:iconTint="@color/white"
             />
         <item
+            android:title="FAQs"
+            android:icon="@drawable/ic_baseline_question_mark_24"
+            android:iconTint="@color/white"
+            android:id="@+id/sidenav_faq"/>
+        <item
             android:title="Contact Us"
             android:icon="@drawable/ic_baseline_call_24"
             android:id="@+id/sidenav_con"
             android:iconTint="@color/white"
             />
+
         <item
-            android:title="Sign out"
-            android:icon="@drawable/ic_signout"
-            android:id="@+id/sidenav_signout"
-            android:iconTint="@color/white"
-            />
+            android:title="Developers"
+            android:icon="@drawable/ic_baseline_groups_24"
+            android:id="@+id/sidenav_devs"/>
+
+
     </group>
 
 

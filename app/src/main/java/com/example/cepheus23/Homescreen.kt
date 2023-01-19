@@ -1,5 +1,6 @@
 package com.example.cepheus23
 
+import android.R.attr.button
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
@@ -12,19 +13,21 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.drawerlayout.widget.DrawerLayout
+
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+
 
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
-
 import com.example.cepheus23.databinding.HomelayoutBinding
 import com.example.cepheus23.fragments.SponsorFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -50,6 +53,7 @@ class Homescreen : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        Token.token = getDefaults("JWToken").toString()
         val drawerLayout:DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
@@ -103,7 +107,13 @@ class Homescreen : AppCompatActivity() {
                     Log.i("error","4")
 
                 }
-                R.id.sidenav_faqs -> Toast.makeText(applicationContext,"FAQS",Toast.LENGTH_SHORT).show()
+                
+                R.id.sidenav_faq -> {
+                    val intent = Intent(android.content.Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("https://discord.gg/jQsfbrtkzG")
+                    startActivity(intent)
+                }
+
                 R.id.sidenav_signout-> {
                     val gso = GoogleSignInOptions.Builder(
                         GoogleSignInOptions.DEFAULT_SIGN_IN
@@ -116,9 +126,6 @@ class Homescreen : AppCompatActivity() {
                     val activityIntent = Intent(this@Homescreen,SigninActivity::class.java)
                     startActivity(activityIntent)
                     Toast.makeText(applicationContext, "Sign out", Toast.LENGTH_SHORT).show()
-
-
-                }
             }
             true
         }
@@ -127,8 +134,14 @@ class Homescreen : AppCompatActivity() {
 //        implementing QR
         val header: View = navView.getHeaderView(0)
         val QRimageview : ImageView = header.findViewById(R.id.Qrbox)
-//        val useremail: String = "vivek.bandrele.20031@iitgoa.ac.in"
+
+        val drawericon : ImageView = header.findViewById(R.id.navicon)
+        val navname : TextView = header.findViewById(R.id.nav_name)
+        navname.text = getDefaults("Name").toString()
+        drawericon.setImageResource(R.drawable.avtr1)
+
         val useremail : String = getDefaults("Email").toString()
+
         val writer = QRCodeWriter()
         try {
             val bitMatrix = writer.encode(useremail, BarcodeFormat.QR_CODE, 200,200)
@@ -153,8 +166,14 @@ class Homescreen : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    // override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+    //     val intent = Intent(Intent.ACTION_VIEW)
+    //     intent.data = Uri.parse("https://iitgoa.ac.in/")
+    //     startActivity(intent)
+    // }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
             return true
         }

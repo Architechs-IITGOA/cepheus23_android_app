@@ -32,6 +32,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
     override fun onBindViewHolder(holder: eventViewHolder, position: Int) {
         var eventImage: Int? = null
         holder.itemView.setOnClickListener{
+
             val intent= Intent(holder.itemView.context,DescriptionActivity::class.java)
             intent.putExtra("Event",event[position])
 //            intent.putExtra("EventImage",eventImage)
@@ -40,14 +41,14 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             Log.i("adapter",event[position].eventName.toString())
         }
         holder.eventName.text = event[position].eventName
-        holder.eventOverview.text = event[position].overview
+        holder.eventOverview.text = event[position].description
 
 
 
 
 
         when (event[position].eventName!!) {
-            "Loren Ipsum" -> {
+            "Lorem Ipsum" -> {
                 eventImage = R.drawable.loremipsum1
             }
             "HackOverFlow" -> {
@@ -71,7 +72,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             "Online Treasure Hunt" -> {
                 eventImage = R.drawable.onlinethunt1
             }
-            "Bridge Building Comeptition" -> {
+            "Bridge Building Competition" -> {
                 eventImage = R.drawable.bridgebuilding1
             }
             "Copy the Nature" -> {
@@ -104,14 +105,19 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
             "Game Theory" -> {
                 eventImage = R.drawable.gametheory1
             }
-            "Arduino Workshop" -> {
+            "Arduino's Trial" -> {
                 eventImage = R.drawable.arduinotrial1
             }
             "EV Bike Competition" -> {
                 eventImage = R.drawable.ebike1
             }
 
+            else -> {
+                eventImage = R.drawable.h
+            }
+
         }
+
         holder.eventListImage.setImageResource(eventImage!!)
     }
 

@@ -40,6 +40,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_eventsFragment_to_EventDetailsFragment"
+            app:destination="@id/EventDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/EventDetailsFragment"
@@ -56,7 +59,11 @@
         android:id="@+id/homeFragment"
         android:name="com.example.cepheus23.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_eventsFragment"
+            app:destination="@id/eventsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/schedules2"
         android:name="com.example.cepheus23.fragments.Schedules"
