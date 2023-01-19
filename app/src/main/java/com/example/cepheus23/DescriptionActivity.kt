@@ -123,10 +123,6 @@ class DescriptionActivity : AppCompatActivity() {
             binding.registerButton.setText("Create Team")
             binding.registerButton.setOnClickListener {
 
-<<<<<<< HEAD
-=======
-                var team_name = "123eav"
->>>>>>> main
 
                 // create team intent
                 Log.i("response3",Token.token)
@@ -174,9 +170,9 @@ class DescriptionActivity : AppCompatActivity() {
                                 call2.enqueue(object : Callback<RegisterEventResponse?> {
                                     override fun onResponse(
                                         call: Call<RegisterEventResponse?>,
-                                        response1: Response<RegisterEventResponse?>
+                                        response: Response<RegisterEventResponse?>
                                     ) {
-                                        if(response1.isSuccessful){
+                                        if(response.isSuccessful){
                                             Log.i("response2","registered successfully")
                                             Toast.makeText(this@DescriptionActivity,"Team created successfully: " + teamcode,Toast.LENGTH_LONG).show()
 //                                            binding.registerButton.setText("registered")
@@ -201,6 +197,7 @@ class DescriptionActivity : AppCompatActivity() {
                             else{
                                 Log.i("response2","error in team creation")
                                 Log.i("response2",response.body().toString())
+                                Log.i("response2",response.errorBody()?.charStream()?.readText().toString())
                                 Log.i("response2",response.errorBody()?.charStream()?.readText().toString())
                                 Log.i("response2", response.message())
                                 Log.i("response2", response.code().toString())
