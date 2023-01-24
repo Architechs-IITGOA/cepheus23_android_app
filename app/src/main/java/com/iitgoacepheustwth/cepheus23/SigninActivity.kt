@@ -9,6 +9,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatDelegate
 import com.iitgoacepheustwth.cepheus23.APIs.LoginApi
 import com.iitgoacepheustwth.cepheus23.databinding.ActivitySigninBinding
 import com.iitgoacepheustwth.cepheus23.model.*
@@ -131,6 +132,8 @@ class SigninActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)

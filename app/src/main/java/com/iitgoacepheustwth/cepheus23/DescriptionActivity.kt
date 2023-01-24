@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.iitgoacepheustwth.cepheus23.APIs.CreateTeamApi
 import com.iitgoacepheustwth.cepheus23.APIs.RegisterEventApi
 import com.iitgoacepheustwth.cepheus23.EventsData.EventData
@@ -25,6 +26,8 @@ class DescriptionActivity : AppCompatActivity() {
     private lateinit var obj : EventData
     private var eventImg:Int?=null
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         binding = FragmentEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
