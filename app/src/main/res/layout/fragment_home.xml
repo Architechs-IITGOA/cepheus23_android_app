@@ -56,6 +56,7 @@
                         android:textSize="20sp" />
 
 
+
                 </LinearLayout>
 
 
@@ -141,7 +142,7 @@
                         <ImageView
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:src="@drawable/planet5"
+                            android:src="@drawable/planets02"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="MissingConstraints" />
@@ -404,3 +405,11 @@
     </ScrollView>
 
 </FrameLayout>
+
+
+<!--<Button-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:id="@+id/crash_button"-->
+<!--android:text="dsfg"-->
+<!--android:textColor="@color/black"/>-->

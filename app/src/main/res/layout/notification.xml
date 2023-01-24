@@ -12,7 +12,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/cepheus_applogo_firebase"/>
+            android:src="@drawable/cepheusicon"/>
         <TextView
             android:id="@+id/tv_notification_title"
             android:layout_width="wrap_content"
