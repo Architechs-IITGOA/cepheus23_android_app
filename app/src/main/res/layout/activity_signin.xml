@@ -8,7 +8,20 @@
     tools:context=".SigninActivity">
 
 
+    <ProgressBar
+        android:id="@+id/indeterminateBar"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -30,8 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="CEPHEUS 23"
             android:fontFamily="@font/mohaveregular"
+            android:text="CEPHEUS 23"
 
             android:textColor="@color/white"
             android:textSize="55sp" />
@@ -39,8 +52,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IIT Goa’s Technical fest"
             android:fontFamily="@font/mohaveregular"
+            android:text="IIT Goa’s Technical fest"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

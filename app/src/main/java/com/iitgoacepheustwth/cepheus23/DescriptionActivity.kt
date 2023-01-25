@@ -1,5 +1,8 @@
 package com.iitgoacepheustwth.cepheus23
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -26,6 +29,7 @@ class DescriptionActivity : AppCompatActivity() {
     private lateinit var obj : EventData
     private var eventImg:Int?=null
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         super.onCreate(savedInstanceState)
@@ -34,7 +38,13 @@ class DescriptionActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        binding.contactno.setOnClickListener{
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("text", obj.phone)
+            clipboardManager.setPrimaryClip(clipData)
 
+            Toast.makeText(this@DescriptionActivity, "Phone number copied.",Toast.LENGTH_SHORT).show()
+        }
 
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)

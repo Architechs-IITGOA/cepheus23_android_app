@@ -20,7 +20,9 @@ class SponsorActivity : AppCompatActivity() {
 
 //    private lateinit var binding: FragmentSponsorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
 //        binding = FragmentSponsorBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
