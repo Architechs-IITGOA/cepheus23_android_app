@@ -1,5 +1,8 @@
 package com.iitgoacepheustwth.cepheus23
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -8,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.iitgoacepheustwth.cepheus23.APIs.CreateTeamApi
 import com.iitgoacepheustwth.cepheus23.APIs.RegisterEventApi
 import com.iitgoacepheustwth.cepheus23.EventsData.EventData
@@ -25,13 +29,22 @@ class DescriptionActivity : AppCompatActivity() {
     private lateinit var obj : EventData
     private var eventImg:Int?=null
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         binding = FragmentEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        binding.contactno.setOnClickListener{
+            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clipData = ClipData.newPlainText("text", obj.phone)
+            clipboardManager.setPrimaryClip(clipData)
 
+            Toast.makeText(this@DescriptionActivity, "Phone number copied.",Toast.LENGTH_SHORT).show()
+        }
 
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)

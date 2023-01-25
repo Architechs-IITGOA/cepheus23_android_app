@@ -18,6 +18,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.drawerlayout.widget.DrawerLayout
 
 
@@ -43,6 +44,9 @@ class Homescreen : AppCompatActivity() {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         binding = HomelayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -52,7 +56,7 @@ class Homescreen : AppCompatActivity() {
         val drawerLayout:DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
 
-        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        toggle = ActionBarDrawerToggle(this,drawerLayout, R.string.open,R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

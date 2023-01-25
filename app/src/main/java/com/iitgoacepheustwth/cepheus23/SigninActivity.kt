@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatDelegate
 import com.iitgoacepheustwth.cepheus23.APIs.LoginApi
 import com.iitgoacepheustwth.cepheus23.databinding.ActivitySigninBinding
 import com.iitgoacepheustwth.cepheus23.model.*
@@ -33,6 +36,7 @@ class SigninActivity : AppCompatActivity() {
     private var oneTapClient: SignInClient? = null
     private var signUpRequest: BeginSignInRequest? = null
     private var signInRequest: BeginSignInRequest? = null
+    private var progressBar: ProgressBar? = null
 
     private val oneTapResult = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()){ result ->
         try {
@@ -131,11 +135,15 @@ class SigninActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
+        progressBar = binding.indeterminateBar
+        progressBar!!.visibility = View.GONE
 
         oneTapClient = Identity.getSignInClient(this)
         signUpRequest = BeginSignInRequest.builder()
@@ -160,7 +168,9 @@ class SigninActivity : AppCompatActivity() {
             .build()
 
         binding.bvSignin.setOnClickListener {
+            progressBar!!.visibility = View.GONE
             displaySignIn()
+            progressBar!!.visibility = View.VISIBLE
         }
 
     }

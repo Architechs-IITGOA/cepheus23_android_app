@@ -8,6 +8,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.iitgoacepheustwth.cepheus23.databinding.ActivityDetailsBinding
 import com.iitgoacepheustwth.cepheus23.model.*
 import retrofit2.Call
@@ -19,6 +20,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.iitgoacepheustwth.cepheus23.adapter.SponsorAdapter
@@ -19,6 +20,9 @@ class SponsorActivity : AppCompatActivity() {
 
 //    private lateinit var binding: FragmentSponsorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Removes Dark mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         super.onCreate(savedInstanceState)
 //        binding = FragmentSponsorBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
