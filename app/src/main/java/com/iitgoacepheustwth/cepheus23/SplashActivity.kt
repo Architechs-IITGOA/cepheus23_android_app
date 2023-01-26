@@ -43,10 +43,8 @@ class SplashActivity : AppCompatActivity() {
                 Log.i("splash",Login.login.toString())
                 val intent = Intent(this@SplashActivity, SigninActivity::class.java)
                 startActivity(intent)
-
             }
             else if(Login_status=="true" && Register_status!="true"){
-
                 Log.i("splash",Login.login.toString())
                 val intent = Intent(this@SplashActivity, DetailsActivity::class.java)
                 startActivity(intent)

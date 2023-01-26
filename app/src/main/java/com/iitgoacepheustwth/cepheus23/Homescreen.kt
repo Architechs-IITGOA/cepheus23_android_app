@@ -196,7 +196,7 @@ class Homescreen : AppCompatActivity() {
         return when(item.itemId){
             R.id.feedbackbtn -> {
                 val intent = Intent(android.content.Intent.ACTION_VIEW)
-                intent.data = Uri.parse("https://forms.gle/3e2WP658MGdxxz9B7")
+                intent.data = Uri.parse("https://forms.gle/CdszgvwSvs8YBVPz7")
                 Log.i("error","3")
                 startActivity(intent)
                 true

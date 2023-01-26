@@ -104,6 +104,7 @@ class DetailsActivity : AppCompatActivity() {
 
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@DetailsActivity,Homescreen::class.java)
+                            finish()
                             startActivity(intent)
                             Log.i("response","switched to Homescreen")
                             val responseCode = response.code()

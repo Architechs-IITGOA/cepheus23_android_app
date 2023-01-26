@@ -85,6 +85,7 @@ class SigninActivity : AppCompatActivity() {
                                 else{
                                     saveLoginStatuslocally("true","true", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,Homescreen::class.java)
+                                    finish()
                                     startActivity(activityIntent)
                                 }
 
