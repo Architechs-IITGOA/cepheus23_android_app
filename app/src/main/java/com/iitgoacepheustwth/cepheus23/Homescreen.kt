@@ -1,5 +1,6 @@
 package com.iitgoacepheustwth.cepheus23
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
@@ -45,6 +46,11 @@ class Homescreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Removes Dark mode
+        actionBar?.setDisplayShowCustomEnabled(true)
+//        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
+        actionBar?.setCustomView(view)
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         super.onCreate(savedInstanceState)

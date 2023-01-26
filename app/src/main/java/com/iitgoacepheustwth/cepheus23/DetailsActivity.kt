@@ -95,8 +95,13 @@ class DetailsActivity : AppCompatActivity() {
 
 
 
+
                             Log.i("newToken",token2)
-                            saveregistrationStatuslocally("true")
+                            saveregistrationStatuslocally("true", token2)
+                            Token.token = getDefaults("JWToken").toString()
+                            Log.i("TestingDetails", "JWT updated")
+
+
                             Toast.makeText(this@DetailsActivity,"Successfully entered",Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@DetailsActivity,Homescreen::class.java)
                             startActivity(intent)
@@ -127,11 +132,12 @@ class DetailsActivity : AppCompatActivity() {
             }
         }
     }
-    private fun saveregistrationStatuslocally(currstatus_register: String) {
+    private fun saveregistrationStatuslocally(currstatus_register: String, currstatus_token: String ) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()
         editor.putString("register_status", currstatus_register)
+        editor.putString("JWToken", currstatus_token)
         editor.apply()
     }
 
