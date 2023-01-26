@@ -74,16 +74,18 @@ class SigninActivity : AppCompatActivity() {
 
 
 
+
                                 if(response.body()?.user?.registered == false){
                                     //                                    Login.login = true
-                                    saveLoginStatuslocally("true", responseToken, user_email, user_name)
+                                    saveLoginStatuslocally("true","false", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
                                     startActivity(activityIntent)
 //                                    Log.i("login response", Login.login.toString())
                                 }
                                 else{
-                                    saveLoginStatuslocally("true", responseToken, user_email, user_name)
+                                    saveLoginStatuslocally("true","true", responseToken, user_email, user_name)
                                     val activityIntent = Intent(this@SigninActivity,Homescreen::class.java)
+                                    finish()
                                     startActivity(activityIntent)
                                 }
 
@@ -210,11 +212,12 @@ class SigninActivity : AppCompatActivity() {
     }
 
 
-    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, currstatus_email : String, currstatus_name : String) {
+    private fun saveLoginStatuslocally(currstatus_login:String, currstatus_register: String, currstatus_token: String, currstatus_email : String, currstatus_name : String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()
         editor.putString("Login_status", currstatus_login)
+        editor.putString("register_status", currstatus_register)
         editor.putString("JWToken", currstatus_token)
         editor.putString("Email",currstatus_email)
         editor.putString("Name", currstatus_name)

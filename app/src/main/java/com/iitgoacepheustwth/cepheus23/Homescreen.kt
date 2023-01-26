@@ -1,5 +1,6 @@
 package com.iitgoacepheustwth.cepheus23
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
@@ -45,6 +46,11 @@ class Homescreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Removes Dark mode
+        actionBar?.setDisplayShowCustomEnabled(true)
+//        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
+        actionBar?.setCustomView(view)
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         super.onCreate(savedInstanceState)
@@ -190,7 +196,7 @@ class Homescreen : AppCompatActivity() {
         return when(item.itemId){
             R.id.feedbackbtn -> {
                 val intent = Intent(android.content.Intent.ACTION_VIEW)
-                intent.data = Uri.parse("https://forms.gle/3e2WP658MGdxxz9B7")
+                intent.data = Uri.parse("https://forms.gle/CdszgvwSvs8YBVPz7")
                 Log.i("error","3")
                 startActivity(intent)
                 true
