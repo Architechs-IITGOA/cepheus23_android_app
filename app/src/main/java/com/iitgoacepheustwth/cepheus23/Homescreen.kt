@@ -26,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.iitgoacepheustwth.cepheus23.databinding.HomelayoutBinding
 import com.iitgoacepheustwth.cepheus23.model.Token
 import com.iitgoacepheustwth.cepheus23.model.UserName
@@ -35,6 +36,16 @@ import com.google.android.material.navigation.NavigationView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.WriterException
 import com.google.zxing.qrcode.QRCodeWriter
+import com.iitgoacepheustwth.cepheus23.APIs.GetEventsApi
+import com.iitgoacepheustwth.cepheus23.EventsData.setData
+import com.iitgoacepheustwth.cepheus23.adapter.EventAdapter
+import com.iitgoacepheustwth.cepheus23.model.GetRegInfo
+import com.iitgoacepheustwth.cepheus23.model.RegisteredEventList
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class Homescreen : AppCompatActivity() {
@@ -45,12 +56,12 @@ class Homescreen : AppCompatActivity() {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Removes Dark mode
-        actionBar?.setDisplayShowCustomEnabled(true)
-//        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
-        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
-        actionBar?.setCustomView(view)
 
+//        actionBar?.setDisplayShowCustomEnabled(true)
+////        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+//        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
+//        actionBar?.setCustomView(view)
+        // Removes Dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         super.onCreate(savedInstanceState)
@@ -104,22 +115,23 @@ class Homescreen : AppCompatActivity() {
 //
 //                        Log.i("sponsors", "fragment switched")
 //                    }
-
                     Toast.makeText(applicationContext,"Sponsors",Toast.LENGTH_SHORT).show()
-                }
-                R.id.sidenav_con -> Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
-                R.id.sidenav_merch -> {
-                    Log.i("error","1")
-                    val merchurl = Intent(android.content.Intent.ACTION_VIEW)
-                    Log.i("error","2")
 
-                    merchurl.data = Uri.parse("https://cepheusmemories.co.in/")
-                    Log.i("error","3")
-
-                    startActivity(merchurl)
-                    Log.i("error","4")
 
                 }
+                R.id.sidenav_con -> {
+                    Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
+                    val contactintent = Intent(this@Homescreen,AboutUs::class.java)
+                    startActivity(contactintent)
+
+                }
+
+                R.id.sidenav_dev -> {
+                    Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
+                    val contactintent = Intent(this@Homescreen,DeveloperActivity::class.java)
+                    startActivity(contactintent)
+                }
+
                 
                 R.id.sidenav_faq -> {
                     val intent = Intent(android.content.Intent.ACTION_VIEW)
@@ -156,23 +168,88 @@ class Homescreen : AppCompatActivity() {
         drawericon.setImageResource(R.drawable.avtr1)
 
         val useremail : String = getDefaults("Email").toString()
+//        var evlist = ""
 
-        val writer = QRCodeWriter()
-        try {
-            val bitMatrix = writer.encode(useremail, BarcodeFormat.QR_CODE, 200,200)
-            val width = bitMatrix.width
-            val height = bitMatrix.height
-            val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-            for(x in 0 until width){
-                for(y in 0 until height){
-                    bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
+
+
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://backendcepheus.cf/apiM1/")
+            .build()
+
+        val tkn = Token.token
+
+        Log.i("QR",tkn)
+
+
+        val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
+        val tokenpara = GetRegInfo(tkn)
+        val call = geteventapi.getEvents(tokenpara)
+
+        call.enqueue(object : Callback<RegisteredEventList?> {
+            override fun onResponse(
+                call: Call<RegisteredEventList?>,
+                response: Response<RegisteredEventList?>
+            ) {
+                if(response.isSuccessful){
+                    Log.i("QR","success")
+                    val eventlist = response.body()!!.regevents
+
+                    val eventnames =arrayOf<String> ("Lorem Ipsum","HackOverFlow","Circuital Dilemma","Data Science Hackathon","HackTheGames","CTF","FizzBuzz","Online Treasure Hunt","Bridge Building Competition","Copy the Nature","Rule The Market","Launch Galaset","KBC Quiz Competition","Maze Amaze","Scratch","Treasure Hunt","Buy My Code","Pare It Down","Game Theory","Arduino Workshop","EV Bike Competition","Line Maze Fun Game","Dive the Boat")
+
+//                    evlist = eventlist.toString()
+                    var qrstring = ""
+                    qrstring += UserName.name + "\n" + useremail + "\n\n"
+
+                    var finaleventlist :MutableList<String> = mutableListOf<String>()
+                    var j = 1
+                    for (i in eventlist){
+                        finaleventlist.add((j++).toString()+ ". " + eventnames[i-1])
+                    }
+                    Log.i("QR",eventlist.toString())
+
+                    if (finaleventlist.isEmpty()){
+                        finaleventlist = mutableListOf<String>()
+                    }
+                    else{
+                        for (event in finaleventlist){
+                            qrstring += event.toString() + "\n"
+                        }
+                    }
+
+                    val writer = QRCodeWriter()
+                    try {
+
+                        val bitMatrix = writer.encode(qrstring, BarcodeFormat.QR_CODE, 250,250)
+                        val width = bitMatrix.width
+                        val height = bitMatrix.height
+                        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+                        for(x in 0 until width){
+                            for(y in 0 until height){
+                                bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
+                            }
+                        }
+                        QRimageview.setImageBitmap(bmp)
+
+                    }catch (e: WriterException){
+                        e.printStackTrace()
+                    }
                 }
-            }
-            QRimageview.setImageBitmap(bmp)
+                else{
+                    Log.i("QR",response.message().toString())
+                    Log.i("QR",response.code().toString())
+                }
 
-        }catch (e: WriterException){
-            e.printStackTrace()
-        }
+            }
+
+            override fun onFailure(call: Call<RegisteredEventList?>, t: Throwable) {
+                Log.i("QR",t.message.toString())
+                Log.i("QR",t.cause.toString())
+
+            }
+        })
+
+
 
     }
 

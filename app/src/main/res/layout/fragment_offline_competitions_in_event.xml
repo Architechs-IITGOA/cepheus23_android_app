@@ -6,10 +6,11 @@
     tools:context=".fragments.OfflineCompetitionsInEventFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/offlineCompetitionsInEventRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/ll_panel"
-            android:layout_marginTop="10dp" />
+        android:id="@+id/offlineCompetitionsInEventRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_panel"
+        android:padding="10dp"
+        android:layout_marginTop="10dp" />
 
 </FrameLayout>
