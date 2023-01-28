@@ -627,6 +627,9 @@ class DescriptionActivity : AppCompatActivity() {
         else if (obj.id==20){
             binding.ivEventImage.setImageResource(R.drawable.arduino2)
         }
+        else if (obj.id==21){
+            binding.ivEventImage.setImageResource(R.drawable.ebike2)
+        }
 
     }
 

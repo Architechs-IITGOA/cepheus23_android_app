@@ -18,8 +18,23 @@
         android:theme="@style/Theme.Cepheus23"
         tools:targetApi="32">
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.SplashActivity"
+            android:name=".DeveloperActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +61,7 @@
             android:resource="@color/purple_700" />
 
         <service
-            android:name="com.iitgoacepheustwth.cepheus23.MyFirebaseMessagingService"
+            android:name=".MyFirebaseMessagingService"
             android:exported="false"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -55,33 +70,32 @@
         </service>
 
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.SponsorActivity"
+            android:name=".SponsorActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.DetailsActivity"
+            android:name=".DetailsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.SigninActivity"
+            android:name=".SigninActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.DescriptionActivity"
+            android:name=".DescriptionActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.iitgoacepheustwth.cepheus23.Homescreen"
+            android:name=".Homescreen"
             android:exported="false">
 
 

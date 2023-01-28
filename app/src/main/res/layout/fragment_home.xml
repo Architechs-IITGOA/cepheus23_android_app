@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/cepheuslogo"
                 android:gravity="center_vertical"
-                android:paddingRight="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="60dp"
@@ -186,7 +185,7 @@
                         <ImageView
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:src="@drawable/planets02"
+                            android:src="@drawable/planets03"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="MissingConstraints" />
@@ -236,7 +235,7 @@
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewpager2"
                         android:layout_width="0dp"
-                        android:layout_height="300dp"
+                        android:layout_height="275dp"
                         android:paddingStart="80dp"
                         android:paddingEnd="80dp"
                         app:layout_constraintBottom_toBottomOf="parent"
