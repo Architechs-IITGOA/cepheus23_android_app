@@ -9,12 +9,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.iitgoacepheustwth.cepheus23.APIs.GetEventsApi
 import com.iitgoacepheustwth.cepheus23.EventsData.setData
+import com.iitgoacepheustwth.cepheus23.R
 import com.iitgoacepheustwth.cepheus23.SigninActivity
 import com.iitgoacepheustwth.cepheus23.adapter.EventAdapter
 import com.iitgoacepheustwth.cepheus23.databinding.FragmentDashboardBinding
@@ -75,6 +77,55 @@ class DashboardFragment : Fragment() {
                     eventRecycler.adapter = eventsRecyclerAdapter
 
                     dashboardBinding.dashUsername.text = UserName.name
+
+                    val drawericon : ImageView = dashboardBinding.ivDashboard
+
+                    val drawerImage = getDefaults("ImageURL").toString()
+//        if(drawerImage == null){
+//
+//        }
+////        https://res.cloudinary.com/dhtb16f8u/image/upload/c_scale,q_auto:eco,w_240/v16736772
+//        else{
+                    when (drawerImage) {
+                        "56/chepheus/1_rbtjby.webp" -> {
+                            drawericon.setImageResource(R.drawable.man1)
+                        }
+                        "56/chepheus/2_vg5lak.webp" -> {
+                            drawericon.setImageResource(R.drawable.man3)
+                        }
+                        "55/chepheus/3_i0qt4w.webp" -> {
+                            drawericon.setImageResource(R.drawable.man5)
+                        }
+                        "69/chepheus/4_dhsyqx.webp" -> {
+                            drawericon.setImageResource(R.drawable.man2)
+                        }
+                        "60/chepheus/5_j5gsa6.webp" -> {
+                            drawericon.setImageResource(R.drawable.man6)
+                        }
+                        "54/chepheus/6_qbnzbw.webp" -> {
+                            drawericon.setImageResource(R.drawable.man4)
+                        }
+                        "63/chepheus/7_vtxwjn.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman1)
+                        }
+                        "57/chepheus/8_ng6pcu.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman2)
+                        }
+                        "57/chepheus/9_ci9c7p.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman3)
+                        }
+                        "59/chepheus/10_q1oypc.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman4)
+                        }
+                        "64/chepheus/11_lvx5xc.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman5)
+                        }
+                        "67/chepheus/12_zz8wuo.webp" -> {
+                            drawericon.setImageResource(R.drawable.woman6)
+                        }
+////            else -> {
+////                drawericon.setImageResource(R.drawable.woman6)
+                    }
 
 
                     var oncnt = 0
@@ -150,6 +201,11 @@ class DashboardFragment : Fragment() {
         editor.putString("Login_status", currstatus_login)
         editor.putString("JWToken", currstatus_token)
         editor.apply()
+    }
+
+    fun getDefaults(key: String?): String? {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+        return preferences.getString(key, null)
     }
 
 //    fun getDefaults(key: String?): String? {
