@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "1082178218217",
-    "firebase_url": "https://cepheus-iit-goa-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "cepheus-iit-goa",
-    "storage_bucket": "cepheus-iit-goa.appspot.com"
+    "project_number": "521494284300",
+    "firebase_url": "https://iit-goa-techfest-default-rtdb.firebaseio.com",
+    "project_id": "iit-goa-techfest",
+    "storage_bucket": "iit-goa-techfest.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1082178218217:android:0998c71e16be634576a878",
+        "mobilesdk_app_id": "1:521494284300:android:ebe917057b046392f3c629",
         "android_client_info": {
-          "package_name": "com.example.cepheus23"
+          "package_name": "com.iitgoacepheustwth.cepheus23"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1082178218217-fu74p7r6pvkahvugbsmitprid3kd898s.apps.googleusercontent.com",
+          "client_id": "521494284300-fqgjhmmfm344768dppm7jq88tm1e5vcp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHAkzup3UUzvF7he4GXzpG9Ga45kwEVuE"
+          "current_key": "AIzaSyCy_DwbXwEx3KJKLgKctBTMg6QlitFHHXA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1082178218217-fu74p7r6pvkahvugbsmitprid3kd898s.apps.googleusercontent.com",
+              "client_id": "521494284300-fqgjhmmfm344768dppm7jq88tm1e5vcp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -8,7 +8,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/DescriptionActivity"
-        android:name="com.example.cepheus23.DescriptionActivity"
+        android:name="com.iitgoacepheustwth.cepheus23.DescriptionActivity"
         android:label="description_activity"
         tools:layout="@layout/fragment_event_details"/>
 
@@ -30,7 +30,7 @@
 <!--    </activity>-->
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.example.cepheus23.fragments.EventsFragment"
+        android:name="com.iitgoacepheustwth.cepheus23.fragments.EventsFragment"
         android:label="fragment_events"
         tools:layout="@layout/fragment_events" >
         <action
@@ -46,18 +46,18 @@
     </fragment>
     <fragment
         android:id="@+id/EventDetailsFragment"
-        android:name="com.example.cepheus23.fragments.EventDetailsFragment"
+        android:name="com.iitgoacepheustwth.cepheus23.fragments.EventDetailsFragment"
         android:label="event_details"
         tools:layout="@layout/fragment_event_details"/>
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.cepheus23.fragments.DashboardFragment"
+        android:name="com.iitgoacepheustwth.cepheus23.fragments.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.cepheus23.fragments.HomeFragment"
+        android:name="com.iitgoacepheustwth.cepheus23.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/schedules2"
-        android:name="com.example.cepheus23.fragments.Schedules"
+        android:name="com.iitgoacepheustwth.cepheus23.fragments.Schedules"
         android:label="fragment_schedules"
         tools:layout="@layout/fragment_schedules" />
 </navigation>
