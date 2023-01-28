@@ -30,6 +30,10 @@ class SigninActivity : AppCompatActivity() {
     private var _binding: ActivitySigninBinding? = null
     private val binding get() = _binding!!
 
+    // ...
+    private val REQ_ONE_TAP = 2  // Can be any integer unique to the Activity
+    private var showOneTapUI = true
+    // ...
     private var oneTapClient: SignInClient? = null
     private var signUpRequest: BeginSignInRequest? = null
     private var signInRequest: BeginSignInRequest? = null
@@ -199,6 +203,40 @@ class SigninActivity : AppCompatActivity() {
             }
     }
 
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            REQ_ONE_TAP -> {
+                try {
+                    val credential = oneTapClient?.getSignInCredentialFromIntent(data)
+                    val idToken = credential?.googleIdToken
+                    val username = credential?.id
+                    val password = credential?.password
+                    when {
+                        idToken != null -> {
+                            // Got an ID token from Google. Use it to authenticate
+                            // with your backend.
+                            Log.d("onActivityResult", "Got ID token.")
+                        }
+                        password != null -> {
+                            // Got a saved username and password. Use them to authenticate
+                            // with your backend.
+                            Log.d("onActivityResult", "Got password.")
+                        }
+                        else -> {
+                            // Shouldn't happen.
+                            Log.d("onActivityResult", "No ID token or password!")
+                        }
+                    }
+                } catch (e: ApiException) {
+                    // ...
+                }
+            }
+        }
+    }
+    // ...
 
     private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, currstatus_email : String, currstatus_name : String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
