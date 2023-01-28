@@ -19,7 +19,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <Linearlayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -59,7 +59,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </Linearlayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -69,7 +69,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <Linearlayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -108,7 +108,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </Linearlayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -118,7 +118,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <Linearlayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -158,7 +158,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </Linearlayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

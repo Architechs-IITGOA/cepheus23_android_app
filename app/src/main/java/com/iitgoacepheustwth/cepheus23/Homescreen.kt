@@ -125,14 +125,11 @@ class Homescreen : AppCompatActivity() {
 
                 }
                 R.id.sidenav_con -> {
-                    Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
                     val contactintent = Intent(this@Homescreen,AboutUs::class.java)
                     startActivity(contactintent)
-
                 }
 
                 R.id.sidenav_dev -> {
-                    Toast.makeText(applicationContext,"Contacts",Toast.LENGTH_SHORT).show()
                     val contactintent = Intent(this@Homescreen,DeveloperActivity::class.java)
                     startActivity(contactintent)
                 }
@@ -241,6 +238,11 @@ class Homescreen : AppCompatActivity() {
                     }
                 }
                 else{
+                    val resCode = response.code().toString() // IMP for check 401
+                    if(!checkFor401(resCode)){
+                        // Whatever action you've to perform
+
+                    }
                     Log.i("QR",response.message().toString())
                     Log.i("QR",response.code().toString())
                 }
@@ -287,6 +289,26 @@ class Homescreen : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun checkFor401(resCode: String): Boolean {
+        // TO BE TESTED FOR 401----------------------------------------------------------------------
+        if(resCode == "401") {
+            val gso = GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_SIGN_IN
+            ).requestEmail()
+                .build()
+            val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+            mGoogleSignInClient.signOut()
+
+            saveLoginStatuslocally("","")
+            val activityIntent = Intent(this@Homescreen, SigninActivity::class.java)
+            startActivity(activityIntent)
+            Toast.makeText(applicationContext, "Session Expired.", Toast.LENGTH_LONG).show()
+
+            return true
+        }
+        return false
     }
 
     private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {

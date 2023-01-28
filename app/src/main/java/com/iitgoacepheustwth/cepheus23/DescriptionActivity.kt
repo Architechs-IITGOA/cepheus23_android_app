@@ -538,7 +538,7 @@ class DescriptionActivity : AppCompatActivity() {
 
 
 
-    fun checkFor401(resCode: String): Boolean {
+    private fun checkFor401(resCode: String): Boolean {
         // TO BE TESTED FOR 401----------------------------------------------------------------------
         if(resCode == "401") {
             val gso = GoogleSignInOptions.Builder(
