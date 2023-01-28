@@ -327,15 +327,14 @@
                             android:layout_height="80dp"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/socialbox"
                             android:gravity="center_horizontal"
                             android:orientation="horizontal">
 
 
                             <ImageView
                                 android:id="@+id/instahome"
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
                                 android:src="@drawable/instagram_icon"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -370,9 +369,9 @@
 
                             <ImageView
                                 android:id="@+id/webhome"
-                                android:layout_width="55dp"
-                                android:layout_height="55dp"
-                                android:src="@drawable/website_icon"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:src="@drawable/cepheusicon"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.93"

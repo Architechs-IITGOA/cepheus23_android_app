@@ -66,7 +66,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
         }
         binding.card3.setOnClickListener {
-            Toast.makeText(context, "Stay tuned! Rulebook comming soon.", Toast.LENGTH_LONG).show()
+//            Toast.makeText(context, "Stay tuned! Rulebook comming soon.", Toast.LENGTH_LONG).show()
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://drive.google.com/file/d/1nwTWWTokmhP16mURLwLM6jnAXLiVFzZd/view")
+            startActivity(intent)
         }
 
         binding.instahome.setOnClickListener {

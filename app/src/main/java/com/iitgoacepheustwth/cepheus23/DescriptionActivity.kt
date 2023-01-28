@@ -408,7 +408,7 @@ class DescriptionActivity : AppCompatActivity() {
                                     if(errorMessage  == "{\"message\":\"user is already registered\"}")
                                         Toast.makeText(this@DescriptionActivity,"You have already registered in other team.",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"team code not found\"}")
-                                        Toast.makeText(this@DescriptionActivity,"Team code incorrect / doesn't exist.",Toast.LENGTH_LONG).show()
+                                        Toast.makeText(this@DescriptionActivity,"Incorrect team code.",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"team code is not applicable for this event\"}")
                                         Toast.makeText(this@DescriptionActivity,"This team code is not valid for this event",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"this event is not meant for your grade\"}")
