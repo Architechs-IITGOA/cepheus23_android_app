@@ -19,7 +19,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -27,14 +27,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#00000000"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="15dp"
-                android:background="@color/black">
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/schedules_event_name"
@@ -60,7 +59,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -70,7 +69,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -78,13 +77,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#00000000"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="15dp"
-                android:background="@color/black">
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/schedules_event_name1"
@@ -110,7 +108,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -120,7 +118,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -128,14 +126,13 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#00000000"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/schedules_event"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="15dp"
-                android:background="@color/black">
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/schedules_event_name2"
@@ -161,7 +158,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -172,7 +169,7 @@
                 android:background="#FFFFFF" />
         </LinearLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -180,13 +177,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#00000000"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="15dp"
-                android:background="@color/black">
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/schedules_event_name3"
@@ -212,7 +208,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -222,7 +218,7 @@
                 android:layout_height="1dp"
                 android:background="#FFFFFF" />
         </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -230,13 +226,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="#00000000"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="15dp"
-                android:background="@color/black">
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:id="@+id/schedules_event_name4"
@@ -262,7 +257,7 @@
                     android:layout_marginLeft="20dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

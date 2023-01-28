@@ -58,18 +58,18 @@
         <View
             android:layout_width="150dp"
             android:layout_height="2dp"
-            android:background="#808080"/>
+            android:background="#DCDCDC"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="or"
             android:textSize="20sp"
-            android:textColor="@color/black"
+            android:textColor="#8F8F8F"
             android:padding="10dp"/>
         <View
             android:layout_width="150dp"
             android:layout_height="2dp"
-            android:background="#808080"/>
+            android:background="#DCDCDC"/>
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -101,6 +101,13 @@
         android:backgroundTint="@color/black"
         android:text="Join team"
         android:textSize="10dp" />
+    <TextView
+        android:id="@+id/contact_devs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:paddingVertical="10dp"
+        android:text="@string/having_any_issue_contact_developers"/>
 
 
 </LinearLayout>
