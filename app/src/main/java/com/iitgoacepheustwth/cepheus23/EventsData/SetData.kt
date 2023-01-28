@@ -13,8 +13,7 @@ object setData {
                 "Design a Multiverse themed website in 24 hours",
                 "Utsav Bansal",
                 "6267184086",
-                "Every great design begins with an even better story. Through this event, we hope to find bright and innovative designers across the country to face off and design the user interface for a website based on the theme “Multiverse”. The submission can be made individually or as a team of two within 24 hours from the start of the competition."
-            )
+                "If you think you have an eye for design, worry not we’ve got you! The Lorem Ipsum is a UI/UX Design Challenge for all you creative designers out there! As a part of this event, the participant must design a website using the provided content (text and images) and turn in their submissions before the clock runs out. Also do keep in mind, the website should revolve around the theme- ‘Multiverse’. We look forward to seeing your innovation in action.")
         )
 
         Eventlist.add(
@@ -27,7 +26,7 @@ object setData {
                 "36 hour Hackathon to work out a real life problem",
                 "Aditya Koshti",
                 "8767313024",
-                "From functionality and appearance to navigation and coding integrity, a lot goes into creating an eye-catching, user-friendly website. We bring to you an amusing challenge where every participating team will have to develop a website based on the theme, “Multiverse survival”. The team will have to work on the topic and create a fully functional website. There may be a presentation round as well to track your progress."
+                "From functionality and appearance to navigation and coding integrity, a lot goes into creating an eye-catching, user-friendly website. We bring to you an amusing challenge where every participating team will have to develop a website based on the theme, “Multiverse survival”. The team will have to work on the topic and create a fully functional website. There may be a presentation round as well to track your progress.!"
             )
         )
         Eventlist.add(
@@ -52,7 +51,8 @@ object setData {
                 "Build an ML model to save the planet in Cepheus verse",
                 "Ananya Alekar",
                 "8424942069",
-                "We are living in a world of big data that is empowering businesses and organizations to make data-driven decisions.  Delve deep into your Data Science skills and build an ML model to help a planet that is facing an unprecedented problem. The problem statements involve tackling some real-life problems and using the insights gained to guide decision-making and strategic planning.")
+                "We are living in a world of big data that is empowering businesses and organizations to make data-driven decisions. Delve deep into your Data Science skills and build an ML model to help a planet that is facing an unprecedented problem. The problem statements involve tackling some real-life problems and using the insights gained to guide decision-making and strategic planning."
+            )
         )
         Eventlist.add(
             EventData(
@@ -76,7 +76,7 @@ object setData {
                 "Unveil the secret of Cepheus verse using your puzzle solving kills",
                 "Akhil T. Sivakumar",
                 "9989152948",
-                "Capture The Flag is a 3-day event in which teams will be given challenges involving cyber security. The essence of a CTF is puzzle-solving. The challenges are created by and for people who like solving puzzles. The goal of each challenge will be to find the hidden flag. The difficulty of the challenge determines the points awarded to the team. The team that gets the most points in the shortest amount of time wins.")
+                "Get ready for a thrilling 3-day event where teams will put their cybersecurity skills to the test in the ultimate challenge: Capture The Flag! It's all about solving puzzles and finding the hidden flags. Each challenge will have its own level of difficulty and corresponding points awarded to the team. The team with the most points in the shortest amount of time will emerge victorious. So gather your team and sharpen your puzzle-solving skills, it's time to Capture The Flag!")
         )
         Eventlist.add(
             EventData(
@@ -88,7 +88,7 @@ object setData {
                 "Two hours Long Algorithm based Coding contest",
                 "Rohith G",
                 "8248539650",
-                "FizzBuzz is a competitive coding contest. In this event, participants will be given algorithm-based problems to solve within a 2-hour time limit. This is an individual event. Don't fret, even if you're a beginner, the event ensures that everybody regardless of what their level is, will receive an opportunity to solve a problem. Do you have what it takes to survive Fizzbuzz and come out on top?")
+                "Introducing FizzBuzz, a competitive coding contest where participants will put their algorithm skills to the test. You'll have 2 hours to solve as many problems as you can. It's an individual event so you'll be going head-to-head against the best of the best. But don't worry if you're new to the game, we designed the event to give everyone, regardless of skill level, a chance to shine. So, do you have what it takes to conquer FizzBuzz and come out on top? Let's find out!")
         )
         Eventlist.add(
             EventData(
@@ -100,7 +100,7 @@ object setData {
                 "12 hours of fun Technical challenge to find the treasure of Cepheus",
                 "Sai Adarsh",
                 "8688530237",
-                "This will be a 12-hour Treasure Hunt-style event with five rounds of various tasks depending on the participants' coding and analytical skills. The contestants will receive points for their progress on problem statements in each round, and the competition will be held on a single platform. After 3-4 events, there will be some elimination based on the points earned, and the winner of the competition will be decided based on the highest number of points earned.")
+                "Are you ready for the ultimate coding thrill ride? Join the 18-hour Treasure Hunt of Code where you'll tackle 5 rounds of pulse-pounding coding challenges. Put your skills to the test, earn points, and climb to the top of the leaderboard on a single platform. Outsmart the competition and survive eliminations to claim the ultimate prize as the champion coder.")
         )
         Eventlist.add(
             EventData(
@@ -139,7 +139,7 @@ object setData {
                 "Test your Trading skills through mock trading in Cepheus verse",
                 "Shreya Marda",
                 "7676286680",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \"Red Planet\".\nThe latter refers to the effect of the iron oxide prevalent on Mars's surface, which gives it a reddish appearance distinctive among the astronomical bodies visible to the naked eye.\nMars is a terrestrial planet with a thin atmosphere, with surface features reminiscent of the impact craters of the Moon and the valleys, deserts and polar ice caps of Earth."
+                "Whether you are new to the trading and investing world or have some prior experience in the stock markets, Cepheus brings to you its Mock Trading competition organized by Alpha - The Finance Club of IIT Goa. The stakes are high and so are the rewards. The trading assets will happen with virtual money but the winners on the Leader-board (where the ranking will be based on the profits made) will win cash prizes and more."
             )
         )
 
@@ -153,7 +153,8 @@ object setData {
                 "FinTech Pitching to allure investors",
                 "Pavithra T Soman",
                 "9446091496",
-                "The hype that Shark Tank India created, a few months back, was real! It had all of us glued to our seats, and sparked our minds with curiosity and awe. We’re planning to give you a similar experience this year. Except, that you’ll not be watching this time. You’ll be the one pitching your ideas to the panel of investors in front of you. Pitch your startup ideas, specifically in the domain of FinTech in under 7 minutes. Stand a chance to be noticed by the investors and get their help in financing your ideas.")
+                "The hype that Shark Tank India created, a few months back, was real! It had all of us glued to our seats, and sparked our minds with curiosity and awe. We’re planning to give you a similar experience this year. Except, that you’ll not be watching this time. You’ll be the one pitching your ideas to the panel of investors in front of you. Pitch your startup ideas, specifically in the domain of FinTech in under 7 minutes. Stand a chance to be noticed by the investors and get their help in financing your ideas."
+            )
         )
 
         Eventlist.add(
@@ -166,7 +167,8 @@ object setData {
                 "Put your Technical knowledge to the test",
                 "Suyash Jaduan",
                 "8770321291",
-                "Watching KBC on TV is by far one of our favorite memories. Our excitement is at its peak when a question is presented to the participant, and the stakes are high. Join us for a fun KBC quiz event this year. In teams of 3, you will have 30 ")
+                "Step right up folks and join the KBC quiz-tastic event of the year! Where finance is the name of the game and speed is the key to victory. Gather a partner and get ready to race against the clock, answering questions faster than a cheetah on steroids. But beware, one wrong move and you'll be deductin' points faster than a bank charges fees. So brush up on your finance knowledge and let the good times roll!"
+            )
         )
 
         Eventlist.add(
@@ -179,7 +181,7 @@ object setData {
                 "Race your Bot along the lines without limits",
                 "Hetarth Bhatt",
                 "8780632021",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \"Red Planet\".\nThe latter refers to the effect of the iron oxide prevalent on Mars's surface, which gives it a reddish appearance distinctive among the astronomical bodies visible to the naked eye.\nMars is a terrestrial planet with a thin atmosphere, with surface features reminiscent of the impact craters of the Moon and the valleys, deserts and polar ice caps of Earth."
+                "Have you ever dreamed of building a bot that can solve a maze on its own? Well, now you get a chance to do so! We challenge you to create a line-follower robot that can keep track of directions while solving a maze, analyze the path in the Dry run, and use this information in the Actual run to traverse the maze in the shortest possible time."
             )
         )
 
@@ -219,7 +221,7 @@ object setData {
                 "A program trading event to create functions",
                 "Arnav Kamat",
                 "8237063638",
-                "You have heard about trading in stocks and trading in cryptocurrency, but have you ever heard about trading in programming? We are hosting a fascinating event that will test both your trading and coding skills. Problem statements will be released and the participants will have to create functions that might be helpful to complete the challenge. The name and description of all functions will be open to all the participants. If participants are convinced by the price and description then they can trade."
+                "Calling all code wizards and trading gurus! Have you ever dreamed of combining your love for programming with your passion for trading? Well, dream no more! We're hosting an event that'll put your skills to the ultimate test. Think of it like a barter system for code, where problem statements are released and participants must create functions to solve them. The best part? The name and description of all the functions will be open to everyone, so you can trade the hottest code on the market. Ready to flex your coding and trading muscles? Let's do this!"
             )
         )
 
@@ -233,7 +235,7 @@ object setData {
                 "Five staged Beginner friendly programming competition",
                 "Abhay Tiwari",
                 "8299307702",
-                "Curious about competitive programming but don’t know where to start? We bring to you a fun coding event to help you hone your programming skills even without any prior experience. There will be five coding rounds which will  progress from easy to medium difficulty levels namely,  Introduction to a new language, Debugging Round, Brain Racking, Blind Code, and CP with risk and reward.")
+                "Want to flex your coding muscles and have a blast doing it? Look no further! We're bringing you an event that'll take you on a wild coding journey, from easy-peasy intro rounds to brain-melting challenges. We've got five rounds in store for you: Introduction to a new language, Debugging Round, Brain Racker, Blind Code, and CP with risk and reward. Each round will have its own set of challenging problems that'll test your skills and push you to level up. The clock is ticking, so grab your keyboard and let's code like crazy!")
         )
         Eventlist.add(
             EventData(
@@ -245,7 +247,7 @@ object setData {
                 "Play the Opponent not the game",
                 "Nandini B.",
                 "9094357472",
-                "It's riveting to see how games and human nature can get complicated and interesting at the same time. Game Theory is the tool in use to comprehend the subtle relation between the two. It also lays the foundation for some profound algorithms used in AI today. If Game Theory is back on the grid, so are we. There would be a faceoff between participants in each round, which will consist of multiple games. The selected players would proceed to the next round and climb up the Leaderboard. So keep an eye out for everyone's strengths and weaknesses, and get ready to play on both fronts.\n")
+                "It's riveting to see how games and human nature can get complicated and interesting at the same time. Game Theory is the tool in use to comprehend the subtle relation between the two. It also lays the foundation for some profound algorithms used in AI today. If Game Theory is back on the grid, so are we. There would be a faceoff between participants in each round, which will consist of multiple games. The selected players would proceed to the next round and climb up the Leaderboard. So keep an eye out for everyone's strengths and weaknesses, and get ready to play on both fronts.")
         )
 
         Eventlist.add(
@@ -258,7 +260,7 @@ object setData {
                 "Extensive two staged Quiz on Arduino programming",
                 "Varun Singh",
                 "9958357706",
-                "In order to expand the knowledge of participants we will be hosting a workshop followed by a competition on Arduino\n The entire workshop is split into 3 sessions, during which the facilitators will explain the fundamentals of Arduino and other basic sensors and motors while also demonstrating some live projects using both hardware and software. Whatever your skill level is, you’re sure to have fun as you will learn to harness the power of Arduino in your own DIY projects\n")
+                "In order to expand the knowledge of participants we will be hosting a workshop followed by a competition on Arduino\n" + "The entire workshop is split into 3 sessions, during which the facilitators will explain the fundamentals of Arduino and other basic sensors and motors while also demonstrating some live projects using both hardware and software. Whatever your skill level is, you’re sure to have fun as you will learn to harness the power of Arduino in your own DIY projects.")
         )
 
         Eventlist.add(
@@ -271,7 +273,7 @@ object setData {
                 "Build a EV Bike for a greener tomorrow",
                 "Runal Palkar",
                 "9137884831",
-                "The E-bike competition is a 2-wheeler electric vehicle event for all enthusiasts of electric vehicle technology and sustainable transportation. Participants will have the opportunity to showcase their skills in design, engineering, and innovation as they compete against their peers to build the cheapest and most efficient E-bike.  The competition will take place on the IIT Goa grounds and will include a series of tests that the participants have to pass in order to gain points and top the leaderboard. Whether you're a student, a hobbyist, or a professional, this is a unique opportunity to push the boundaries of E-bike design and performance. Join us and be a part of the future of sustainable transportation.")
+                "The E-bike competition is a 2-wheeler electric vehicle event for all enthusiasts of electric vehicle technology and sustainable transportation. Participants will have the opportunity to showcase their skills in design, engineering, and innovation as they compete against their peers to build the cheapest and most efficient E-bike. The competition will include a series of tests that the participants have to pass to gain points and top the leaderboard. Whether you are a student, or a professional, this is a unique opportunity to push the boundaries of E-bike design and performance. Join us and be a part of the future of sustainable transportation.")
         )
 
 //        Eventlist.add(

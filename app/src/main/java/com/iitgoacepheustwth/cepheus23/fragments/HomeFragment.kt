@@ -15,14 +15,17 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.iitgoacepheustwth.cepheus23.Homescreen
 import com.iitgoacepheustwth.cepheus23.R
 import com.iitgoacepheustwth.cepheus23.databinding.FragmentHomeBinding
 import com.iitgoacepheustwth.cepheus23.ImageAdapter
+import com.iitgoacepheustwth.cepheus23.databinding.HomelayoutBinding
 import java.lang.Math.abs
 
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding2: HomelayoutBinding
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
 
@@ -36,6 +39,8 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater,container,false)
+
+        //binding2=  HomelayoutBinding.inflate(layoutInflater)
 
         init()
 
@@ -54,6 +59,7 @@ class HomeFragment : Fragment() {
 //        }
 
         binding.card1.setOnClickListener {
+
             findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
         }
         binding.card2.setOnClickListener {
@@ -110,6 +116,7 @@ class HomeFragment : Fragment() {
         transformer.addTransformer(MarginPageTransformer(40))
         transformer.addTransformer { page, position ->
             val r = 1 - abs(position)
+//            page.scaleX = 0.95f
             page.scaleY = 0.75f + r*0.14f
         }
 
@@ -123,8 +130,11 @@ class HomeFragment : Fragment() {
 
         imageList.add(R.drawable.scrollimage1)
         imageList.add(R.drawable.scrollimage2)
+        imageList.add(R.drawable.scrollimg6)
         imageList.add(R.drawable.scrollimage3)
+        imageList.add(R.drawable.scrollimg5)
         imageList.add(R.drawable.scrollimage4)
+
 
         adapter = ImageAdapter(imageList,viewPager2)
 
