@@ -46,10 +46,10 @@ class Homescreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Removes Dark mode
-        actionBar?.setDisplayShowCustomEnabled(true)
+//        actionBar!!.setDisplayShowCustomEnabled(true)
 //        val inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
-        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
-        actionBar?.setCustomView(view)
+//        val view = layoutInflater.inflate(R.layout.menu_image_center,null)
+//        actionBar!!.setCustomView(view)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
