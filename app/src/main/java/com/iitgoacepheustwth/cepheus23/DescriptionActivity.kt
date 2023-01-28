@@ -59,6 +59,13 @@ class DescriptionActivity : AppCompatActivity() {
         Log.i("desc",obj.overview.toString())
         setData(obj, eventImg!!)
 
+
+        binding.eventRules.setOnClickListener {
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse(obj.rules_link)
+            startActivity(intent)
+        }
+
 //        binding.buttonRegistration.setOnClickListener {
 //            val intent = Intent(this, Homescreen::class.java)
 //            startActivity(intent)
