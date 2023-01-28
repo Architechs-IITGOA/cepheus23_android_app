@@ -102,7 +102,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:text="@string/About_us"
                             android:textColor="#3E3939"
-                            android:textSize="17sp" />
+                            android:textSize="16sp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
