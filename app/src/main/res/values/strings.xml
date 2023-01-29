@@ -16,7 +16,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="About_us">In Cepheus, we strive to promote and foster technical spirit within the young and imaginative minds of students while also representing the rich and unique culture of Goa, which will be evident in the fest’s various subtleties. Cepheus is a celebration of our technical prowess - not just as an institution, but as a country. We aim at instilling a sense of collective learning by creating a melting pot of ideas open to students of all institutions and disciplines. With intriguing events and competitions, along with resourceful workshops by experts and professionals, we hope to make Cepheus ‘23 a memorable experience for all.</string>
-    <string name="privacyinfo">*We understand that all visitors to our application are entitled to know that their personal data will not be used for any purpose unintended by them and will not accidentally fall into the hands of a third party.</string>
+    <string name="privacyinfo">*We understand that all visitors to our application are entitled to know that their personal data will not be used for any malicious purposes and are intended to be used in only in favor of Cepheus IIT Goa*.</string>
     <string name="fri_n_n10">Fri 10</string>
     <string name="thu_n_n09">Thu\n10</string>
     <string name="_12_00pm_2_00pm">12.00PM - 2.00PM</string>
