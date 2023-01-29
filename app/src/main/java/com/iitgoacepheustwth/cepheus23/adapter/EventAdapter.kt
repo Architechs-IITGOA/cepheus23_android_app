@@ -96,7 +96,7 @@ class EventAdapter(var event: List<EventData>) : RecyclerView.Adapter<EventAdapt
                 eventImage = R.drawable.buymycode1
             }
             "Pare It Down" -> {
-                eventImage = R.drawable.pairitdown1
+                eventImage = R.drawable.pareitdown1
             }
             "Game Theory" -> {
                 eventImage = R.drawable.gametheory1
