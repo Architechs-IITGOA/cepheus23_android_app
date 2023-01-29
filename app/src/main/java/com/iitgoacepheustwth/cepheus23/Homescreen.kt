@@ -248,7 +248,7 @@ class Homescreen : AppCompatActivity() {
 
         val writer = QRCodeWriter()
         try {
-            val bitMatrix = writer.encode(uniqueUserId, BarcodeFormat.QR_CODE, 300,300)
+            val bitMatrix = writer.encode(uniqueUserId, BarcodeFormat.QR_CODE, 400,400)
             val width = bitMatrix.width
             val height = bitMatrix.height
             val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
