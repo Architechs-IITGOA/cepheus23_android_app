@@ -5,5 +5,6 @@ data class UserInfo(
     val college:String,
     val mobile:String,
     val grade:Int,
-    val token:String
+    val token:String,
+    val image_url: String
 )

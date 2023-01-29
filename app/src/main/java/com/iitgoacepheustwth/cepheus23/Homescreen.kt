@@ -24,7 +24,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 
 
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iitgoacepheustwth.cepheus23.databinding.HomelayoutBinding
@@ -104,8 +106,8 @@ class Homescreen : AppCompatActivity() {
             when(it.itemId){
                 R.id.sidenav_sponsors ->{
 
-//                    val sponsorintent = Intent(this@Homescreen,SponsorActivity::class.java)
-//                    startActivity(sponsorintent)
+                    val sponsorintent = Intent(this@Homescreen,SponsorActivity::class.java)
+                    startActivity(sponsorintent)
 //                    val sponsorintent = Intent(this,SponsorFragment::class.java)
 //                    startActivity(sponsorintent)
 //
@@ -167,94 +169,184 @@ class Homescreen : AppCompatActivity() {
         val navname : TextView = header.findViewById(R.id.nav_name)
         navname.text = getDefaults("Name").toString()
         UserName.name = getDefaults("Name").toString()
-        drawericon.setImageResource(R.drawable.avtr1)
+//        drawericon.setImageResource(R.drawable.man1)
 
-        val useremail : String = getDefaults("Email").toString()
+        val drawerImage = getDefaults("ImageURL").toString()
+//        if(drawerImage == null){
+//
+//        }
+////        https://res.cloudinary.com/dhtb16f8u/image/upload/c_scale,q_auto:eco,w_240/v16736772
+//        else{
+        when (drawerImage) {
+            "56/chepheus/1_rbtjby.webp" -> {
+                drawericon.setImageResource(R.drawable.man1)
+            }
+            "56/chepheus/2_vg5lak.webp" -> {
+                drawericon.setImageResource(R.drawable.man3)
+            }
+            "55/chepheus/3_i0qt4w.webp" -> {
+                drawericon.setImageResource(R.drawable.man5)
+            }
+            "69/chepheus/4_dhsyqx.webp" -> {
+                drawericon.setImageResource(R.drawable.man2)
+            }
+            "60/chepheus/5_j5gsa6.webp" -> {
+                drawericon.setImageResource(R.drawable.man6)
+            }
+            "54/chepheus/6_qbnzbw.webp" -> {
+                drawericon.setImageResource(R.drawable.man4)
+            }
+            "63/chepheus/7_vtxwjn.webp" -> {
+                drawericon.setImageResource(R.drawable.woman1)
+            }
+            "57/chepheus/8_ng6pcu.webp" -> {
+                drawericon.setImageResource(R.drawable.woman2)
+            }
+            "57/chepheus/9_ci9c7p.webp" -> {
+                drawericon.setImageResource(R.drawable.woman3)
+            }
+            "59/chepheus/10_q1oypc.webp" -> {
+                drawericon.setImageResource(R.drawable.woman4)
+            }
+            "64/chepheus/11_lvx5xc.webp" -> {
+                drawericon.setImageResource(R.drawable.woman5)
+            }
+            "67/chepheus/12_zz8wuo.webp" -> {
+                drawericon.setImageResource(R.drawable.woman6)
+            }
+//            else -> {
+//                drawericon.setImageResource(R.drawable.woman6)
+//            }
+
+        }
+
+
+
+
+
+//        }
+
+        //image randomly generate karna hai if image url is null
+//        val img_url = getDefaults("ImageURL").toString()
+//        if (img_url == null){
+//            generate.random.number
+//            glide se call kar le image
+//        }
+//        else{
+//            glide.generate(img_url)
+//        }
+
+
+
+
+
+
+
+
+//        val useremail : String = getDefaults("Email").toString()
+        val uniqueUserId : String = getDefaults("UniqueUserID").toString()
+
+        val writer = QRCodeWriter()
+        try {
+            val bitMatrix = writer.encode(uniqueUserId, BarcodeFormat.QR_CODE, 300,300)
+            val width = bitMatrix.width
+            val height = bitMatrix.height
+            val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+            for(x in 0 until width){
+                for(y in 0 until height){
+                    bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
+                }
+            }
+            QRimageview.setImageBitmap(bmp)
+
+        }catch (e: WriterException){
+            e.printStackTrace()
+        }
 //        var evlist = ""
 
 
 
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://backendcepheus.cf/apiM1/")
-            .build()
-
-        val tkn = Token.token
-
-        Log.i("QR",tkn)
-
-
-        val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
-        val tokenpara = GetRegInfo(tkn)
-        val call = geteventapi.getEvents(tokenpara)
-
-        call.enqueue(object : Callback<RegisteredEventList?> {
-            override fun onResponse(
-                call: Call<RegisteredEventList?>,
-                response: Response<RegisteredEventList?>
-            ) {
-                if(response.isSuccessful){
-                    Log.i("QR","success")
-                    val eventlist = response.body()!!.regevents
-
-                    val eventnames =arrayOf<String> ("Lorem Ipsum","HackOverFlow","Circuital Dilemma","Data Science Hackathon","HackTheGames","CTF","FizzBuzz","Online Treasure Hunt","Bridge Building Competition","Copy the Nature","Rule The Market","Launch Galaset","KBC Quiz Competition","Maze Amaze","Scratch","Treasure Hunt","Buy My Code","Pare It Down","Game Theory","Arduino Workshop","EV Bike Competition","Line Maze Fun Game","Dive the Boat")
-
-//                    evlist = eventlist.toString()
-                    var qrstring = ""
-                    qrstring += UserName.name + "\n" + useremail + "\n\n"
-
-                    var finaleventlist :MutableList<String> = mutableListOf<String>()
-                    var j = 1
-                    for (i in eventlist){
-                        finaleventlist.add((j++).toString()+ ". " + eventnames[i-1])
-                    }
-                    Log.i("QR",eventlist.toString())
-
-                    if (finaleventlist.isEmpty()){
-                        finaleventlist = mutableListOf<String>()
-                    }
-                    else{
-                        for (event in finaleventlist){
-                            qrstring += event.toString() + "\n"
-                        }
-                    }
-
-                    val writer = QRCodeWriter()
-                    try {
-
-                        val bitMatrix = writer.encode(qrstring, BarcodeFormat.QR_CODE, 250,250)
-                        val width = bitMatrix.width
-                        val height = bitMatrix.height
-                        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
-                        for(x in 0 until width){
-                            for(y in 0 until height){
-                                bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
-                            }
-                        }
-                        QRimageview.setImageBitmap(bmp)
-
-                    }catch (e: WriterException){
-                        e.printStackTrace()
-                    }
-                }
-                else{
-                    val resCode = response.code().toString() // IMP for check 401
-                    if(!checkFor401(resCode)){
-                        // Whatever action you've to perform
-
-                    }
-                    Log.i("QR",response.message().toString())
-                    Log.i("QR",response.code().toString())
-                }
-
-            }
-
-            override fun onFailure(call: Call<RegisteredEventList?>, t: Throwable) {
-                Log.i("QR",t.message.toString())
-                Log.i("QR",t.cause.toString())
-
-            }
-        })
+//        val retrofitBuilder = Retrofit.Builder()
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .baseUrl("https://backendcepheus.cf/apiM1/")
+//            .build()
+//
+//        val tkn = Token.token
+//
+//        Log.i("QR",tkn)
+//
+//
+//        val geteventapi = retrofitBuilder.create(GetEventsApi::class.java)
+//        val tokenpara = GetRegInfo(tkn)
+//        val call = geteventapi.getEvents(tokenpara)
+//
+//        call.enqueue(object : Callback<RegisteredEventList?> {
+//            override fun onResponse(
+//                call: Call<RegisteredEventList?>,
+//                response: Response<RegisteredEventList?>
+//            ) {
+//                if(response.isSuccessful){
+//                    Log.i("QR","success")
+//                    val eventlist = response.body()!!.regevents
+//
+//                    val eventnames =arrayOf<String> ("Lorem Ipsum","HackOverFlow","Circuital Dilemma","Data Science Hackathon","HackTheGames","CTF","FizzBuzz","Online Treasure Hunt","Bridge Building Competition","Copy the Nature","Rule The Market","Launch Galaset","KBC Quiz Competition","Maze Amaze","Scratch","Treasure Hunt","Buy My Code","Pare It Down","Game Theory","Arduino Workshop","EV Bike Competition","Line Maze Fun Game","Dive the Boat")
+//
+////                    evlist = eventlist.toString()
+//                    var qrstring = ""
+//                    qrstring += UserName.name + "\n" + useremail + "\n\n"
+//
+//                    var finaleventlist :MutableList<String> = mutableListOf<String>()
+//                    var j = 1
+//                    for (i in eventlist){
+//                        finaleventlist.add((j++).toString()+ ". " + eventnames[i-1])
+//                    }
+//                    Log.i("QR",eventlist.toString())
+//
+//                    if (finaleventlist.isEmpty()){
+//                        finaleventlist = mutableListOf<String>()
+//                    }
+//                    else{
+//                        for (event in finaleventlist){
+//                            qrstring += event.toString() + "\n"
+//                        }
+//                    }
+//
+//                    val writer = QRCodeWriter()
+//                    try {
+//
+//                        val bitMatrix = writer.encode(qrstring, BarcodeFormat.QR_CODE, 250,250)
+//                        val width = bitMatrix.width
+//                        val height = bitMatrix.height
+//                        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+//                        for(x in 0 until width){
+//                            for(y in 0 until height){
+//                                bmp.setPixel(x,y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
+//                            }
+//                        }
+//                        QRimageview.setImageBitmap(bmp)
+//
+//                    }catch (e: WriterException){
+//                        e.printStackTrace()
+//                    }
+//                }
+//                else{
+//                    val resCode = response.code().toString() // IMP for check 401
+//                    if(!checkFor401(resCode)){
+//                        // Whatever action you've to perform
+//
+//                    }
+//                    Log.i("QR",response.message().toString())
+//                    Log.i("QR",response.code().toString())
+//                }
+//
+//            }
+//
+//            override fun onFailure(call: Call<RegisteredEventList?>, t: Throwable) {
+//                Log.i("QR",t.message.toString())
+//                Log.i("QR",t.cause.toString())
+//
+//            }
+//        })
 
 
 
@@ -311,7 +403,7 @@ class Homescreen : AppCompatActivity() {
         return false
     }
 
-    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String) {
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, ) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()

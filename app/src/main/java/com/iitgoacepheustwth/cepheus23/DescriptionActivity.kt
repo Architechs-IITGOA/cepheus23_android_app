@@ -2,10 +2,13 @@ package com.iitgoacepheustwth.cepheus23
 
 import android.app.AlertDialog
 import android.content.*
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.os.SystemClock
 import android.preference.PreferenceManager
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -83,6 +86,8 @@ class DescriptionActivity : AppCompatActivity() {
         if(obj.team==0){
 
             binding.registerButton.setOnClickListener {
+                binding.registerButton.isEnabled = false
+                binding.registerButton.text = "Registering..."
                 var teamcode = ""
                 val team_name : String = getDefaults("Email").toString()
                 // call create team api
@@ -113,6 +118,9 @@ class DescriptionActivity : AppCompatActivity() {
                                     call: Call<RegisterEventResponse?>,
                                     response1: Response<RegisterEventResponse?>
                                 ) {
+                                    binding.registerButton.isEnabled = true
+                                    binding.registerButton.text = "Register now"
+
                                     Log.i("new response", "in response")
                                     if(response1.isSuccessful){
                                         Log.i("new response", "is success")
@@ -155,13 +163,18 @@ class DescriptionActivity : AppCompatActivity() {
                                     call: Call<RegisterEventResponse?>,
                                     t: Throwable
                                 ) {
+                                    binding.registerButton.isEnabled = true
+                                    binding.registerButton.text = "Register now"
                                     Log.i("new response", "onfailure")
-                                    Toast.makeText(this@DescriptionActivity, "Couldn't connect to server. Please check internet connection or contact developers!",Toast.LENGTH_LONG).show()
+                                    Toast.makeText(this@DescriptionActivity, "Please check internet connection or contact developers!",Toast.LENGTH_LONG).show()
                                 }
                             })
 
                         }
                         else{
+                            binding.registerButton.isEnabled = true
+                            binding.registerButton.text = "Register now"
+
                             Log.i("new response",response.message())
                             Log.i("new response",response.code().toString())
                             Log.i("new response", response.errorBody()?.charStream()?.readText().toString())
@@ -172,8 +185,10 @@ class DescriptionActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
+                        binding.registerButton.isEnabled = true
+                        binding.registerButton.text = "Register now"
                         Log.i("new response","Onfailure of ct")
-                        Toast.makeText(this@DescriptionActivity, "Couldn't connect to server. Please check internet connection!",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@DescriptionActivity, "Please check internet connection!",Toast.LENGTH_LONG).show()
                     }
                 })
 
@@ -231,14 +246,15 @@ class DescriptionActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
-
-
                 createTeamCall.setOnClickListener {
                     var teamcode = ""
                     if (view.findViewById<TextView>(R.id.team_name).text.isEmpty()){
                         Toast.makeText(this@DescriptionActivity, "Please fill a Team name.", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
+                    createTeamCall.isEnabled = false
+                    createTeamCall.text = "Registering..."
+
                     team_name = view.findViewById<TextView>(R.id.team_name).text.toString()
 
                     // Create team API called
@@ -269,6 +285,8 @@ class DescriptionActivity : AppCompatActivity() {
                                         call: Call<RegisterEventResponse?>,
                                         response1: Response<RegisterEventResponse?>
                                     ) {
+                                        createTeamCall.isEnabled = true
+                                        createTeamCall.text = "Create team"
                                         if(response1.isSuccessful){
                                             Log.i("response2","registered successfully")
 //                                            Toast.makeText(this@DescriptionActivity,"Registered successfully: " + teamcode,Toast.LENGTH_LONG).show()
@@ -328,13 +346,18 @@ class DescriptionActivity : AppCompatActivity() {
                                     }
 
                                     override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+                                        createTeamCall.isEnabled = true
+                                        createTeamCall.text = "Create team"
+
                                         Log.i("failed2","failure of reg")
-                                        Toast.makeText(this@DescriptionActivity,"Couldn't connect to server. Please check internet connection or contact developers!",Toast.LENGTH_LONG).show()
+                                        Toast.makeText(this@DescriptionActivity,"Please check internet connection or contact developers!",Toast.LENGTH_LONG).show()
 
                                     }
                                 })
                             }
                             else{
+                                createTeamCall.isEnabled = true
+                                createTeamCall.text = "Create team"
                                 val resCode = response.code().toString() // IMP for check 401
                                 if(!checkFor401(resCode)) {
 
@@ -357,6 +380,8 @@ class DescriptionActivity : AppCompatActivity() {
                         }
 
                         override fun onFailure(call: Call<CreateTeamResponse?>, t: Throwable) {
+                            createTeamCall.isEnabled = true
+                            createTeamCall.text = "Create team"
                             Log.i("failed2","Onfailure of ct")
                             Toast.makeText(this@DescriptionActivity,"Couldn't connect to server. Please check internet connection!",Toast.LENGTH_LONG).show()
                         }
@@ -365,12 +390,16 @@ class DescriptionActivity : AppCompatActivity() {
 //                    Toast.makeText(this@DescriptionActivity, "Create team text:" + view.findViewById<TextView>(R.id.team_name).text.toString(), Toast.LENGTH_SHORT).show()
 //                    Toast.makeText(this@DescriptionActivity, "Join team text:" + view.findViewById<TextView>(R.id.team_id).text.toString(), Toast.LENGTH_SHORT).show()
                 }
-                joinTeamCall.setOnClickListener {
+                joinTeamCall.setOnClickListener  {
+
                     Log.i("response 4", "Working join team")
                     if (view.findViewById<TextView>(R.id.team_id).text.isEmpty()){
                         Toast.makeText(this@DescriptionActivity, "Please give a Team code.", Toast.LENGTH_LONG).show()
                         return@setOnClickListener
                     }
+
+                    joinTeamCall.isEnabled = false
+                    joinTeamCall.text = "Registering..."
 
                     val team_id = view.findViewById<TextView>(R.id.team_id).text.toString()
 
@@ -382,7 +411,11 @@ class DescriptionActivity : AppCompatActivity() {
                             call: Call<RegisterEventResponse?>,
                             response: Response<RegisterEventResponse?>
                         ) {
+                            joinTeamCall.isEnabled = true
+                            joinTeamCall.text = "Join team"
                             if(response.isSuccessful){
+
+
 //                                Toast.makeText(this@DescriptionActivity,"Joined Team and Registered Successfully",Toast.LENGTH_LONG).show()
 
                                 dialog.dismiss()
@@ -403,6 +436,7 @@ class DescriptionActivity : AppCompatActivity() {
 
                             }
                             else{
+
                                 val resCode = response.code().toString() // IMP for check 401
                                 if(!checkFor401(resCode)){
                                     val errorMessage = response.errorBody()?.charStream()?.readText().toString() // IMP to be on 1st line
@@ -415,7 +449,7 @@ class DescriptionActivity : AppCompatActivity() {
                                     if(errorMessage  == "{\"message\":\"user is already registered\"}")
                                         Toast.makeText(this@DescriptionActivity,"You have already registered in other team.",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"team code not found\"}")
-                                        Toast.makeText(this@DescriptionActivity,"Team code incorrect / doesn't exist.",Toast.LENGTH_LONG).show()
+                                        Toast.makeText(this@DescriptionActivity,"Incorrect team code.",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"team code is not applicable for this event\"}")
                                         Toast.makeText(this@DescriptionActivity,"This team code is not valid for this event",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"this event is not meant for your grade\"}")
@@ -427,17 +461,16 @@ class DescriptionActivity : AppCompatActivity() {
                             }
                         }
                         override fun onFailure(call: Call<RegisterEventResponse?>, t: Throwable) {
+                            joinTeamCall.isEnabled = true
+                            joinTeamCall.text = "Join team"
                             Toast.makeText(this@DescriptionActivity,"Couldn't connect to server. Please check internet connection!",Toast.LENGTH_SHORT).show()
                         }
                     })
-
-
                 }
 
                 dialog.setContentView(view)
 
                 dialog.show()
-
 
 
                 //create team api call
@@ -542,7 +575,6 @@ class DescriptionActivity : AppCompatActivity() {
 
 
     }
-
 
 
     private fun checkFor401(resCode: String): Boolean {
@@ -656,3 +688,5 @@ class DescriptionActivity : AppCompatActivity() {
         return preferences.getString(key, null)
     }
 }
+
+

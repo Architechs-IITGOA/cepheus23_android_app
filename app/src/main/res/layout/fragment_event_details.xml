@@ -208,7 +208,7 @@
                 android:id="@+id/register_Button"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#C419245C"
+                android:backgroundTint="@color/register_button_color"
                 android:text="register Now"
                 android:textSize="10sp" />
 

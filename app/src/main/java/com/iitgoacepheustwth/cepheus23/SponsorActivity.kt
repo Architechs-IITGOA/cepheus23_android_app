@@ -3,6 +3,8 @@ package com.iitgoacepheustwth.cepheus23
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,25 +14,37 @@ import com.iitgoacepheustwth.cepheus23.model.SponsorData
 import com.google.firebase.database.*
 
 class SponsorActivity : AppCompatActivity() {
-    private lateinit var recyclerView : RecyclerView
-    private lateinit var listSpo : ArrayList<SponsorData>
-    private lateinit var databaseReference : DatabaseReference
+//    private lateinit var recyclerView : RecyclerView
+//    private lateinit var listSpo : ArrayList<SponsorData>
+//    private lateinit var databaseReference : DatabaseReference
 
 
 
 //    private lateinit var binding: FragmentSponsorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Removes Dark mode
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-        super.onCreate(savedInstanceState)
+// Removes Dark mode
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+    supportActionBar?.setDisplayShowTitleEnabled(false)
+    super.onCreate(savedInstanceState)
 //        binding = FragmentSponsorBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
-        setContentView(R.layout.fragment_sponsor)
-        Log.i("sponsors", "sponsor activity initialised")
-        recyclerView = findViewById(R.id.recycler)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        listSpo = arrayListOf<SponsorData>()
+//        setContentView(R.layout.fragment_sponsor)
+    setContentView(R.layout.sponsor_webview)
+    val myWeb = findViewById<WebView>(R.id.MyWebView)
+    myWeb.webViewClient = WebViewClient()
+
+    // 3rd, Run webview loading code.
+    myWeb.apply {
+        loadUrl("iitgoa.ac.in/cepheus#Sponsors")
+        settings.javaScriptEnabled = true
+    }
+        }
+
+}
+//        Log.i("sponsors", "sponsor activity initialised")
+//        recyclerView = findViewById(R.id.recycler)
+//        recyclerView.layoutManager = LinearLayoutManager(this)
+//        listSpo = arrayListOf<SponsorData>()
 
 
 
@@ -45,38 +59,38 @@ class SponsorActivity : AppCompatActivity() {
        // }
 
 
-        Log.i("sponsors", "firebase call initialised")
-        databaseReference = FirebaseDatabase.getInstance().getReference("sponsor")
-        Log.i("sponsors", "firebase call complete")
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for (dataSnapShot in snapshot.children){
-                        val list = dataSnapShot.getValue(SponsorData::class.java)
-                        listSpo.add(list!!)
-                    }
+//        Log.i("sponsors", "firebase call initialised")
+//        databaseReference = FirebaseDatabase.getInstance().getReference("sponsor")
+//        Log.i("sponsors", "firebase call complete")
+//        databaseReference.addValueEventListener(object : ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                if(snapshot.exists()){
+//                    for (dataSnapShot in snapshot.children){
+//                        val list = dataSnapShot.getValue(SponsorData::class.java)
+//                        listSpo.add(list!!)
+//                    }
+//
+//                    Log.i("sponsors", "found the adpter")
+//
+//                    val spAdapter = SponsorAdapter(listSpo)
+//                    recyclerView.adapter = spAdapter
+//
+////                    recyclerView.adapter = SponsorAdapter(listSpo)
+//
+//                    Log.i("sponsors", "adapter initialised")
+//                }
+//                else{
+//                    Log.i("sponsors", "data nhi aya")
+//                }
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                Log.i("sponsors", "error")
+//                Toast.makeText(this@SponsorActivity,error.toString(), Toast.LENGTH_SHORT)
+//                    .show()
+//            }
 
-                    Log.i("sponsors", "found the adpter")
-
-                    val spAdapter = SponsorAdapter(listSpo)
-                    recyclerView.adapter = spAdapter
-
-//                    recyclerView.adapter = SponsorAdapter(listSpo)
-
-                    Log.i("sponsors", "adapter initialised")
-                }
-                else{
-                    Log.i("sponsors", "data nhi aya")
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Log.i("sponsors", "error")
-                Toast.makeText(this@SponsorActivity,error.toString(), Toast.LENGTH_SHORT)
-                    .show()
-            }
-
-        })
+//        })
 
 //        supportActionBar?.setDisplayShowTitleEnabled(false)
 //
@@ -100,7 +114,7 @@ class SponsorActivity : AppCompatActivity() {
 //            startActivity(callintent2)
 //
 //        }
-    }
+//    }
 
 //
 //    private fun checkper(){
@@ -108,4 +122,4 @@ class SponsorActivity : AppCompatActivity() {
 //            ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CALL_PHONE),101)
 //        }
 //    }
-}
+//}

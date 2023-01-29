@@ -11,6 +11,17 @@
         android:id="@+id/imageContainer"
         android:scaleType="fitXY"
         android:src="@drawable/scrollimage2"/>
-
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@drawable/gradient" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/img_text"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello"-->
+<!--        android:textSize="60sp"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:textColor="@color/white"/>-->
 
 </androidx.cardview.widget.CardView>
