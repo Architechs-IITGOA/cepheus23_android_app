@@ -408,7 +408,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
                             android:textColor="@color/white"
-                            android:text="Junior Event Manager (online)"/>
+                            android:text="Jr Event Manager (online)"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -487,7 +487,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
                             android:textColor="@color/white"
-                            android:text="Junior Event Manager (offline)"/>
+                            android:text="Jr Event Manager (offline)"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -554,7 +554,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Kushagra Srivastava"
+                            android:text="Kushagra"
                             android:textColor="@color/white"
                             android:fontFamily="@font/mohaveregular"
                             android:textSize="25sp"/>

@@ -139,8 +139,14 @@ class DetailsActivity : AppCompatActivity() {
                             }
                         }
                         else{
-                            Log.i("response",response.code().toString())
-                            Log.i("response",response.message().toString())
+                            val resCode = response.code().toString() // IMP for check 401
+                            if(!checkFor401(resCode)){
+                                Log.i("response",response.code().toString())
+                                Log.i("response",response.message().toString())
+
+                                Toast.makeText(this@DetailsActivity, "Please put valid phone number", Toast.LENGTH_LONG).show()
+                            }
+
                         }
                     }
 
@@ -165,6 +171,34 @@ private fun saveregistrationStatuslocally(currstatus_register: String, currstatu
 //    editor.putString("Gender", currstatus_gender)
     editor.apply()
 }
+    private fun checkFor401(resCode: String): Boolean {
+        // TO BE TESTED FOR 401----------------------------------------------------------------------
+        if(resCode == "401") {
+//            val gso = GoogleSignInOptions.Builder(
+//                GoogleSignInOptions.DEFAULT_SIGN_IN
+//            ).requestEmail()
+//                .build()
+//            val mGoogleSignInClient = GoogleSignIn.getClient(this@MainActivity, gso)
+//            mGoogleSignInClient.signOut()
+
+            saveLoginStatuslocally("","")
+            val activityIntent = Intent(this@DetailsActivity, SigninActivity::class.java)
+            startActivity(activityIntent)
+            Toast.makeText(this@DetailsActivity, "Session Expired.", Toast.LENGTH_LONG).show()
+
+            return true
+        }
+        return false
+    }
+
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, ) {
+//        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = preferences.edit()
+        editor.putString("Login_status", currstatus_login)
+        editor.putString("JWToken", currstatus_token)
+        editor.apply()
+    }
 
     fun getDefaults(key: String?): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
