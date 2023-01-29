@@ -195,12 +195,13 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/event_rules"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="40dp"
                 android:backgroundTint="#C419245C"
-                android:text="Problem Statement"
+                android:text="Event Rules"
                 android:textSize="10sp" />
 
             <com.google.android.material.button.MaterialButton

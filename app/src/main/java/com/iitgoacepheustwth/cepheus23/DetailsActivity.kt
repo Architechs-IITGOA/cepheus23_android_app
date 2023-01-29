@@ -19,6 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
+    private lateinit var randomAvtar : String
     override fun onCreate(savedInstanceState: Bundle?) {
         // Removes Dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -80,8 +81,24 @@ class DetailsActivity : AppCompatActivity() {
 
                 val regApi = retrofitBuilder.create(RegisterApi::class.java)
 
+                val img_url = getDefaults("ImageURL").toString()
+                if(img_url == "null"){
+                    if(gender == "Male"){
+                        val maleList = listOf("56/chepheus/1_rbtjby.webp", "56/chepheus/2_vg5lak.webp", "55/chepheus/3_i0qt4w.webp", "69/chepheus/4_dhsyqx.webp","60/chepheus/5_j5gsa6.webp", "54/chepheus/6_qbnzbw.webp")
+                        randomAvtar = maleList.random()
 
-                val info = UserInfo(username,college_name,phonenumber, grade.toInt(),token)
+
+                    }
+                    else {
+                        val womenList = listOf("63/chepheus/7_vtxwjn.webp", "57/chepheus/8_ng6pcu.webp", "57/chepheus/9_ci9c7p.webp", "59/chepheus/10_q1oypc.webp","64/chepheus/11_lvx5xc.webp", "67/chepheus/12_zz8wuo.webp")
+                        randomAvtar = womenList.random()
+                    }
+                }
+                else{
+                    randomAvtar = img_url
+                }
+
+                val info = UserInfo(username,college_name,phonenumber, grade.toInt(),token, randomAvtar)
                 Log.i("userinfo","007")
 
                 val call = regApi.registerUser(info)
@@ -99,7 +116,7 @@ class DetailsActivity : AppCompatActivity() {
 
 
                             Log.i("newToken",token2)
-                            saveregistrationStatuslocally("true", token2)
+                            saveregistrationStatuslocally("true", token2, randomAvtar, )
                             Token.token = getDefaults("JWToken").toString()
                             Log.i("TestingDetails", "JWT updated")
 
@@ -137,14 +154,17 @@ class DetailsActivity : AppCompatActivity() {
             }
         }
     }
-    private fun saveregistrationStatuslocally(currstatus_register: String, currstatus_token: String ) {
+
+private fun saveregistrationStatuslocally(currstatus_register: String, currstatus_token: String, currstatus_useravatar: String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
-        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val editor = preferences.edit()
-        editor.putString("register_status", currstatus_register)
-        editor.putString("JWToken", currstatus_token)
-        editor.apply()
-    }
+    val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+    val editor = preferences.edit()
+    editor.putString("register_status", currstatus_register)
+    editor.putString("JWToken", currstatus_token)
+    editor.putString("ImageURL", currstatus_useravatar)
+//    editor.putString("Gender", currstatus_gender)
+    editor.apply()
+}
 
     fun getDefaults(key: String?): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)

@@ -66,11 +66,17 @@ class SigninActivity : AppCompatActivity() {
                                 Log.i("login response",response.body()?.token.toString())
                                 Log.i("login response", response.body()?.user?.registered.toString())
                                 Log.i("login response", response.body().toString())
+                                Log.i("login response", response.body()?.user?.id.toString())
 
 
                                 val responseToken = response.body()?.token.toString()
                                 val user_email = response.body()?.user?.email.toString()
                                 val user_name = response.body()?.user?.user_name.toString()
+
+                                val uuID = response.body()?.user?.id.toString()
+                                val imageURL = response.body()?.user?.image_url.toString()
+
+
                                 responseToken.trim()
                                 Token.token = responseToken
                                 Log.i("first jwt",responseToken)
@@ -80,13 +86,13 @@ class SigninActivity : AppCompatActivity() {
 
                                 if(response.body()?.user?.registered == false){
                                     //                                    Login.login = true
-                                    saveLoginStatuslocally("true","false", responseToken, user_email, user_name)
+                                    saveLoginStatuslocally("true","false", responseToken, user_email, user_name,uuID,imageURL )
                                     val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
                                     startActivity(activityIntent)
 //                                    Log.i("login response", Login.login.toString())
                                 }
                                 else{
-                                    saveLoginStatuslocally("true","true", responseToken, user_email, user_name)
+                                    saveLoginStatuslocally("true","true", responseToken, user_email, user_name,uuID, imageURL )
                                     val activityIntent = Intent(this@SigninActivity,Homescreen::class.java)
                                     finish()
                                     startActivity(activityIntent)
@@ -222,7 +228,7 @@ class SigninActivity : AppCompatActivity() {
     }
 
 
-    private fun saveLoginStatuslocally(currstatus_login:String, currstatus_register: String, currstatus_token: String, currstatus_email : String, currstatus_name : String) {
+    private fun saveLoginStatuslocally(currstatus_login:String, currstatus_register: String, currstatus_token: String, currstatus_email : String, currstatus_name : String, currstatus_uuid : String, currstatus_useravatar: String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
         val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = preferences.edit()
@@ -231,6 +237,8 @@ class SigninActivity : AppCompatActivity() {
         editor.putString("JWToken", currstatus_token)
         editor.putString("Email",currstatus_email)
         editor.putString("Name", currstatus_name)
+        editor.putString("UniqueUserID", currstatus_uuid)
+        editor.putString("ImageURL", currstatus_useravatar)
 
         editor.apply()
     }
