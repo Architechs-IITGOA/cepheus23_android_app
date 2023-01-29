@@ -24,7 +24,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 
 
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.iitgoacepheustwth.cepheus23.databinding.HomelayoutBinding

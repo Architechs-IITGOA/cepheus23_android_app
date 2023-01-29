@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -34,12 +35,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DashboardFragment : Fragment() {
     private lateinit var  dashboardBinding: FragmentDashboardBinding
+    private var progressBar: ProgressBar? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         dashboardBinding = com.iitgoacepheustwth.cepheus23.databinding.FragmentDashboardBinding.inflate(inflater, container, false)
-
+        progressBar = dashboardBinding.pgbar
 
 
 
@@ -63,6 +65,7 @@ class DashboardFragment : Fragment() {
                 call: Call<RegisteredEventList?>,
                 response: Response<RegisteredEventList?>
             ) {
+                progressBar!!.visibility = View.GONE
                 if(response.isSuccessful){
                     Log.i("response3","success")
                     val eventlist = response.body()!!.regevents
@@ -110,6 +113,7 @@ class DashboardFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<RegisteredEventList?>, t: Throwable) {
+                progressBar!!.visibility = View.GONE
                 Log.i("failed3",t.message.toString())
                 Log.i("failed3",t.cause.toString())
 

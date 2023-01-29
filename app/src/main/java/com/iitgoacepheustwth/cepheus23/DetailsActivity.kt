@@ -70,6 +70,8 @@ class DetailsActivity : AppCompatActivity() {
                 Toast.makeText(this,"Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }
             else{
+                binding.enterButton.isEnabled = false
+                binding.enterButton.text = "Let me remember you..."
 
                 val retrofitBuilder = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
@@ -88,12 +90,12 @@ class DetailsActivity : AppCompatActivity() {
                         call: Call<UserResponse?>,
                         response: Response<UserResponse?>
                     ) {
+                        binding.enterButton.isEnabled = true
+                        binding.enterButton.text = "Enter the Multiverse of Cepheus"
                         if(response.isSuccessful){
                             Log.i("response",response.code().toString())
 
                             val token2 = response.body()?.token.toString()
-
-
 
 
                             Log.i("newToken",token2)
@@ -126,8 +128,10 @@ class DetailsActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<UserResponse?>, t: Throwable) {
+                        binding.enterButton.isEnabled = true
+                        binding.enterButton.text = "Enter the Multiverse of Cepheus"
                         Log.i("failed",t.message.toString())
-                        Toast.makeText(this@DetailsActivity,"Failure occur",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DetailsActivity,"Please check your internet connection",Toast.LENGTH_SHORT).show()
                     }
                 })
             }

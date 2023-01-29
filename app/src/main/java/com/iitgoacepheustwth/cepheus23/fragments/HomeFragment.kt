@@ -59,7 +59,6 @@ class HomeFragment : Fragment() {
 //        }
 
         binding.card1.setOnClickListener {
-
             findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
         }
         binding.card2.setOnClickListener {
