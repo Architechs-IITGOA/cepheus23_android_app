@@ -25,18 +25,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hi,"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:layout_gravity="center_vertical"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/nav_name"
             android:text="Cepheus Cipher"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
+            android:textSize="18dp"
+            android:layout_marginLeft="5dp"
             android:textColor="@color/white"
             android:layout_gravity="center_vertical"
             />
