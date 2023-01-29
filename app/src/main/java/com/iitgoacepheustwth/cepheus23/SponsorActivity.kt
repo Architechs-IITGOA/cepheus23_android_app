@@ -1,5 +1,7 @@
 package com.iitgoacepheustwth.cepheus23
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,14 +32,23 @@ class SponsorActivity : AppCompatActivity() {
 //        setContentView(binding.root)
 //        setContentView(R.layout.fragment_sponsor)
     setContentView(R.layout.sponsor_webview)
-    val myWeb = findViewById<WebView>(R.id.MyWebView)
-    myWeb.webViewClient = WebViewClient()
-
-    // 3rd, Run webview loading code.
-    myWeb.apply {
-        loadUrl("iitgoa.ac.in/cepheus#Sponsors")
-        settings.javaScriptEnabled = true
-    }
+    val intent = Intent(Intent.ACTION_VIEW)
+    intent.data = Uri.parse("https://iitgoa.ac.in/cepheus/#Sponsors")
+    startActivity(intent)
+//
+//    val contactintent = Intent(this@SponsorActivity,Homescreen::class.java)
+//    startActivity(contactintent)
+//    val intent3 = Intent(Intent.ACTION_VIEW)
+//    intent.data = Uri.parse("https://iitgoa.ac.in/cepheus/#About")
+//    startActivity(intent3)
+//    val myWeb = findViewById<WebView>(R.id.MyWebView)
+//    myWeb.webViewClient = WebViewClient()
+//
+//    // 3rd, Run webview loading code.
+//    myWeb.apply {
+//        loadUrl("https://iitgoa.ac.in/cepheus/")  //https://iitgoa.ac.in/cepheus/#Sponsors
+//        settings.javaScriptEnabled = true
+//    }
         }
 
 }
