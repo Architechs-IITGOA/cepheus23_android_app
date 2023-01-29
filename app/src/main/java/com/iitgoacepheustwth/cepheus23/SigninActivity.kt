@@ -9,6 +9,7 @@ import android.preference.PreferenceManager
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatDelegate
@@ -44,6 +45,7 @@ class SigninActivity : AppCompatActivity() {
             val idToken = credential?.googleIdToken
             when {
                 idToken != null -> {
+                    progressBar!!.visibility = View.VISIBLE
                     val retrofitBuilder = Retrofit.Builder()
                         .addConverterFactory(GsonConverterFactory.create())
                         .baseUrl("https://backendcepheus.cf/apiM1/")
@@ -58,6 +60,7 @@ class SigninActivity : AppCompatActivity() {
                             call: Call<LoginUserResponse?>,
                             response: Response<LoginUserResponse?>
                         ) {
+                            progressBar!!.visibility = View.GONE
                             if(response.isSuccessful){
                                 Log.i("login response",response.code().toString())
                                 Log.i("login response",response.body()?.token.toString())
@@ -105,6 +108,8 @@ class SigninActivity : AppCompatActivity() {
                         }
 
                         override fun onFailure(call: Call<LoginUserResponse?>, t: Throwable) {
+                            progressBar!!.visibility = View.GONE
+                            Toast.makeText(this@SigninActivity,"Please check internet connection",Toast.LENGTH_LONG).show()
 
                         }
 
@@ -121,6 +126,7 @@ class SigninActivity : AppCompatActivity() {
                 }
             }
         } catch (e: ApiException) {
+            progressBar!!.visibility = View.GONE
             when (e.statusCode) {
                 CommonStatusCodes.CANCELED -> {
                     Log.d("one tap", "One-tap dialog was closed.")
@@ -150,6 +156,7 @@ class SigninActivity : AppCompatActivity() {
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
         progressBar = binding.indeterminateBar
         progressBar!!.visibility = View.GONE
 
@@ -176,7 +183,6 @@ class SigninActivity : AppCompatActivity() {
             .build()
 
         binding.bvSignin.setOnClickListener {
-            progressBar!!.visibility = View.GONE
             displaySignIn()
             progressBar!!.visibility = View.VISIBLE
         }
@@ -186,6 +192,7 @@ class SigninActivity : AppCompatActivity() {
     private fun displaySignIn(){
         oneTapClient?.beginSignIn(signInRequest!!)
             ?.addOnSuccessListener(this) { result ->
+                progressBar!!.visibility = View.GONE
                 try {
                     val ib = IntentSenderRequest.Builder(result.pendingIntent.intentSender).build()
                     oneTapResult.launch(ib)
@@ -195,6 +202,8 @@ class SigninActivity : AppCompatActivity() {
             }
             ?.addOnFailureListener(this) { e ->
                 // No Google Accounts found. Just continue presenting the signed-out UI.
+                progressBar!!.visibility = View.GONE
+//                Toast.makeText(this@SigninActivity,"Please check internet connection",Toast.LENGTH_LONG).show()
                 displaySignUp()
                 Log.d("btn click", e.localizedMessage!!)
             }
@@ -212,7 +221,8 @@ class SigninActivity : AppCompatActivity() {
             }
             ?.addOnFailureListener(this) { e ->
                 // No Google Accounts found. Just continue presenting the signed-out UI.
-                displaySignUp()
+                Toast.makeText(this@SigninActivity,"Please check internet connection",Toast.LENGTH_LONG).show()
+//                displaySignUp()
                 Log.d("btn click", e.localizedMessage!!)
             }
     }
@@ -232,6 +242,7 @@ class SigninActivity : AppCompatActivity() {
 
         editor.apply()
     }
+
 
 
 

@@ -45,7 +45,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/design_default_color_primary_dark"
+        android:backgroundTint="@color/create_team_button_color"
         android:shadowColor="@color/black"
         android:text="Create team"
         android:textSize="10dp" />
@@ -98,7 +98,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/enable_dis"
         android:text="Join team"
         android:textSize="10dp" />
     <TextView

@@ -71,6 +71,8 @@ class DetailsActivity : AppCompatActivity() {
                 Toast.makeText(this,"Empty fields are not allowed", Toast.LENGTH_SHORT).show()
             }
             else{
+                binding.enterButton.isEnabled = false
+                binding.enterButton.text = "Let me remember you..."
 
                 val retrofitBuilder = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
@@ -105,12 +107,12 @@ class DetailsActivity : AppCompatActivity() {
                         call: Call<UserResponse?>,
                         response: Response<UserResponse?>
                     ) {
+                        binding.enterButton.isEnabled = true
+                        binding.enterButton.text = "Enter the Multiverse of Cepheus"
                         if(response.isSuccessful){
                             Log.i("response",response.code().toString())
 
                             val token2 = response.body()?.token.toString()
-
-
 
 
                             Log.i("newToken",token2)
@@ -137,14 +139,22 @@ class DetailsActivity : AppCompatActivity() {
                             }
                         }
                         else{
-                            Log.i("response",response.code().toString())
-                            Log.i("response",response.message().toString())
+                            val resCode = response.code().toString() // IMP for check 401
+                            if(!checkFor401(resCode)){
+                                Log.i("response",response.code().toString())
+                                Log.i("response",response.message().toString())
+
+                                Toast.makeText(this@DetailsActivity, "Please put valid phone number", Toast.LENGTH_LONG).show()
+                            }
+
                         }
                     }
 
                     override fun onFailure(call: Call<UserResponse?>, t: Throwable) {
+                        binding.enterButton.isEnabled = true
+                        binding.enterButton.text = "Enter the Multiverse of Cepheus"
                         Log.i("failed",t.message.toString())
-                        Toast.makeText(this@DetailsActivity,"Failure occur",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@DetailsActivity,"Please check your internet connection",Toast.LENGTH_SHORT).show()
                     }
                 })
             }
@@ -161,6 +171,34 @@ private fun saveregistrationStatuslocally(currstatus_register: String, currstatu
 //    editor.putString("Gender", currstatus_gender)
     editor.apply()
 }
+    private fun checkFor401(resCode: String): Boolean {
+        // TO BE TESTED FOR 401----------------------------------------------------------------------
+        if(resCode == "401") {
+//            val gso = GoogleSignInOptions.Builder(
+//                GoogleSignInOptions.DEFAULT_SIGN_IN
+//            ).requestEmail()
+//                .build()
+//            val mGoogleSignInClient = GoogleSignIn.getClient(this@MainActivity, gso)
+//            mGoogleSignInClient.signOut()
+
+            saveLoginStatuslocally("","")
+            val activityIntent = Intent(this@DetailsActivity, SigninActivity::class.java)
+            startActivity(activityIntent)
+            Toast.makeText(this@DetailsActivity, "Session Expired.", Toast.LENGTH_LONG).show()
+
+            return true
+        }
+        return false
+    }
+
+    private fun saveLoginStatuslocally(currstatus_login: String, currstatus_token: String, ) {
+//        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = preferences.edit()
+        editor.putString("Login_status", currstatus_login)
+        editor.putString("JWToken", currstatus_token)
+        editor.apply()
+    }
 
     fun getDefaults(key: String?): String? {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
