@@ -88,6 +88,7 @@ class SigninActivity : AppCompatActivity() {
                                     //                                    Login.login = true
                                     saveLoginStatuslocally("true","false", responseToken, user_email, user_name,uuID,imageURL )
                                     val activityIntent = Intent(this@SigninActivity,DetailsActivity::class.java)
+                                    finish()
                                     startActivity(activityIntent)
 //                                    Log.i("login response", Login.login.toString())
                                 }
