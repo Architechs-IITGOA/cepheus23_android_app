@@ -29,6 +29,7 @@ class SponsorActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
         binding = ActivitySponsorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 //        setContentView(R.layout.fragment_sponsor)
 //    setContentView(R.layout.sponsor_webview)
 //    val intent = Intent(Intent.ACTION_VIEW)
