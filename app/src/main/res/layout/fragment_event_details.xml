@@ -99,6 +99,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
+                            android:textIsSelectable="true"
                             android:fontFamily="@font/mohaveregular"
                             android:text="@string/About_us"
                             android:textColor="#3E3939"
@@ -149,8 +150,10 @@
                                 android:layout_height="wrap_content"
                                 android:text="0000000000"
                                 android:textColor="@color/black"
+                                android:textIsSelectable="true"
                                 android:textSize="15sp"
                                 android:textStyle="italic" />
+
 
 
                         </LinearLayout>

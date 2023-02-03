@@ -45,14 +45,14 @@ class DescriptionActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        binding.contactno.setOnClickListener{
-            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clipData = ClipData.newPlainText("text", obj.phone)
-            clipboardManager.setPrimaryClip(clipData)
-
-            Toast.makeText(this@DescriptionActivity, "Phone number copied.",Toast.LENGTH_SHORT).show()
-        }
+//        No need now
+//        binding.contactno.setOnClickListener{
+//            val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+//            val clipData = ClipData.newPlainText("text", obj.phone)
+//            clipboardManager.setPrimaryClip(clipData)
+//
+//            Toast.makeText(this@DescriptionActivity, "Phone number copied.",Toast.LENGTH_SHORT).show()
+//        }
 
         obj = intent.getParcelableExtra("Event")!!
         eventImg=intent.getIntExtra("EventImage",-1)
