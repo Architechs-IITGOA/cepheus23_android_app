@@ -135,6 +135,8 @@ class HomeFragment : Fragment() {
         imageList.add(R.drawable.scrollimg6)
         imageList.add(R.drawable.scrollimage3)
         imageList.add(R.drawable.scrollimg5)
+        imageList.add(R.drawable.scrollimg8)
+        imageList.add(R.drawable.scrollimg9)
         imageList.add(R.drawable.scrollimage4)
 
 
