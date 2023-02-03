@@ -14,27 +14,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.iitgoacepheustwth.cepheus23.adapter.SponsorAdapter
 import com.iitgoacepheustwth.cepheus23.model.SponsorData
 import com.google.firebase.database.*
+import com.iitgoacepheustwth.cepheus23.databinding.ActivitySponsorBinding
 
 class SponsorActivity : AppCompatActivity() {
 //    private lateinit var recyclerView : RecyclerView
 //    private lateinit var listSpo : ArrayList<SponsorData>
 //    private lateinit var databaseReference : DatabaseReference
 
-
-
-//    private lateinit var binding: FragmentSponsorBinding
+    private lateinit var binding: ActivitySponsorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 // Removes Dark mode
     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     supportActionBar?.setDisplayShowTitleEnabled(false)
     super.onCreate(savedInstanceState)
-//        binding = FragmentSponsorBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
+        binding = ActivitySponsorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 //        setContentView(R.layout.fragment_sponsor)
-    setContentView(R.layout.sponsor_webview)
-    val intent = Intent(Intent.ACTION_VIEW)
-    intent.data = Uri.parse("https://iitgoa.ac.in/cepheus/#Sponsors")
-    startActivity(intent)
+//    setContentView(R.layout.sponsor_webview)
+//    val intent = Intent(Intent.ACTION_VIEW)
+//    intent.data = Uri.parse("https://iitgoa.ac.in/cepheus/#Sponsors")
+//    startActivity(intent)
 //
 //    val contactintent = Intent(this@SponsorActivity,Homescreen::class.java)
 //    startActivity(contactintent)
