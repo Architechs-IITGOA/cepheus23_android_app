@@ -113,10 +113,10 @@ class DetailsActivity : AppCompatActivity() {
                             Log.i("response",response.code().toString())
 
                             val token2 = response.body()?.token.toString()
-
+                            val user_name = response.body()?.user?.user_name.toString()
 
                             Log.i("newToken",token2)
-                            saveregistrationStatuslocally("true", token2, randomAvtar, )
+                            saveregistrationStatuslocally("true", token2, randomAvtar,user_name )
                             Token.token = getDefaults("JWToken").toString()
                             Log.i("TestingDetails", "JWT updated")
 
@@ -161,16 +161,21 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-private fun saveregistrationStatuslocally(currstatus_register: String, currstatus_token: String, currstatus_useravatar: String) {
+private fun saveregistrationStatuslocally(currstatus_register: String, currstatus_token: String, currstatus_useravatar: String, currstatus_name : String) {
 //        val sharedPreferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
     val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
     val editor = preferences.edit()
     editor.putString("register_status", currstatus_register)
     editor.putString("JWToken", currstatus_token)
     editor.putString("ImageURL", currstatus_useravatar)
+    editor.putString("Name", currstatus_name)
 //    editor.putString("Gender", currstatus_gender)
     editor.apply()
 }
+
+
+
+
     private fun checkFor401(resCode: String): Boolean {
         // TO BE TESTED FOR 401----------------------------------------------------------------------
         if(resCode == "401") {
