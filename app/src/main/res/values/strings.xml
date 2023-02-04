@@ -22,6 +22,7 @@
     <string name="_12_00pm_2_00pm">12.00PM - 2.00PM</string>
     <string name="selected_item">Selected item:</string>
     <string name="having_any_issue_contact_developers">Having any issue? <font color="blue">Contact developers</font></string>
+    <string name="having_issues_signing_in_contact_developers"><font color="white">Having issues signing in?</font> <font color="#03A9F4">Contact developers</font></string>
     <string-array name="Languages">
         <item>Java</item>
         <item>Kotlin</item>
