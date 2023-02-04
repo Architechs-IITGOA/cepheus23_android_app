@@ -225,6 +225,8 @@ class SigninActivity : AppCompatActivity() {
                 Toast.makeText(this@SigninActivity,"Please check internet connection",Toast.LENGTH_LONG).show()
 //                displaySignUp()
                 Log.d("btn click", e.localizedMessage!!)
+                Log.d("btn click", e.cause.toString())
+                Log.d("btn click", e.message.toString())
             }
     }
 

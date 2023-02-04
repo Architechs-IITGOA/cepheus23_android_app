@@ -12,9 +12,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 import com.iitgoacepheustwth.cepheus23.Homescreen
 import com.iitgoacepheustwth.cepheus23.R
 import com.iitgoacepheustwth.cepheus23.databinding.FragmentHomeBinding
@@ -28,6 +31,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding2: HomelayoutBinding
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
+    var onTabLayoutReadyListener: ((TabLayout) -> Unit)? = null
 
     private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
@@ -59,10 +63,19 @@ class HomeFragment : Fragment() {
 //        }
 
         binding.card1.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
+//            findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
+            val bottomNavigation = activity?.findViewById<BottomNavigationView>(R.id.bottomNavView)
+            bottomNavigation?.selectedItemId = R.id.eventsFragment
         }
         binding.card2.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_eventsFragment)
+            val bottomNavigation = activity?.findViewById<BottomNavigationView>(R.id.bottomNavView)
+            bottomNavigation?.selectedItemId = R.id.eventsFragment
+
+//            val viewPager = activity?.findViewById<ViewPager2>(R.id.viewpager2)
+//            viewPager?.setCurrentItem(2, false)
+//            val tabLayout = activity?.findViewById<TabLayout>(R.id.tabLayout)
+//            val desiredTab = tabLayout?.getTabAt(1)
+//            desiredTab?.select()
         }
         binding.card3.setOnClickListener {
 //            Toast.makeText(context, "Stay tuned! Rulebook comming soon.", Toast.LENGTH_LONG).show()
