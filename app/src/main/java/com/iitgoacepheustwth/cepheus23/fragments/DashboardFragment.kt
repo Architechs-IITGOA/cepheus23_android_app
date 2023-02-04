@@ -52,6 +52,7 @@ class DashboardFragment : Fragment() {
 //        }
 ////        https://res.cloudinary.com/dhtb16f8u/image/upload/c_scale,q_auto:eco,w_240/v16736772
 //        else{
+        dashboardBinding.dashUsername.text = UserName.name
         when (drawerImage) {
             "56/chepheus/1_rbtjby.webp" -> {
                 drawericon.setImageResource(R.drawable.man1)
@@ -126,7 +127,6 @@ class DashboardFragment : Fragment() {
                     var eventsRecyclerAdapter = EventAdapter(regEvents)
                     eventRecycler.adapter = eventsRecyclerAdapter
 
-                    dashboardBinding.dashUsername.text = UserName.name
 
 
 
