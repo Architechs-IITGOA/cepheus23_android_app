@@ -3,6 +3,7 @@ package com.iitgoacepheustwth.cepheus23
 import android.content.Intent
 import android.content.IntentSender
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -157,6 +158,12 @@ class SigninActivity : AppCompatActivity() {
         _binding = ActivitySigninBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        binding.issueSigningIn.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://forms.gle/CdszgvwSvs8YBVPz7")
+            startActivity(intent)
+        }
 
         progressBar = binding.indeterminateBar
         progressBar!!.visibility = View.GONE
