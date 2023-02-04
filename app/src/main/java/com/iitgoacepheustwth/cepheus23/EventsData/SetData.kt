@@ -22,10 +22,10 @@ object setData {
                 2,
                 1,
                 1,
-                "8th Feb 1:00 PM (36 hrs)",
+                "8th Feb 1:00 PM (48 hrs)",
                 "HackOverFlow",
                 "https://drive.google.com/file/d/1oU92DJ6XcTNWct_gArPZJD76-SlKIdmQ/view",
-                "36 hour Hackathon to work out a real life problem",
+                "48 hour Hackathon to work out a real life problem",
                 "Aditya Koshti",
                 "8767313024",
                 "From functionality and appearance to navigation and coding integrity, a lot goes into creating an eye-catching, user-friendly website. We bring to you an amusing challenge where every participating team will have to develop a website based on the theme, “Multiverse survival”. The team will have to work on the topic and create a fully functional website. There may be a presentation round as well to track your progress.!"
