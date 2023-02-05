@@ -124,12 +124,8 @@ class DashboardFragment : Fragment() {
                     var eventsRecyclerLayoutManager = LinearLayoutManager(activity)
                     eventRecycler.layoutManager = eventsRecyclerLayoutManager
                     val regEvents = setData.SetEvents().filter {eventlist.contains(it.id)}
-                    var eventsRecyclerAdapter = EventAdapter(regEvents)
+                    var eventsRecyclerAdapter = EventAdapter(context!!, regEvents, 0)
                     eventRecycler.adapter = eventsRecyclerAdapter
-
-
-
-
 
                     var oncnt = 0
                     var offcnt = 0
@@ -187,7 +183,7 @@ class DashboardFragment : Fragment() {
 //            ).requestEmail()
 //                .build()
 //            val mGoogleSignInClient = GoogleSignIn.getClient(this@MainActivity, gso)
-//            mGoogleSignInClient.signOut()
+//            mGoogleSignInClient.signOut()*
 
             saveLoginStatuslocally("","")
             val activityIntent = Intent(context, SigninActivity::class.java)

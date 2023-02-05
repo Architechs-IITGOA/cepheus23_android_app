@@ -33,7 +33,7 @@ class OfflineCompetitionsInEventFragment : Fragment() {
         eventRecycler.layoutManager = eventsRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
         val offlineCompetitionsList : List<EventData> = setData.SetEvents().filter{ it.type  == 2 }
-        eventsRecyclerAdapter = EventAdapter(offlineCompetitionsList)
+        eventsRecyclerAdapter = EventAdapter(context!!, offlineCompetitionsList,1)
         eventRecycler.adapter = eventsRecyclerAdapter
         return binding.root
     }

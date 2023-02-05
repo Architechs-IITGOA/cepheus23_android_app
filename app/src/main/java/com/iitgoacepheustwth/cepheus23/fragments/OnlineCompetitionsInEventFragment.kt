@@ -35,7 +35,7 @@ class OnlineCompetitionsInEventFragment : Fragment() {
         eventRecycler.layoutManager = eventsRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
         val onlineCompetitionsList : List<EventData> = setData.SetEvents().filter{ it.type  == 1 }
-        eventsRecyclerAdapter = EventAdapter(onlineCompetitionsList)
+        eventsRecyclerAdapter = EventAdapter(context!!, onlineCompetitionsList,1)
         eventRecycler.adapter = eventsRecyclerAdapter
         return binding.root
     }
