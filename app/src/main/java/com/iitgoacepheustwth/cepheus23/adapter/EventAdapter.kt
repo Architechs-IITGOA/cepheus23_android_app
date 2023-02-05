@@ -94,6 +94,7 @@ class EventAdapter(val context:Context,var event: List<EventData>, var eventPage
                                 var str = "Team name: "
                                 str = str + teamname + "\n\n"
                                 str = str + "Team code: " + teamcode + "\n\n"
+                                str = str + "Members (" + mates?.size+"/"+event[position].teamsize+")"
                                 for (i in 1..mates?.size!!) {
                                     str = str + "\n\t" + i + ". " + mates?.get(i - 1)?.user_name + "\n"
                                     str = str +"\t\t\t" + mates?.get(i - 1)?.email + "\n"
