@@ -36,7 +36,7 @@ class WorkshopsInEventsFragment : Fragment() {
         eventInEventRecycler.layoutManager = eventsInEventRecyclerLayoutManager
 //        val finalRes: MutableList<EventData> = mutableListOf()
         val workshopList : List<EventData> = setData.SetEvents().filter{ it.type == 3 }
-        eventsInEventRecyclerAdapter = EventAdapter(workshopList)
+        eventsInEventRecyclerAdapter = EventAdapter(context!!, workshopList,1)
         eventInEventRecycler.adapter = eventsInEventRecyclerAdapter
 
         return binding.root
