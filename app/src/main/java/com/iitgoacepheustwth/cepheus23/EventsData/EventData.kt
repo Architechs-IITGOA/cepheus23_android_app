@@ -8,6 +8,7 @@ data class EventData(
     val id:Int?,
     val type:Int?,
     val team:Int?,
+    val teamsize:Int?,
     val time: String?,
     val eventName:String?,
     val rules_link:String?,
@@ -17,6 +18,7 @@ data class EventData(
     val overview:String?
 ): Parcelable { //Made parcela-able so that putextra can pass the object in DescrpitionActivity
     constructor(parcel: Parcel) : this(
+        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readValue(Int::class.java.classLoader) as? Int,
@@ -34,6 +36,7 @@ data class EventData(
         parcel.writeValue(id)
         parcel.writeValue(type)
         parcel.writeValue(team)
+        parcel.writeValue(teamsize)
         parcel.writeString(time)
         parcel.writeString(eventName)
         parcel.writeString(rules_link)

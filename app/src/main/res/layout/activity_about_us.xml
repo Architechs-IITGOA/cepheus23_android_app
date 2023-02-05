@@ -99,6 +99,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:textColor="@color/white"
+                            android:textIsSelectable="true"
                             android:text="Contact: 6263498532 "/>
 
                         <TextView
@@ -106,6 +107,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="gstechnical@iitgoa.ac.in"/>
 
@@ -178,6 +180,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 8074292759"/>
 
@@ -186,6 +189,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="atharva.bhanage.20042@iitgoa.ac.in"/>
 
@@ -257,6 +261,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 9770594125"/>
 
@@ -265,6 +270,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="yuvraj.nagar.20031@iitgoa.ac.in"/>
 
@@ -336,6 +342,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 7087363393"/>
 
@@ -344,6 +351,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="aniket.chaudhri.20031@iitgoa.ac.in"/>
 
@@ -416,6 +424,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:textColor="@color/white"
+                            android:textIsSelectable="true"
                             android:text="Contact: 9817568174"/>
 
                         <TextView
@@ -423,6 +432,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="mulayam.21031@iitgoa.ac.in"/>
 
@@ -495,6 +505,7 @@
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
                             android:textColor="@color/white"
+                            android:textIsSelectable="true"
                             android:text="Contact: 9643204258"/>
 
                         <TextView
@@ -502,6 +513,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="atharva.bhawsar.21063@iitgoa.ac.in"/>
 
@@ -572,6 +584,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 7007432254"/>
 
@@ -580,6 +593,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="kushagra.srivastava.20042@iitgoa.ac.in"/>
 
@@ -651,6 +665,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 6280789636"/>
 
@@ -659,6 +674,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="neetu.20031@iitgoa.ac.in"/>
 
@@ -730,6 +746,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 9098819578"/>
 
@@ -738,6 +755,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="shivam.sinoliya.20031@iitgoa.ac.in"/>
 
@@ -809,6 +827,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 8529530095"/>
 
@@ -817,6 +836,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="prateek.singhal.20042@iitgoa.ac.in"/>
 
@@ -888,6 +908,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 9431011303"/>
 
@@ -896,6 +917,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="shreya.yadav.20031@iitgoa.ac.in"/>
 
@@ -967,6 +989,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact:6307907724 "/>
 
@@ -975,6 +998,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="ritik.tiwari.20042@iitgoa.ac.in"/>
 
@@ -1045,6 +1069,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 8102115698"/>
 
@@ -1053,6 +1078,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="diya.bhagat.20063@iitgoa.ac.in"/>
 
@@ -1124,6 +1150,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="Contact: 7736017928"/>
 
@@ -1132,6 +1159,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
+                            android:textIsSelectable="true"
                             android:textColor="@color/white"
                             android:text="krishnaveni.unnikrishnan.20063@iitgoa.ac.in"/>
 

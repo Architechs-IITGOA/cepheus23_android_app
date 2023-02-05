@@ -131,7 +131,7 @@ class DashboardFragment : Fragment() {
                     var offcnt = 0
                     var wcnt = 0
                     for(i in eventlist){
-                        if(i==19 || i==20){
+                        if(i==15 || i==20){
                             wcnt += 1
                         }
                         else if(i<=11){
