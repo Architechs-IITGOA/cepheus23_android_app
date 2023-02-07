@@ -2,6 +2,7 @@ package com.iitgoacepheustwth.cepheus23
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
@@ -40,6 +41,13 @@ class DetailsActivity : AppCompatActivity() {
         val gender = arrayOf("Female", "Male", "Other")
         val genderAdapter = ArrayAdapter<String>(this, R.layout.dropdown_item, gender)
         genderDropdown.setAdapter(genderAdapter)
+        val privacyPolicy = binding.tvPrivacyPolicy
+        privacyPolicy.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://drive.google.com/file/d/1bsUlknxv7HK8xdvudiecBPYVR2Wsog04/view?usp=sharing")
+            startActivity(intent)
+        }
+
 
 
 

@@ -340,6 +340,9 @@ class DescriptionActivity : AppCompatActivity() {
                                                     Toast.makeText(this@DescriptionActivity,"Event not for your grade/age.",Toast.LENGTH_LONG).show()
                                                 if(errorMessage  == "{\"message\":\"team is full\"}")
                                                     Toast.makeText(this@DescriptionActivity,"This team is full!",Toast.LENGTH_LONG).show()
+                                                if(errorMessage  == "{\"message\":\"Cepheus is no longer accepting new registrations\"}"){
+                                                    Toast.makeText(this@DescriptionActivity,"Event registration is closed",Toast.LENGTH_LONG).show()
+                                                }
 //                                            Toast.makeText(this@DescriptionActivity,ee101,Toast.LENGTH_LONG).show()
                                             }
                                         }
@@ -456,7 +459,11 @@ class DescriptionActivity : AppCompatActivity() {
                                         Toast.makeText(this@DescriptionActivity,"Event not for your grade/age.",Toast.LENGTH_LONG).show()
                                     if(errorMessage  == "{\"message\":\"team is full\"}")
                                         Toast.makeText(this@DescriptionActivity,"This team is full!",Toast.LENGTH_LONG).show()
+                                    if(errorMessage  == "{\"message\":\"Cepheus is no longer accepting new registrations\"}"){
+                                        Toast.makeText(this@DescriptionActivity,"Event registration is closed",Toast.LENGTH_LONG).show()
+                                    }
                                 }
+
 
                             }
                         }
