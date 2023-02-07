@@ -113,11 +113,11 @@
                             android:fontFamily="@font/mohaveregular"
                             android:text="Competitions"
                             android:textColor="@color/white"
-                            android:textSize="30dp"
+                            android:textSize="25dp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.783"
+                            app:layout_constraintHorizontal_bias="0.69"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintVertical_bias="0.914" />
@@ -156,7 +156,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:text="Workshops"
                             android:textColor="@color/white"
-                            android:textSize="30dp"
+                            android:textSize="25dp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -197,7 +197,7 @@
                             android:fontFamily="@font/mohaveregular"
                             android:text="RuleBook"
                             android:textColor="@color/white"
-                            android:textSize="30dp"
+                            android:textSize="25dp"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -226,6 +226,7 @@
                     android:text="What's Hot!"
                     android:textColor="@color/white"
                     android:textSize="30dp"
+                    android:textStyle="bold"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/mohaveregular"/>
 
@@ -234,7 +235,6 @@
                     android:id="@+id/iv_arsh"
                     android:layout_width="wrap_content"
                     android:padding="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_height="200dp"
                     android:src="@drawable/spce_arsh" />
                 <ImageView
@@ -266,6 +266,7 @@
                     android:text="Glimpses"
                     android:textColor="@color/white"
                     android:textSize="30dp"
+                    android:textStyle="bold"
                     android:layout_marginLeft="20dp"
                     android:fontFamily="@font/mohaveregular"/>
 
@@ -298,14 +299,14 @@
                     android:layout_marginLeft="20dp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/mohaveregular"
+                    android:textStyle="bold"
                     android:textSize="30dp"/>
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginBottom="10dp">
 
 
                     <TextView
@@ -316,7 +317,7 @@
                         android:paddingRight="25dp"
                         android:text="@string/About_us"
                         android:textColor="@color/white"
-                        android:textSize="19sp"
+                        android:textSize="20dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -352,7 +353,7 @@
                             android:layout_marginLeft="20dp"
                             android:text="Follow us"
                             android:textSize="30dp"
-                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"
                             android:textColor="@color/white"
                             android:fontFamily="@font/mohaveregular"
                             />
