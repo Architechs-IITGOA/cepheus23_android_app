@@ -84,6 +84,7 @@ class DescriptionActivity : AppCompatActivity() {
 
 
         if(obj.team==0){
+            binding.enterButton.visibility = View.GONE
 
             binding.registerButton.setOnClickListener {
                 binding.registerButton.isEnabled = false
@@ -224,6 +225,7 @@ class DescriptionActivity : AppCompatActivity() {
         }
 
         else{
+            binding.enterButton.text = "Max. "+obj.teamsize+" members"
             binding.registerButton.setText("Create / Join Team")
             binding.registerButton.setOnClickListener {
 

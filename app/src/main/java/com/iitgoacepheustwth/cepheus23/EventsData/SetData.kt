@@ -294,7 +294,7 @@ object setData {
                 3,
                 1,
                 3,
-                "10th Feb 10:00 AM (2 hrs)",
+                "10th Feb 9:00 AM (~3 hrs)",
                 "Arduino's Trial",
                 "https://drive.google.com/file/d/1GUTIZp2T5H6pn-VsaOKn56-kwynnQKwM/view",
                 "Extensive two staged Quiz on Arduino programming",
