@@ -149,6 +149,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_privacy_policy"
                 android:padding="5dp"
                 android:text="@string/privacyinfo"
                 android:textColor="@color/white"

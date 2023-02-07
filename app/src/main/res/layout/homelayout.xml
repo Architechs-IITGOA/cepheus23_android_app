@@ -12,8 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <fragment
             android:id="@+id/mainContainer"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -36,7 +34,7 @@
             android:layout_height="55dp"
             android:background="@color/bottomnavbar"
             app:itemIconTint="@color/white"
-            app:itemTextColor="#233988"
+            app:itemTextColor="#276F85"
             app:backgroundTint="#A1000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

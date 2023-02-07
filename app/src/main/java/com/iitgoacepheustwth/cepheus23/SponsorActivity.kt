@@ -29,6 +29,85 @@ class SponsorActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
         binding = ActivitySponsorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val aether = binding.llAether
+        aether.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.atherenergy.com/")
+            startActivity(intent)
+        }
+        val sbi = binding.llSbi
+        sbi.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://sbi.co.in/")
+            startActivity(intent)
+        }
+        val hpcl = binding.llHpcl
+        hpcl.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.hindustanpetroleum.com/")
+            startActivity(intent)
+        }
+        val goaGormit = binding.llGoaGormit
+        goaGormit.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.dit.goa.gov.in/")
+            startActivity(intent)
+        }
+        val ims = binding.llIms
+        ims.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.imsindia.com/center/goa/")
+            startActivity(intent)
+        }
+        val intraniz = binding.llIntraniz
+        intraniz.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://intrainz.com/")
+            startActivity(intent)
+        }
+        val lvlUp = binding.llLevlUP
+        lvlUp.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.levelupgaming.ca/")
+            startActivity(intent)
+        }
+        val whtHeavns = binding.llWhitehe
+        whtHeavns.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://whiteheavenentertainments.in/")
+            startActivity(intent)
+        }
+        val innovians = binding.llInovians
+        innovians.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://innovianstechnologies.com/")
+            startActivity(intent)
+        }
+        val stockGro = binding.llStockGro
+        stockGro.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.stockgro.club/")
+            startActivity(intent)
+        }
+        val statwig = binding.llStatwig
+        statwig.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://statwig.com/")
+            startActivity(intent)
+        }
+        val osseb = binding.llOsseb
+        osseb.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://osseb.com/")
+            startActivity(intent)
+        }
+        val yputhInc = binding.llYouthInc
+        yputhInc.setOnClickListener{
+            val intent = Intent(android.content.Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://youthincmag.com/")
+            startActivity(intent)
+        }
+
 
 //        setContentView(R.layout.fragment_sponsor)
 //    setContentView(R.layout.sponsor_webview)

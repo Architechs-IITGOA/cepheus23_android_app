@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbackground"
-    tools:context=".DeveloperActivity">
+    android:background="@drawable/mainbackground">
 
 
     <ScrollView
@@ -31,6 +30,7 @@
                 android:textSize="32sp"/>
 
             <LinearLayout
+                android:id="@+id/ll_vivek"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -72,6 +72,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_harsh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -112,6 +113,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_pranav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -153,6 +155,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ll_rushi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
